@@ -16,16 +16,16 @@ class Example extends Phaser.Scene {
     const group = this.add.group({
       key: "diamonds",
       frame: [0, 1, 2, 3, 4],
-      frameQuantity: 20,
+      frameQuantity: 20, // 每一帧中重复多少次
     });
 
     Phaser.Actions.GridAlign(group.getChildren(), {
-      width: 10,
-      height: 10,
-      cellWidth: 32,
-      cellHeight: 32,
-      x: 100,
-      y: 100,
+      width: 10, // 每行数量
+      height: 10, // 每列数量
+      cellWidth: 32, // 每个cell的宽度
+      cellHeight: 32, // 每个cell的高度
+      x: 100, // 原点位置x
+      y: 100, // 原点位置y
     });
   }
 }
