@@ -19,9 +19,7 @@ onMounted(() => {
     height: canvasBox.value.clientHeight,
     parent: myCanvas.value,
     backgroundColor: "#2d2d2d",
-    scene: [
-      new Example(canvasBox.value.clientWidth, canvasBox.value.clientHeight),
-    ],
+    scene: [new Example()],
   };
   const game = new Phaser.Game(config);
 });
