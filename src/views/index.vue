@@ -7,6 +7,11 @@
         is-link
         to="/actions/inc-x-layers"
       />
+      <van-cell
+        title="actions/place-on-a-circle-multi"
+        is-link
+        to="/actions/place-on-a-circle-multi"
+      />
     </div>
   </div>
 </template>
