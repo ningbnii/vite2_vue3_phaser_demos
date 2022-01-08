@@ -4,5 +4,6 @@ dist
 dist-ssr
 *.local
 .vscode
+deploy.sh
 
 yarn-error.log

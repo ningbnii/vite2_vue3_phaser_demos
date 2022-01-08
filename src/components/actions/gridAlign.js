@@ -24,8 +24,8 @@ class Example extends Phaser.Scene {
       height: 10, // 每列数量
       cellWidth: 32, // 每个cell的宽度
       cellHeight: 32, // 每个cell的高度
-      x: 100, // 原点位置x
-      y: 100, // 原点位置y
+      x: 20, // 原点位置x
+      y: 24, // 原点位置y
     });
   }
 }
