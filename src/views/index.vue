@@ -19,6 +19,7 @@
       />
       <van-cell title="放在圆上" is-link to="/actions/place-on-circle" />
       <van-cell title="放在椭圆上" is-link to="/actions/place-on-ellipse" />
+      <van-cell title="放在一条线上" is-link to="/actions/place-on-line" />
     </div>
   </div>
 </template>

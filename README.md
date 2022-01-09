@@ -20,3 +20,4 @@ yarn build
 - actions/place-on-a-circle-reversed 沿着一个圆倒着转
 - actions/place-on-circle 放在圆上
 - actions/place-on-ellipse 放在椭圆上
+- actions/place-on-line 放在一条线上
