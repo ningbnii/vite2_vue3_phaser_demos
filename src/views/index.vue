@@ -8,9 +8,14 @@
         to="/actions/inc-x-layers"
       />
       <van-cell
-        title="actions/place-on-a-circle-multi"
+        title="放在一个圆上"
         is-link
         to="/actions/place-on-a-circle-multi"
+      />
+      <van-cell
+        title="在一个圆圈上倒着转"
+        is-link
+        to="/actions/place-on-a-circle-reversed"
       />
     </div>
   </div>

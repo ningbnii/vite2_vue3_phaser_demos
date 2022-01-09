@@ -1,4 +1,3 @@
-import * as Phaser from "Phaser";
 import balls from "../../assets/balls.png";
 
 class Example extends Phaser.Scene {

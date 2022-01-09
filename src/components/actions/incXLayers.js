@@ -1,4 +1,3 @@
-import * as Phaser from "Phaser";
 import veg_png from "../../assets/veg.png";
 import veg_json from "../../assets/veg.json";
 
