@@ -15,7 +15,7 @@ export default {};
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 body {
@@ -80,5 +80,6 @@ textarea {
 .canvas_box {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 </style>
