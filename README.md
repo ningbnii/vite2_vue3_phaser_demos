@@ -18,3 +18,5 @@ yarn build
 - actions/inc-x-layers 设置坐标，旋转角度
 - actions/place-on-a-circle-multi 沿着一个圆旋转
 - actions/place-on-a-circle-reversed 沿着一个圆倒着转
+- actions/place-on-circle 放在圆上
+- actions/place-on-ellipse 放在椭圆上

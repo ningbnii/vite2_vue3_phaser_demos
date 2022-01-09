@@ -18,6 +18,7 @@
         to="/actions/place-on-a-circle-reversed"
       />
       <van-cell title="放在圆上" is-link to="/actions/place-on-circle" />
+      <van-cell title="放在椭圆上" is-link to="/actions/place-on-ellipse" />
     </div>
   </div>
 </template>
