@@ -26,3 +26,4 @@ yarn build
 - actions/place-on-rectangle 放在一个正方形上
 - actions/place-on-triangle 放在三角形上
 - actions/random-circle 随机圈
+- actions/random-ellipse 随机椭圆
