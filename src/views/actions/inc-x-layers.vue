@@ -4,13 +4,14 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import * as Phaser from "Phaser";
 
 import Example from "../../components/actions/incXLayers.js";
 
 let myCanvas = ref(null);
 let canvasBox = ref(null);
+let game;
 
 onMounted(() => {
   let config = {
@@ -21,7 +22,16 @@ onMounted(() => {
     backgroundColor: "#2d2d2d",
     scene: [Example],
   };
-  const game = new Phaser.Game(config);
+  game = new Phaser.Game(config);
+});
+
+onUnmounted(() => {
+  for (let key in game.scene.keys) {
+    if (game.scene.keys.hasOwnProperty(key)) {
+      game.scene.stop(key);
+      game.scene.keys[key] = undefined;
+    }
+  }
 });
 </script>
 <style lang="less" scoped>
