@@ -12,7 +12,9 @@ class Example extends Phaser.Scene {
   }
 
   create() {
-    this.triangle = new Phaser.Geom.Triangle.BuildRight(200, 400, 300, 200);
+    // this.triangle = new Phaser.Geom.Triangle.BuildRight(200, 400, 300, 200);
+    // 等边三角形
+    this.triangle = new Phaser.Geom.Triangle.BuildEquilateral(400, 100, 380);
 
     this.group = this.add.group({
       key: "ball",

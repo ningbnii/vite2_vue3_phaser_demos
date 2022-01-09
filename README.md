@@ -25,3 +25,4 @@ yarn build
 - actions/place-on-rectangle-shift 放在矩形移位上
 - actions/place-on-rectangle 放在一个正方形上
 - actions/place-on-triangle 放在三角形上
+- actions/random-circle 随机圈
