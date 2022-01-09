@@ -30,6 +30,7 @@
         is-link
         to="/actions/place-on-rectangle-shift"
       />
+      <van-cell title="放在矩形上" is-link to="/actions/place-on-rectangle" />
     </div>
   </div>
 </template>

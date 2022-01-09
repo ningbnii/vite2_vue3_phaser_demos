@@ -23,3 +23,4 @@ yarn build
 - actions/place-on-line 放在一条线上
 - actions/place-on-part-of-a-circle 放在圆的一部分
 - actions/place-on-rectangle-shift 放在矩形移位上
+- actions/place-on-rectangle 放在一个正方形上
