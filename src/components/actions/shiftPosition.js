@@ -38,8 +38,9 @@ class Example extends Phaser.Scene {
    */
   update(time, delta) {
     this.move += delta;
+    // this.move越大，间隔时间越长
     if (this.move > 6) {
-      // 按顺序移动到原点
+      // 按顺序移动到设置的点的位置，类似贪吃蛇的效果
       Phaser.Actions.ShiftPosition(this.group.getChildren(), this.x, this.y);
       this.move = 0;
     }
