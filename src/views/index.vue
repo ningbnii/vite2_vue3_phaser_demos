@@ -51,6 +51,7 @@
       <van-cell title="设置透明度" is-link to="/actions/set-alpha" />
       <van-cell title="设置xy" is-link to="/actions/set-xy" />
       <van-cell title="移动位置" is-link to="/actions/shift-position" />
+      <van-cell title="扩散" is-link to="/actions/spread" />
     </div>
   </div>
 </template>
