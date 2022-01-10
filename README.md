@@ -37,3 +37,4 @@ yarn build
 - actions/set-alpha 设置透明度
 - actions/set-xy 设置 xy
 - actions/shift-position 移动位置
+- actions/wrap-in-camera-bounds 包裹在相机范围内

@@ -52,6 +52,11 @@
       <van-cell title="设置xy" is-link to="/actions/set-xy" />
       <van-cell title="移动位置" is-link to="/actions/shift-position" />
       <van-cell title="扩散" is-link to="/actions/spread" />
+      <van-cell
+        title="包裹在相机范围内"
+        is-link
+        to="/actions/wrap-in-camera-bounds"
+      />
     </div>
   </div>
 </template>
