@@ -21,7 +21,7 @@ class Example extends Phaser.Scene {
   create() {
     this.anims.create({
       key: "snooze",
-      frames: [{ key: "cat1" }, { key: "cat2" }, { key: "cat3" }, { key: "cat4", duration: 50 }],
+      frames: [{ key: "cat1" }, { key: "cat2" }, { key: "cat3" }, { key: "cat4", duration: 50 }], // 将几张png图片组成一个序列
       frameRate: 8,
       repeat: -1,
     })

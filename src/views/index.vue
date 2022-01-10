@@ -32,6 +32,7 @@
       <van-cell title="添加动画事件" is-link to="/animation/add-animation-event" />
       <van-cell title="向现有动画添加帧" is-link to="/animation/add-frames-to-existing-animation" />
       <van-cell title="来自 png 序列的动画" is-link to="/animation/animation-from-png-sequence" />
+      <van-cell title="动画取得进度" is-link to="/animation/animation-get-progress" />
     </div>
   </div>
 </template>
