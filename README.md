@@ -38,3 +38,4 @@ yarn build
 - actions/set-xy 设置 xy
 - actions/shift-position 移动位置
 - actions/wrap-in-camera-bounds 包裹在相机范围内
+- actions/wrap-in-rectangle 包裹在矩形中

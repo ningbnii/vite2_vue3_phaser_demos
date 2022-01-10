@@ -57,6 +57,7 @@
         is-link
         to="/actions/wrap-in-camera-bounds"
       />
+      <van-cell title="包裹在矩形中" is-link to="/actions/wrap-in-rectangle" />
     </div>
   </div>
 </template>

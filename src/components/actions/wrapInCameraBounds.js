@@ -28,6 +28,7 @@ class Example extends Phaser.Scene {
       shape.x += 1 + 0.1 * i;
       shape.y += 1 + 0.1 * i;
     });
+    // 将每个项目的坐标包裹在矩形区域内
     Phaser.Actions.WrapInRectangle(this.shapes, this.rect, 72);
     this.draw();
   }
