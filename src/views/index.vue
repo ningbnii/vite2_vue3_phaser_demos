@@ -35,6 +35,7 @@
         <van-cell title="来自 png 序列的动画" is-link to="/animation/animation-from-png-sequence" />
         <van-cell title="动画取得进度" is-link to="/animation/animation-get-progress" />
         <van-cell title="动画重复事件" is-link to="/animation/animation-repeat-event" />
+        <van-cell title="aseprite动画" is-link to="/animation/aseprite-animation" />
       </van-list>
     </div>
   </div>
