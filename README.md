@@ -39,3 +39,7 @@ yarn build
 - actions/shift-position 移动位置
 - actions/wrap-in-camera-bounds 包裹在相机范围内
 - actions/wrap-in-rectangle 包裹在矩形中
+- animation/60fps-animation-test 60fps 动画测试
+- animation/add-animation-event 添加动画事件
+- animation/add-frames-to-existing-animation 向现有动画添加帧
+- animation/animation-from-png-sequence 来自 png 序列的动画
