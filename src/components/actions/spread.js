@@ -27,8 +27,11 @@ class Example extends Phaser.Scene {
       },
     });
 
+    console.log(group.getChildren());
     // 使用基于字符串的属性在 2 个给定值之间展开子项，渐变效果
     Phaser.Actions.Spread(group.getChildren(), "alpha", 0, 1);
+    // 从小到大排列，效果可以叠加
+    Phaser.Actions.Spread(group.getChildren(), "scale", 0, 1);
   }
 }
 
