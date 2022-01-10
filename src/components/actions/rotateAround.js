@@ -31,7 +31,7 @@ class Example extends Phaser.Scene {
     Phaser.Actions.RotateAround(
       this.group.getChildren(),
       { x: this.width / 2, y: this.height / 2 },
-      0.1
+      0.01
     );
   }
 }
