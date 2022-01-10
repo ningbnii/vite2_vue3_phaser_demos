@@ -30,3 +30,4 @@ yarn build
 - actions/random-line 随机线
 - actions/random-rectangle 随机矩形
 - actions/random-triangle 随机三角形
+- actions/random-around-distance 绕距离旋转
