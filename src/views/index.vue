@@ -35,6 +35,7 @@
       <van-cell title="随机圈" is-link to="/actions/random-circle" />
       <van-cell title="随机椭圆" is-link to="/actions/random-ellipse" />
       <van-cell title="随机线" is-link to="/actions/random-line" />
+      <van-cell title="随机矩形" is-link to="/actions/random-rectangle" />
     </div>
   </div>
 </template>

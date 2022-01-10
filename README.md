@@ -28,3 +28,4 @@ yarn build
 - actions/random-circle 随机圈
 - actions/random-ellipse 随机椭圆
 - actions/random-line 随机线
+- actions/random-rectangle 随机矩形
