@@ -44,3 +44,4 @@ yarn build
 - animation/add-frames-to-existing-animation 向现有动画添加帧
 - animation/animation-from-png-sequence 来自 png 序列的动画
 - animation/animation-get-progress 动画取得进度
+- animation/animation-repeat-event 动画重复事件
