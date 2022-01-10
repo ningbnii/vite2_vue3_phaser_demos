@@ -37,6 +37,7 @@
         <van-cell title="动画重复事件" is-link to="/animation/animation-repeat-event" />
         <van-cell title="aseprite动画" is-link to="/animation/aseprite-animation" />
         <van-cell title="链式动画" is-link to="/animation/chained-animation" />
+        <van-cell title="从画布纹理创建动画" is-link to="/animation/create-animation-from-canvas-texture" />
       </van-list>
     </div>
   </div>

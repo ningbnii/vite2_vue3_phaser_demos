@@ -47,3 +47,4 @@ yarn build
 - animation/animation-repeat-event 动画重复事件
 - animation/aseprite-animation aseprite 动画
 - animation/chained-animation 链式动画
+- animation/create-animation-from-canvas-texture 从画布纹理创建动画
