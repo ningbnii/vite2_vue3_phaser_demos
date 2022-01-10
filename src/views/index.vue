@@ -48,8 +48,8 @@
         is-link
         to="/actions/rotate-container-facing-point"
       />
-
       <van-cell title="设置透明度" is-link to="/actions/set-alpha" />
+      <van-cell title="设置xy" is-link to="/actions/set-xy" />
     </div>
   </div>
 </template>

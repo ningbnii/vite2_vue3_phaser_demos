@@ -35,3 +35,4 @@ yarn build
 - actions/rotate 旋转
 - actions/rotate-container-facing-point 旋转容器面对点，点击暂停
 - actions/set-alpha 设置透明度
+- actions/set-xy 设置 xy
