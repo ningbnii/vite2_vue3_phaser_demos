@@ -43,6 +43,11 @@
         to="/actions/rotate-around-distance"
       />
       <van-cell title="旋转" is-link to="/actions/rotate-around" />
+      <van-cell
+        title="旋转容器面对点，点击暂停"
+        is-link
+        to="/actions/rotate-container-facing-point"
+      />
     </div>
   </div>
 </template>

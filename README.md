@@ -33,3 +33,4 @@ yarn build
 - actions/random-around-distance 绕距离旋转
 - actions/rotate-around-xy 绕 x y 旋转，随圆内鼠标移动
 - actions/rotate 旋转
+- actions/rotate-container-facing-point 旋转容器面对点，点击暂停
