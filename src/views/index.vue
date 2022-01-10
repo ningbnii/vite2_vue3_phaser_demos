@@ -36,6 +36,7 @@
         <van-cell title="动画取得进度" is-link to="/animation/animation-get-progress" />
         <van-cell title="动画重复事件" is-link to="/animation/animation-repeat-event" />
         <van-cell title="aseprite动画" is-link to="/animation/aseprite-animation" />
+        <van-cell title="链式动画" is-link to="/animation/chained-animation" />
       </van-list>
     </div>
   </div>

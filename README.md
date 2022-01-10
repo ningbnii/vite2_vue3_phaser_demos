@@ -46,3 +46,4 @@ yarn build
 - animation/animation-get-progress 动画取得进度
 - animation/animation-repeat-event 动画重复事件
 - animation/aseprite-animation aseprite 动画
+- animation/chained-animation 链式动画
