@@ -37,6 +37,7 @@ class Example extends Phaser.Scene {
     sprite.on(
       "animationrepeat",
       function () {
+        // 添加小屎
         const poop = this.add.image(sprite.x - 32, 300, "poo").setScale(0.5)
 
         this.tweens.add({
