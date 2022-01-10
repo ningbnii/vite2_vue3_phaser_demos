@@ -42,6 +42,8 @@
         is-link
         to="/actions/rotate-around-distance"
       />
+
+      <van-cell title="绕xy旋转" is-link to="/actions/rotate-around-xy" />
     </div>
   </div>
 </template>

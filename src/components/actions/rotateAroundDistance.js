@@ -15,7 +15,7 @@ class Example extends Phaser.Scene {
     this.group = this.add.group();
 
     for (let i = 0; i < 32; i++) {
-      this.group.create(i * 32, i * 2, "ball");
+      this.group.create(i * 32, 0, "ball");
     }
   }
 
