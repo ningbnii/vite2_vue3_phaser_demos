@@ -21,9 +21,9 @@ class Example extends Phaser.Scene {
       frame: 3,
       frameQuantity: 50,
       setXY: {
-        x: 32,
-        y: 32,
-        stepX: 14,
+        x: this.center.x,
+        y: 0,
+        stepY: 14,
       },
     });
 
