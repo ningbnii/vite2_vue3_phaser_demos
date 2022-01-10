@@ -32,3 +32,4 @@ yarn build
 - actions/random-triangle 随机三角形
 - actions/random-around-distance 绕距离旋转
 - actions/rotate-around-xy 绕 x y 旋转，随圆内鼠标移动
+- actions/rotate 旋转

@@ -19,30 +19,19 @@ class Example extends Phaser.Scene {
 
     for (let i = 0; i < 256; i++) {
       this.group.create(
-        Phaser.Math.Between(0, this.width),
-        Phaser.Math.Between(0, this.height),
+        Phaser.Math.Between(0, this.width / 2),
+        Phaser.Math.Between(0, this.height / 2),
         "diamonds",
         Phaser.Math.Between(0, 4)
       );
     }
-
-    this.geomPoint = new Phaser.Geom.Point(this.width / 2, this.height / 2);
-    // 监听鼠标移动事件，更改geomPoint的坐标为鼠标坐标值
-    this.input.on(
-      "pointermove",
-      function (pointer) {
-        this.geomPoint.setTo(pointer.x, pointer.y);
-      },
-      this
-    );
   }
 
   update() {
-    Phaser.Actions.RotateAroundDistance(
+    Phaser.Actions.RotateAround(
       this.group.getChildren(),
-      this.geomPoint,
-      0.1,
-      100
+      { x: this.width / 2, y: this.height / 2 },
+      0.1
     );
   }
 }
