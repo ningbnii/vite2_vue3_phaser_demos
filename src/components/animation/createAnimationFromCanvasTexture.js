@@ -34,7 +34,7 @@ class Example extends Phaser.Scene {
       x += 32
       radius += radiusInc
 
-      if (i % framesPerRow === 0) {
+      if ((i + 1) % framesPerRow === 0) {
         x = 0
         y += 32
       }
@@ -43,6 +43,27 @@ class Example extends Phaser.Scene {
     canvasFrame.refresh()
 
     this.add.image(0, 0, "dynamicFrames", "__BASE").setOrigin(0)
+
+    this.anims.create({
+      key: "pulse",
+      frames: this.anims.generateFrameNumbers("dynamicFrames", { start: 0, end: frameTotal }),
+      frameRate: 28,
+      repeat: -1,
+      yoyo: true,
+    })
+
+    for (let i = 0; i < 50; i++) {
+      let ball = this.add.sprite(8 + i * 16, 164, "dynamicFrames").play("pulse")
+      this.tweens.add({
+        targets: ball,
+        y: 584,
+        duration: 2000,
+        ease: "Quad.easeInOut",
+        delay: i * 30,
+        yoyo: true,
+        repeat: -1,
+      })
+    }
   }
 }
 
