@@ -42,6 +42,7 @@
         <van-cell title="从纹理图集创建动画" is-link to="/animation/create-animation-from-texture-atlas" />
         <van-cell title="在精灵上创建动画" is-link to="/animation/create-animation-on-sprite" />
         <van-cell title="创建没有帧名称的动画" is-link to="/animation/create-animation-without-frame-names" />
+        <van-cell title="从精灵配置创建" is-link to="/animation/create-from-sprite-config" />
       </van-list>
     </div>
   </div>

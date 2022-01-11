@@ -52,3 +52,4 @@ yarn build
 - animation/create-animation-from-texture-atlas 从纹理图集创建动画
 - animation/create-animation-on-sprite 在精灵上创建动画
 - animation/create-animation-without-frame-names 创建没有帧名称的动画
+- animation/create-from-sprite-config 从精灵配置创建
