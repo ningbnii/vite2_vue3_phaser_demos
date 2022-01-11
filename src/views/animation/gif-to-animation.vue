@@ -1,5 +1,4 @@
 <template>
-  <div class="title">Check the source code for comments</div>
   <div class="canvas_box" ref="canvasBox">
     <div ref="myCanvas"></div>
   </div>
@@ -8,7 +7,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import * as Phaser from 'Phaser'
 
-import Example from '../../components/animation/generateFrameNumbers'
+import Example from '../../components/animation/gifToAnimation'
 
 let myCanvas = ref(null)
 let canvasBox = ref(null)
