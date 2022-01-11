@@ -54,3 +54,4 @@ yarn build
 - animation/create-animation-without-frame-names 创建没有帧名称的动画
 - animation/create-from-sprite-config 从精灵配置创建
 - animation/cubes 立方体
+- animation/export-json 导出 json
