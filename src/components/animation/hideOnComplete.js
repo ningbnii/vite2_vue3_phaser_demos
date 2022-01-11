@@ -25,7 +25,7 @@ class Example extends Phaser.Scene {
     let config2 = {
       key: "explode",
       frames: "boom",
-      hideOnComplete: true,
+      hideOnComplete: true, // 动画结束后隐藏
     }
 
     this.anims.create(config1)
@@ -41,6 +41,7 @@ class Example extends Phaser.Scene {
       let ship = this.add.sprite(x, y, "invader")
       ship.play("move")
       //在此游戏对象上设置附加色调。
+      // Phaser.Utils.Array.GetRandom从数组中随机取一个值
       ship.setTint(Phaser.Utils.Array.GetRandom(colors))
       //将此游戏对象传递给输入管理器以启用输入。
       ship.setInteractive()
