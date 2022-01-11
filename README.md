@@ -56,3 +56,5 @@ yarn build
 - animation/cubes 立方体
 - animation/export-json 导出 json
 - animation/from-animation-json 来自动画 json
+- animation/from-json 来自 json
+- animation/generate-frame-names 生成帧的名称
