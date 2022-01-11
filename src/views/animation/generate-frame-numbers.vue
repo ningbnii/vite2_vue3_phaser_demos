@@ -17,13 +17,14 @@ let canvasBox = ref(null)
 let game
 
 onMounted(() => {
+  let exampleScene = new Example(canvasBox.value.clientWidth, canvasBox.value.clientHeight)
   let config = {
     type: Phaser.AUTO,
     width: canvasBox.value.clientWidth,
     height: canvasBox.value.clientHeight,
     parent: myCanvas.value,
     backgroundColor: '#2d2d2d',
-    scene: [new Example(canvasBox.value.clientWidth, canvasBox.value.clientHeight)],
+    scene: [exampleScene],
   }
   game = new Phaser.Game(config)
 })
