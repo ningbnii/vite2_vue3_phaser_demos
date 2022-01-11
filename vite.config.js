@@ -1,23 +1,23 @@
-import { defineConfig, loadEnv } from "vite";
-import vue from "@vitejs/plugin-vue";
-import styleImport from "vite-plugin-style-import";
-import px2vp from "postcss-px2vp";
+import { defineConfig, loadEnv } from "vite"
+import vue from "@vitejs/plugin-vue"
+import styleImport from "vite-plugin-style-import"
+import px2vp from "postcss-px2vp"
 
 const vantStyleImport = () => {
-  const libraryName = "vant";
+  const libraryName = "vant"
   return styleImport({
     libs: [
       {
         libraryName,
         esModule: true,
         resolveStyle(name) {
-          return `${libraryName}/es/${name}/style`;
+          return `${libraryName}/es/${name}/style`
         },
       },
     ],
-  });
-};
-console.log(process.cwd());
+  })
+}
+
 export default ({ mode }) =>
   defineConfig({
     base: loadEnv(mode, process.cwd()).VITE_BASEURL,
@@ -27,9 +27,9 @@ export default ({ mode }) =>
         plugins: [
           px2vp({
             viewportWidth(rule) {
-              const file = rule.source?.input.file;
-              if (file?.includes("vant")) return 375;
-              return 750;
+              const file = rule.source?.input.file
+              if (file?.includes("vant")) return 375
+              return 750
             },
           }),
         ],
@@ -48,14 +48,10 @@ export default ({ mode }) =>
         output: {
           manualChunks(id) {
             if (id.includes("/node_modules/")) {
-              return id
-                .toString()
-                .split("node_modules/")[1]
-                .split("/")[0]
-                .toString();
+              return id.toString().split("node_modules/")[1].split("/")[0].toString()
             }
           },
         },
       },
     },
-  });
+  })

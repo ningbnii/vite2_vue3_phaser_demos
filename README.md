@@ -49,3 +49,4 @@ yarn build
 - animation/chained-animation 链式动画
 - animation/create-animation-from-canvas-texture 从画布纹理创建动画
 - animation/create-animation-from-sprite-sheet 从精灵表创建动画
+- animation/create-animation-from-texture-atlas 从纹理图集创建动画

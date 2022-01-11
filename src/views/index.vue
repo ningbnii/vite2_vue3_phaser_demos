@@ -39,6 +39,7 @@
         <van-cell title="链式动画" is-link to="/animation/chained-animation" />
         <van-cell title="从画布纹理创建动画" is-link to="/animation/create-animation-from-canvas-texture" />
         <van-cell title="从精灵表创建动画" is-link to="/animation/create-animation-from-sprite-sheet" />
+        <van-cell title="从纹理图集创建动画" is-link to="/animation/create-animation-from-texture-atlas" />
       </van-list>
     </div>
   </div>
