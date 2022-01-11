@@ -38,6 +38,7 @@
         <van-cell title="aseprite动画" is-link to="/animation/aseprite-animation" />
         <van-cell title="链式动画" is-link to="/animation/chained-animation" />
         <van-cell title="从画布纹理创建动画" is-link to="/animation/create-animation-from-canvas-texture" />
+        <van-cell title="从精灵表创建动画" is-link to="/animation/create-animation-from-sprite-sheet" />
       </van-list>
     </div>
   </div>
