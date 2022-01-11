@@ -58,3 +58,4 @@ yarn build
 - animation/from-animation-json 来自动画 json
 - animation/from-json 来自 json
 - animation/generate-frame-names 生成帧的名称
+- animation/generate-frame-numbers 生成帧号

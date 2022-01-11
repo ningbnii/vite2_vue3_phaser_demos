@@ -47,6 +47,7 @@
         <van-cell title="来自动画 json" is-link to="/animation/from-animation-json" />
         <van-cell title="来自 json" is-link to="/animation/from-json" />
         <van-cell title="生成帧的名称" is-link to="/animation/generate-frame-names" />
+        <van-cell title="生成帧号" is-link to="/animation/generate-frame-numbers" />
       </van-list>
     </div>
   </div>
