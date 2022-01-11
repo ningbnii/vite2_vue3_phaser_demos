@@ -55,3 +55,4 @@ yarn build
 - animation/create-from-sprite-config 从精灵配置创建
 - animation/cubes 立方体
 - animation/export-json 导出 json
+- animation/from-animation-json 来自动画 json

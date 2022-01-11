@@ -44,6 +44,7 @@
         <van-cell title="创建没有帧名称的动画" is-link to="/animation/create-animation-without-frame-names" />
         <van-cell title="立方体" is-link to="/animation/cubes" />
         <van-cell title="导出json" is-link to="/animation/export-json" />
+        <van-cell title="来自动画 json" is-link to="/animation/from-animation-json" />
       </van-list>
     </div>
   </div>
