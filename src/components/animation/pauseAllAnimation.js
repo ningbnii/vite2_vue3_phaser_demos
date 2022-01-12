@@ -52,8 +52,10 @@ class Example extends Phaser.Scene {
       'pointerdown',
       function () {
         if (this.anims.paused) {
+          // 从暂停恢复
           this.anims.resumeAll()
         } else {
+          // 暂停所有
           this.anims.pauseAll()
         }
       },
