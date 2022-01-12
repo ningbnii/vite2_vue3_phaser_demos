@@ -60,6 +60,7 @@
         <van-cell title="监听更新事件" is-link to="/animation/on-update-event" />
         <van-cell title="暂停所有动画" is-link to="/animation/pause-all-animation" />
         <van-cell title="暂停动画实例" is-link to="/animation/pause-animation-instance" />
+        <van-cell title="延迟播放" is-link to="/animation/play-after-delay" />
       </van-list>
     </div>
   </div>
