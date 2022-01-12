@@ -52,6 +52,7 @@
         <van-cell title="完成后隐藏" is-link to="/animation/hide-on-complete" />
         <van-cell title="混合动画" is-link to="/animation/mixed-animation" />
         <van-cell title="多图集动画" is-link to="/animation/multi-atlas-animation" />
+        <van-cell title="迈布里奇" is-link to="/animation/muybridge" />
       </van-list>
     </div>
   </div>

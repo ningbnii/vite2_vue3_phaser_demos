@@ -63,3 +63,4 @@ yarn build
 - animation/hide-on-complete 完成后隐藏
 - animation/mixed-animation 混合动画
 - animation/multi-atlas-animation 多图集动画
+- animation/muybridge 迈布里奇
