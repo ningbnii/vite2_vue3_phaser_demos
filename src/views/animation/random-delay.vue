@@ -8,7 +8,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import * as Phaser from 'Phaser'
 
-import Example from '../../components/animation/playAnimationWithConfig'
+import Example from '../../components/animation/randomDelay'
 
 let myCanvas = ref(null)
 let canvasBox = ref(null)

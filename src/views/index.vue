@@ -63,6 +63,7 @@
         <van-cell title="延迟播放" is-link to="/animation/play-after-delay" />
         <van-cell title="repeat结束后播放" is-link to="/animation/play-after-repeat" />
         <van-cell title="使用配置播放动画" is-link to="/animation/play-animation-with-config" />
+        <van-cell title="随机延迟" is-link to="/animation/random-delay" />
       </van-list>
     </div>
   </div>
