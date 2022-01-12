@@ -8,23 +8,23 @@ class Example extends Phaser.Scene {
   }
 
   preload() {
-    const invader = new URL("../../assets/invader1.png", import.meta.url).href
-    const boom = new URL("../../assets/explosion.png", import.meta.url).href
-    this.load.spritesheet("invader", invader, { frameWidth: 32, frameHeight: 32 })
-    this.load.spritesheet("boom", boom, { frameWidth: 64, frameHeight: 64, endFrame: 23 })
+    const invader = new URL('../../assets/invader1.png', import.meta.url).href
+    const boom = new URL('../../assets/explosion.png', import.meta.url).href
+    this.load.spritesheet('invader', invader, { frameWidth: 32, frameHeight: 32 })
+    this.load.spritesheet('boom', boom, { frameWidth: 64, frameHeight: 64, endFrame: 23 })
   }
 
   create() {
     let config1 = {
-      key: "move",
-      frames: "invader",
+      key: 'move',
+      frames: 'invader',
       frameRate: 4,
       repeat: -1,
     }
 
     let config2 = {
-      key: "explode",
-      frames: "boom",
+      key: 'explode',
+      frames: 'boom',
       hideOnComplete: true, // 动画结束后隐藏
     }
 
@@ -38,23 +38,21 @@ class Example extends Phaser.Scene {
       let x = Phaser.Math.Between(50, 750)
       let y = Phaser.Math.Between(100, 550)
 
-      let ship = this.add.sprite(x, y, "invader")
-      ship.play("move")
+      let ship = this.add.sprite(x, y, 'invader')
+      ship.play('move')
       //在此游戏对象上设置附加色调。
       // Phaser.Utils.Array.GetRandom从数组中随机取一个值
       ship.setTint(Phaser.Utils.Array.GetRandom(colors))
       //将此游戏对象传递给输入管理器以启用输入。
       ship.setInteractive()
 
-      ship.once("pointerdown", function () {
+      ship.once('pointerdown', function () {
         this.clearTint()
         //Sprite will have visible = false set when the animation finishes repeating because of 'hideOnComplete' property
-        this.play("explode")
+        this.play('explode')
       })
     }
   }
-
-  update() {}
 }
 
 export default Example

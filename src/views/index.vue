@@ -50,6 +50,7 @@
         <van-cell title="生成帧号" is-link to="/animation/generate-frame-numbers" />
         <van-cell title="gif转动画" is-link to="/animation/gif-to-animation" />
         <van-cell title="完成后隐藏" is-link to="/animation/hide-on-complete" />
+        <van-cell title="混合动画" is-link to="/animation/mixed-animation" />
       </van-list>
     </div>
   </div>
