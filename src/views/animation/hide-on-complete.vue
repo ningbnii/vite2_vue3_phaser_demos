@@ -5,10 +5,10 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue"
-import * as Phaser from "Phaser"
+import { ref, onMounted, onUnmounted } from 'vue'
+import * as Phaser from 'Phaser'
 
-import Example from "../../components/animation/hideOnComplete"
+import Example from '../../components/animation/hideOnComplete'
 
 let myCanvas = ref(null)
 let canvasBox = ref(null)
@@ -21,7 +21,7 @@ onMounted(() => {
     width: canvasBox.value.clientWidth,
     height: canvasBox.value.clientHeight,
     parent: myCanvas.value,
-    backgroundColor: "#2d2d2d",
+    backgroundColor: '#2d2d2d',
     scene: [exampleScene],
   }
   game = new Phaser.Game(config)

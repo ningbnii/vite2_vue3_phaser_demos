@@ -58,6 +58,7 @@
         <van-cell title="监听开始事件" is-link to="/animation/on-start-event" />
         <van-cell title="监听停止事件" is-link to="/animation/on-stop-event" />
         <van-cell title="监听更新事件" is-link to="/animation/on-update-event" />
+        <van-cell title="暂停所有动画" is-link to="/animation/pause-all-animation" />
       </van-list>
     </div>
   </div>
