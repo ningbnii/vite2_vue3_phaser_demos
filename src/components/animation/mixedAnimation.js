@@ -63,8 +63,6 @@ class Example extends Phaser.Scene {
       }
     })
   }
-
-  update() {}
 }
 
 export default Example

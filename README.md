@@ -62,3 +62,4 @@ yarn build
 - animation/git-to-animation gif 转动画
 - animation/hide-on-complete 完成后隐藏
 - animation/mixed-animation 混合动画
+- animation/multi-atlas-animation 多图集动画

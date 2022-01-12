@@ -51,6 +51,7 @@
         <van-cell title="gif转动画" is-link to="/animation/gif-to-animation" />
         <van-cell title="完成后隐藏" is-link to="/animation/hide-on-complete" />
         <van-cell title="混合动画" is-link to="/animation/mixed-animation" />
+        <van-cell title="多图集动画" is-link to="/animation/multi-atlas-animation" />
       </van-list>
     </div>
   </div>
