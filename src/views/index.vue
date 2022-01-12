@@ -53,6 +53,8 @@
         <van-cell title="混合动画" is-link to="/animation/mixed-animation" />
         <van-cell title="多图集动画" is-link to="/animation/multi-atlas-animation" />
         <van-cell title="迈布里奇" is-link to="/animation/muybridge" />
+        <van-cell title="监听完成事件" is-link to="/animation/on-complete-event" />
+        <van-cell title="监听重复事件" is-link to="/animation/on-repeat-event" />
       </van-list>
     </div>
   </div>

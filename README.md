@@ -64,3 +64,5 @@ yarn build
 - animation/mixed-animation 混合动画
 - animation/multi-atlas-animation 多图集动画
 - animation/muybridge 迈布里奇
+- animation/on-complete-event 监听完成事件
+- animation/on-repeat-event 监听重复事件
