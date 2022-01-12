@@ -62,6 +62,7 @@
         <van-cell title="暂停动画实例" is-link to="/animation/pause-animation-instance" />
         <van-cell title="延迟播放" is-link to="/animation/play-after-delay" />
         <van-cell title="repeat结束后播放" is-link to="/animation/play-after-repeat" />
+        <van-cell title="使用配置播放动画" is-link to="/animation/play-animation-with-config" />
       </van-list>
     </div>
   </div>
