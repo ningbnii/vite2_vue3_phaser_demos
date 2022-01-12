@@ -55,6 +55,7 @@
         <van-cell title="迈布里奇" is-link to="/animation/muybridge" />
         <van-cell title="监听完成事件" is-link to="/animation/on-complete-event" />
         <van-cell title="监听重复事件" is-link to="/animation/on-repeat-event" />
+        <van-cell title="监听开始事件" is-link to="/animation/on-start-event" />
       </van-list>
     </div>
   </div>
