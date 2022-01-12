@@ -20,7 +20,7 @@ class Example extends Phaser.Scene {
     for (let i = 0; i < 13; i++) {
       this.add.image(64 * i, this.height - 64, 'tiles', 1).setOrigin(0)
     }
-    this.add.text(this.center.x, 8, 'click to play animation', { color: '#ffffff' }).setOrigin(0.5, 0)
+    this.add.text(this.center.x, 8, 'click to repeat animation', { color: '#ffffff' }).setOrigin(0.5, 0)
 
     // 攻击动画
     this.anims.create({

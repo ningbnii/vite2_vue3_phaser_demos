@@ -5,7 +5,7 @@ class Example extends Phaser.Scene {
     this.width = width
     this.height = height
     this.center = { x: this.width / 2, y: this.height / 2 }
-    this.isRunning = false
+    this.isRunning = true
   }
 
   preload() {
@@ -20,7 +20,7 @@ class Example extends Phaser.Scene {
     //TileSprite本质上还是一个sprite对象，不过这个sprite的贴图是可以移动的，并且会自动平铺来弥补移动后的空缺，所以我们的素材图片要是平铺后看不出有缝隙，就可以拿来当做TileSprite的移动贴图了
     this.bg = this.add.tileSprite(0, 0, this.width, this.height, 'bg').setOrigin(0)
     this.ground = this.add.tileSprite(0, this.height - 64, this.width, 64, 'tiles', 1).setOrigin(0)
-    this.add.text(this.center.x, 8, 'click to start running animation', { color: '#ffffff' }).setOrigin(0.5, 0)
+    this.add.text(this.center.x, 8, 'click to stop animation', { color: '#ffffff' }).setOrigin(0.5, 0)
 
     // 闲置
     this.anims.create({
@@ -41,10 +41,17 @@ class Example extends Phaser.Scene {
     let lancelot = this.add.sprite(0, this.height - 60, 'knight', 'attack_A/frame0000')
     lancelot.setOrigin(0, 1)
     lancelot.setScale(4)
-    lancelot.play('idle')
+    lancelot.play('run')
 
     // event handler for when the animation completes on our sprite
     // 监听下面的ANIMATION_START，如果将lancelot.play('idle')放到这段代码下面，也会执行
+    lancelot.on(
+      Phaser.Animations.Events.ANIMATION_STOP,
+      function () {
+        this.isRunning = false
+      },
+      this
+    )
     lancelot.on(
       Phaser.Animations.Events.ANIMATION_START,
       function () {
@@ -54,12 +61,17 @@ class Example extends Phaser.Scene {
     )
 
     // add a click handler to start the animation playing
-    // 只触发一次
-    this.input.once('pointerdown', function () {
-      // @param ignoreIfPlaying If an animation is already playing then ignore this call. Default false.
-      // ignoreIfPlaying=true,动画播放完才能再次播放，false，则可以中断播放，从头开始
-      lancelot.play('run')
-    })
+    this.input.on(
+      'pointerdown',
+      function () {
+        if (this.isRunning) {
+          lancelot.stop()
+        } else {
+          lancelot.play('run')
+        }
+      },
+      this
+    )
   }
 
   update() {

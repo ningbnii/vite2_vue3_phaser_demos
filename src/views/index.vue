@@ -56,6 +56,7 @@
         <van-cell title="监听完成事件" is-link to="/animation/on-complete-event" />
         <van-cell title="监听重复事件" is-link to="/animation/on-repeat-event" />
         <van-cell title="监听开始事件" is-link to="/animation/on-start-event" />
+        <van-cell title="监听停止事件" is-link to="/animation/on-stop-event" />
       </van-list>
     </div>
   </div>

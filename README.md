@@ -66,4 +66,5 @@ yarn build
 - animation/muybridge 迈布里奇
 - animation/on-complete-event 监听完成事件
 - animation/on-repeat-event 监听重复事件
-- animation/on-start-event 监听重复事件
+- animation/on-start-event 监听开始事件
+- animation/on-stop-event 监听停止事件
