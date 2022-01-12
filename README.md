@@ -72,3 +72,4 @@ yarn build
 - animation/pause-all-animation 暂停所有动画
 - animation/pause-animation-instance 暂停动画实例
 - animation/pause-animation-instance 延迟播放
+- animation/play-after-repeat repeat 结束后播放
