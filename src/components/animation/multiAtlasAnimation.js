@@ -15,7 +15,7 @@ class Example extends Phaser.Scene {
 
   create() {
     this.anims.create({ key: 'fly', frames: this.anims.generateFrameNames('cybercity', { start: 0, end: 98 }), repeat: -1 })
-    this.add.sprite(this.center.x, this.center.y).play('fly')
+    this.add.sprite(this.center.x, this.center.y).setScale(3.1).play('fly')
   }
 }
 
