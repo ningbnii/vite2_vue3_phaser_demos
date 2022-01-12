@@ -70,3 +70,4 @@ yarn build
 - animation/on-stop-event 监听停止事件
 - animation/on-update-event 监听更新事件
 - animation/pause-all-animation 暂停所有动画
+- animation/pause-animation-instance 暂停动画实例
