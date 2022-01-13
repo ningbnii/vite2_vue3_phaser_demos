@@ -83,3 +83,4 @@ yarn build
 - animation/stagger-play-1 交错播放 1
 - animation/stagger-play-2 交错播放 2
 - animation/tween-timescale 补间动画时间尺度
+- animation/yoyo yoyo
