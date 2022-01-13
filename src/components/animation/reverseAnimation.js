@@ -31,7 +31,7 @@ class Example extends Phaser.Scene {
     this.sprite = this.add.sprite(this.center.x, this.center.y, 'mummy').setScale(4)
 
     // debug text
-    this.progress = this.add.text(100, 420, 'progress: 0%', { color: '#00ff00' })
+    this.progress = this.add.text(100, 100, 'progress: 0%', { color: '#00ff00' })
 
     // 键盘输入,监听的建名必须大写
     this.input.keyboard.on(
@@ -81,6 +81,33 @@ class Example extends Phaser.Scene {
       },
       this
     )
+  }
+
+  update() {
+    this.updateFrameView()
+    const debug = [
+      'SPACE to play the animation, Q to play reverse,',
+      'R to revert at any time, P to pause/resume,',
+      'Y to toggle yoyo',
+      '',
+      'Yoyo: ' + this.sprite.anims.yoyo,
+      'Reverse: ' + this.sprite.anims.inReverse,
+      'Progress: ' + this.sprite.anims.getProgress() * 100 + '%',
+      'Accumulator: ' + this.sprite.anims.accumulator, // 累加器
+      'NextTick: ' + this.sprite.anims.nextTick, // 下一个勾选
+    ]
+
+    this.progress.setText(debug)
+  }
+
+  updateFrameView() {
+    // 正在播放动画 anims.isPlaying
+    if (this.sprite.anims.isPlaying) {
+      // 清空图层
+      this.frameView.clear()
+      // this.sprite.frame.cutX 要从中剪切的源图像中的 X 位置
+      this.frameView.fillRect(this.sprite.frame.cutX, 0, 37, 45)
+    }
   }
 }
 
