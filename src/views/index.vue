@@ -65,6 +65,7 @@
         <van-cell title="使用配置播放动画" is-link to="/animation/play-animation-with-config" />
         <van-cell title="随机延迟" is-link to="/animation/random-delay" />
         <van-cell title="移除动画事件" is-link to="/animation/remove-animation-event" />
+        <van-cell title="反转动画" is-link to="/animation/reverse-animation" />
       </van-list>
     </div>
   </div>

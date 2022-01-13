@@ -76,3 +76,4 @@ yarn build
 - animation/play-animation-with-config 使用配置播放动画
 - animation/random-delay 随机延迟
 - animation/remove-animation-event 移除动画事件
+- animation/reverse-animation 反转动画
