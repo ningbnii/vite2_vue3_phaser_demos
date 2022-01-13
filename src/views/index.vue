@@ -71,6 +71,7 @@
         <van-cell title="精灵动画事件" is-link to="/animation/sprite-animation-events" />
         <van-cell title="交错播放1" is-link to="/animation/stagger-play-1" />
         <van-cell title="交错播放2" is-link to="/animation/stagger-play-2" />
+        <van-cell title="补间动画时间尺度" is-link to="/animation/tween-timescale" />
       </van-list>
     </div>
   </div>
