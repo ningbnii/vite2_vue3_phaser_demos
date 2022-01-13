@@ -81,3 +81,4 @@ yarn build
 - animation/show-on-start 开始播放时显示
 - animation/sprite-animation-events 精灵动画事件
 - animation/stagger-play-1 交错播放 1
+- animation/stagger-play-2 交错播放 2
