@@ -29,7 +29,7 @@ class Example extends Phaser.Scene {
       //  Each one can have a random start delay
       boom.play({
         key: 'explode',
-        delay: Math.random() * 3000,
+        delay: Math.random() * 3000, // 延迟播放
       })
     }
   }
