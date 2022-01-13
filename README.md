@@ -79,3 +79,4 @@ yarn build
 - animation/reverse-animation 反转动画
 - animation/show-animation-play-through 显示动画播放过程
 - animation/show-on-start 开始播放时显示
+- animation/sprite-animation-events 精灵动画事件
