@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <van-list finished-text="没有更多了">
-        <h2>actions</h2>
+        <h1>actions</h1>
         <van-cell title="actions/grid-align" is-link to="/actions/grid-align" />
         <van-cell title="actions/inc-x-layers" is-link to="/actions/inc-x-layers" />
         <van-cell title="放在一个圆上" is-link to="/actions/place-on-a-circle-multi" />
@@ -28,7 +28,7 @@
         <van-cell title="扩散" is-link to="/actions/spread" />
         <van-cell title="包裹在相机范围内" is-link to="/actions/wrap-in-camera-bounds" />
         <van-cell title="包裹在矩形中" is-link to="/actions/wrap-in-rectangle" />
-        <h2>animation</h2>
+        <h1>animation</h1>
         <van-cell title="60fps动画测试" is-link to="/animation/60fps-animation-test" />
         <van-cell title="添加动画事件" is-link to="/animation/add-animation-event" />
         <van-cell title="向现有动画添加帧" is-link to="/animation/add-frames-to-existing-animation" />
@@ -73,6 +73,9 @@
         <van-cell title="交错播放2" is-link to="/animation/stagger-play-2" />
         <van-cell title="补间动画时间尺度" is-link to="/animation/tween-timescale" />
         <van-cell title="yoyo" is-link to="/animation/yoyo" />
+        <h1>audio</h1>
+        <h2>HTML5 Audio</h2>
+        <van-cell title="循环延迟" is-link to="/audio/html5-audio/loop-delay" />
       </van-list>
     </div>
   </div>
