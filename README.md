@@ -77,3 +77,4 @@ yarn build
 - animation/random-delay 随机延迟
 - animation/remove-animation-event 移除动画事件
 - animation/reverse-animation 反转动画
+- animation/show-animation-play-through 显示动画播放
