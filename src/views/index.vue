@@ -69,6 +69,7 @@
         <van-cell title="显示动画播放过程" is-link to="/animation/show-animation-play-through" />
         <van-cell title="开始播放时显示" is-link to="/animation/show-on-start" />
         <van-cell title="精灵动画事件" is-link to="/animation/sprite-animation-events" />
+        <van-cell title="交错播放1" is-link to="/animation/stagger-play-1" />
       </van-list>
     </div>
   </div>
