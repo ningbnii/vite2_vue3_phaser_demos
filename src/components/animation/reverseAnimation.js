@@ -91,8 +91,8 @@ class Example extends Phaser.Scene {
       'Y to toggle yoyo',
       '',
       'Yoyo: ' + this.sprite.anims.yoyo,
-      'Reverse: ' + this.sprite.anims.inReverse,
-      'Progress: ' + this.sprite.anims.getProgress() * 100 + '%',
+      'Reverse: ' + this.sprite.anims.inReverse, // anims.inReverse 是否倒播
+      'Progress: ' + this.sprite.anims.getProgress() * 100 + '%', // this.sprite.anims.getProgress() 进度
       'Accumulator: ' + this.sprite.anims.accumulator, // 累加器
       'NextTick: ' + this.sprite.anims.nextTick, // 下一个勾选
     ]
