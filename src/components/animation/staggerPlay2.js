@@ -10,29 +10,48 @@ class Example extends Phaser.Scene {
 
   preload() {
     this.load.path = 'assets/'
-    this.load.atlas('lazer', 'lazer.png', 'lazer.json')
+    this.load.atlas('knight', 'knight.png', 'knight.json')
+    this.load.image('bg', 'clouds.png')
+    this.load.spritesheet('tiles', 'fantasy-tiles.png', { frameWidth: 64, frameHeight: 64 })
   }
 
   create() {
+    this.bg = this.add.tileSprite(0, 0, this.width, this.height, 'bg').setOrigin(0).setScale(1, 1.2)
+    this.ground = this.add.tileSprite(0, this.height - 64, this.width, 64, 'tiles', 1).setOrigin(0)
+
+    this.add.text(this.center.x, 8, 'tweening the animation.timescale', { color: '#ffffff' }).setOrigin(0.5, 0)
+
     this.anims.create({
-      key: 'blast',
-      frames: this.anims.generateFrameNames('lazer', { prefix: 'lazer_', end: 22, zeroPad: 2 }),
+      key: 'run',
+      frames: this.anims.generateFrameNames('knight', { prefix: 'run/frame', end: 7, zeroPad: 4 }),
+      frameRate: 12,
       repeat: -1,
     })
 
-    let group = this.add.group()
-    //创建多个游戏对象并将它们添加到该组中。
-    group.createMultiple({ key: 'lazer', frame: 'lazer_22', repeat: 39, setScale: { x: 0.25, y: 0.25 } })
-    Phaser.Actions.GridAlign(group.getChildren(), {
-      width: 20,
-      height: 2,
-      cellWidth: 32,
-      cellHeight: 280,
-      x: -50,
-      y: -220,
-    })
+    this.lancelot = this.add
+      .sprite(this.center.x, this.height - 64, 'knight')
+      .setOrigin(0.5, 1)
+      .setScale(4)
+      .play('run')
 
-    this.anims.staggerPlay('blast', group.getChildren(), 20)
+    this.tweens.add(
+      {
+        targets: this.lancelot.anims,
+        timeScale: { from: 0.5, to: 2 }, // 加速度
+        ease: 'Sine.inOut',
+        yoyo: true, // 加速跑，然后缓慢停下来
+        repeat: -1,
+        repeatDelay: 1000,
+        hold: 1000, //在 yoyo'ing 之前保持补间的毫秒数。
+        duration: 3000,
+      },
+      this
+    )
+  }
+
+  update() {
+    this.bg.tilePositionX += 3 * this.lancelot.anims.timeScale
+    this.ground.tilePositionX += 6 * this.lancelot.anims.timeScale
   }
 }
 
