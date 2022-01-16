@@ -85,3 +85,4 @@ yarn build
 - animation/tween-timescale 补间动画时间尺度
 - animation/yoyo yoyo
 - audio/loop-delay 循环延迟
+- audio/seek 寻找

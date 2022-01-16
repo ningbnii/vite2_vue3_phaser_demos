@@ -76,6 +76,7 @@
         <h1>audio</h1>
         <h2>HTML5 Audio</h2>
         <van-cell title="循环延迟" is-link to="/audio/html5-audio/loop-delay" />
+        <van-cell title="寻找" is-link to="/audio/html5-audio/seek" />
       </van-list>
     </div>
   </div>

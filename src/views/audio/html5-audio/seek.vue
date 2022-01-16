@@ -8,7 +8,7 @@
 import { ref, onMounted, onUnmounted } from "vue"
 import * as Phaser from "Phaser"
 
-import Example from "../../../components/audio/html5-audio/loopDelay"
+import Example from "../../../components/audio/html5-audio/seek"
 
 let myCanvas = ref(null)
 let canvasBox = ref(null)
@@ -38,6 +38,7 @@ onMounted(() => {
     audio: {
       // 音频配置对象
       disableWebAudio: true,
+      // noAudio: false, // if this is true, it works, with audio enabled it fails
     },
   }
   game = new Phaser.Game(config)

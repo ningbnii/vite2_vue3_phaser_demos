@@ -60,7 +60,7 @@ class Example extends Phaser.Scene {
       // let text = this.add.bitmapText(400, 70, "atari-classic", "tap to start", 40)
       // text.x -= Math.round(text.width / 2)
       // text.y -= Math.round(text.height / 2)
-      let text = this.add.text(this.center.x, 80, ["atari-classic", "tap to start", "只支持pc打开"], { color: "#00ff00" }).setOrigin(0.5, 0)
+      let text = this.add.text(this.center.x, 80, ["atari-classic", "tap to start"], { color: "#00ff00" }).setOrigin(0.5, 0)
 
       this.sound.once(
         "unlocked",
