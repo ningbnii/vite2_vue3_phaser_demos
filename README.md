@@ -84,5 +84,6 @@ yarn build
 - animation/stagger-play-2 交错播放 2
 - animation/tween-timescale 补间动画时间尺度
 - animation/yoyo yoyo
-- audio/loop-delay 循环延迟
-- audio/seek 寻找
+- audio/html5-audio/loop-delay 循环延迟
+- audio/html5-audio/seek 寻找
+- audio/html5-audio/audiosprite 音频精灵
