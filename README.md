@@ -87,3 +87,4 @@ yarn build
 - audio/html5-audio/loop-delay 循环延迟
 - audio/html5-audio/seek 寻找
 - audio/html5-audio/audiosprite 音频精灵
+- audio/html5-audio/basic-playback-and-events 基本播放和事件
