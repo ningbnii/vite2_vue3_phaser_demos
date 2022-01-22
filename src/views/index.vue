@@ -77,6 +77,7 @@
         <h2>HTML5 Audio</h2>
         <van-cell title="循环延迟" is-link to="/audio/html5-audio/loop-delay" />
         <van-cell title="寻找" is-link to="/audio/html5-audio/seek" />
+        <van-cell title="音量静音率失谐" is-link to="/audio/volume-mute-rate-detune" />
       </van-list>
     </div>
   </div>

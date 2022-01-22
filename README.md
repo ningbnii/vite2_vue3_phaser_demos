@@ -86,3 +86,4 @@ yarn build
 - animation/yoyo yoyo
 - audio/loop-delay 循环延迟
 - audio/seek 寻找
+- audio/volume-mute-rate-detune 音量静音率失谐
