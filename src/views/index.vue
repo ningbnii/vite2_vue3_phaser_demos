@@ -82,6 +82,7 @@
         <van-cell title="基本播放和事件" is-link to="/audio/html5-audio/basic-playback-and-events" />
         <van-cell title="标记暂停恢复" is-link to="/audio/html5-audio/markers-pause-resume" />
         <van-cell title="标记播放" is-link to="/audio/html5-audio/markers-play" />
+        <van-cell title="播放音频文件" is-link to="/audio/html5-audio/play-audio-file" />
       </van-list>
     </div>
   </div>
