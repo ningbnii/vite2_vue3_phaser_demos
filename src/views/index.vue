@@ -81,6 +81,7 @@
         <van-cell title="音频精灵" is-link to="/audio/html5-audio/audiosprite" />
         <van-cell title="基本播放和事件" is-link to="/audio/html5-audio/basic-playback-and-events" />
         <van-cell title="标记暂停恢复" is-link to="/audio/html5-audio/markers-pause-resume" />
+        <van-cell title="标记播放" is-link to="/audio/html5-audio/markers-play" />
       </van-list>
     </div>
   </div>

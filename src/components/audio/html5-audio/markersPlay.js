@@ -27,16 +27,17 @@ class Example extends Phaser.Scene {
     let bg = this.add.image(0, 0, "bg").setOrigin(0)
     bg.setScale(this.width / bg.width, this.height / bg.height)
 
-    this.fx = this.sound.add("sfx")
+    // 两种播放方式都是可以的
+    // 可以先add到声音控制器中,然后添加标记this.fx.addMarker(marker)，然后使用this.fx.play(marker.name)播放对应标记的audio
+    // 也可以使用this.audio.play('sfx',marker)播放对应标记的audio
+    // this.fx = this.sound.add("sfx")
 
     // 给audio添加标记
     for (let i = 0; i < this.markers.length; i++) {
-      let marker = this.markers[i]
-      this.fx.addMarker(marker)
-      this.makeButton.call(this, marker.name, this.center.x, 115 + i * 40)
+      // let marker =this.markers[i]
+      // this.fx.addMarker(marker)
+      this.makeButton.call(this, this.markers[i].name, this.center.x, 115 + i * 40, i)
     }
-
-    this.makePauseResumeButton.call(this)
 
     this.input.on(
       "gameobjectover",
@@ -57,24 +58,12 @@ class Example extends Phaser.Scene {
     this.input.on(
       "gameobjectdown",
       function (pointer, button) {
-        // 点击暂停按钮，如果正在播放，暂停，如果正在暂停，播放，如果停止，就是停止状态
-        if (button.name == "pause") {
-          if (this.fx.isPaused) {
-            this.fx.resume()
-          } else if (this.fx.isPlaying) {
-            this.fx.pause()
-          } else {
-            this.setButtonName(button, 0)
-            return
-          }
-          this.setButtonName(button, 2)
-        } else {
-          // 点击各个声音按钮，播放对应标记的声音
-          this.fx.play(button.name)
+        // 点击各个声音按钮，播放对应标记的声音
+        this.sound.play("sfx", this.markers[index])
+        // this.fx.play(button.name)
 
-          // 按钮按下状态
-          this.setButtonName(button, 2)
-        }
+        // 按钮按下状态
+        this.setButtonName(button, 2)
       },
       this
     )
@@ -88,31 +77,13 @@ class Example extends Phaser.Scene {
     )
   }
 
-  update() {
-    if (this.fx.isPaused) {
-      this.pauseResumeButtonText.text = "resume"
-    } else if (this.fx.isPlaying) {
-      this.pauseResumeButtonText.text = "pause"
-    } else {
-      this.pauseResumeButtonText.text = "stopped"
-    }
-    this.pauseResumeButtonText.x = this.center.x - 40 + (this.pauseResumeButton.width - this.pauseResumeButtonText.width) / 2
-  }
-
-  makeButton(name, x, y) {
+  makeButton(name, x, y, index) {
     let button = this.add.image(x, y, "button", 0).setInteractive()
     button.name = name
+    button.index = index
     button.setScale(2, 1.5)
     let text = this.add.bitmapText(x - 40, y - 8, "nokia", name, 16)
     text.x += (button.width - text.width) / 2
-  }
-
-  makePauseResumeButton() {
-    this.pauseResumeButton = this.add.image(this.center.x, 395, "button", 1).setInteractive()
-    this.pauseResumeButton.name = "pause"
-    this.pauseResumeButton.setScale(2, 1.5)
-
-    this.pauseResumeButtonText = this.add.bitmapText(this.center.x - 40, 387, "nokia", "", 16)
   }
 
   setButtonName(button, frame) {

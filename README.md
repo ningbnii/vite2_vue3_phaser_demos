@@ -90,3 +90,4 @@ yarn build
 - audio/html5-audio/audiosprite 音频精灵
 - audio/html5-audio/basic-playback-and-events 基本播放和事件
 - audio/html5-audio/markers-pause-resume 标记暂停恢复
+- audio/html5-audio/markers-play 标记播放
