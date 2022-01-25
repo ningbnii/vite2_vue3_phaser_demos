@@ -94,3 +94,4 @@ yarn build
 - audio/html5-audio/play-audio-file 播放音频文件
 - audio/html5-audio/play-audio-from-child-scene 从子场景播放音频
 - audio/html5-audio/using-same-audio-file 使用相同的音频文件
+- audio/html5-audio/using-same-audio-file 播放文件包中的音频

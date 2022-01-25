@@ -85,6 +85,7 @@
         <van-cell title="播放音频文件" is-link to="/audio/html5-audio/play-audio-file" />
         <van-cell title="从子场景播放音频" is-link to="/audio/html5-audio/play-audio-from-child-scene" />
         <van-cell title="使用相同的音频文件" is-link to="/audio/html5-audio/using-same-audio-file" />
+        <van-cell title="播放文件包中的音频" is-link to="/audio/html5-audio/play-audio-from-file-pack" />
       </van-list>
     </div>
   </div>
