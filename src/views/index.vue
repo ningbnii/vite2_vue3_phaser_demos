@@ -92,6 +92,7 @@
         <van-cell title="xml" is-link to="/cache/xml" />
         <h1>camera</h1>
         <van-cell title="相机基础" is-link to="/camera/basics" />
+        <van-cell title="缩放" is-link to="/camera/zoom-to" />
       </van-list>
     </div>
   </div>

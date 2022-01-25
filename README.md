@@ -114,3 +114,4 @@ yarn build
 ### camera
 
 - camera/basics 基础
+- camera/zoom-to 缩放
