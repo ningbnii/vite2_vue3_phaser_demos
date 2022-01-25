@@ -14,6 +14,8 @@ yarn dev
 yarn build
 ```
 
+### actions
+
 - actions/grid-align
 - actions/inc-x-layers 设置坐标，旋转角度
 - actions/place-on-a-circle-multi 沿着一个圆旋转
@@ -39,6 +41,9 @@ yarn build
 - actions/shift-position 移动位置
 - actions/wrap-in-camera-bounds 包裹在相机范围内
 - actions/wrap-in-rectangle 包裹在矩形中
+
+### animation
+
 - animation/60fps-animation-test 60fps 动画测试
 - animation/add-animation-event 添加动画事件
 - animation/add-frames-to-existing-animation 向现有动画添加帧
@@ -84,6 +89,9 @@ yarn build
 - animation/stagger-play-2 交错播放 2
 - animation/tween-timescale 补间动画时间尺度
 - animation/yoyo yoyo
+
+### audio
+
 - audio/html5-audio/loop-delay 循环延迟
 - audio/html5-audio/seek 从某个时间点开始播放声音
 - audio/volume-mute-rate-detune 音量静音率失谐
@@ -96,3 +104,7 @@ yarn build
 - audio/html5-audio/using-same-audio-file 使用相同的音频文件
 - audio/html5-audio/using-same-audio-file 播放文件包中的音频
 - audio/html5-audio/reuse-audio-context 重用音频上下文
+
+### cache
+
+- cache/json json

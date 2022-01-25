@@ -74,7 +74,6 @@
         <van-cell title="补间动画时间尺度" is-link to="/animation/tween-timescale" />
         <van-cell title="yoyo" is-link to="/animation/yoyo" />
         <h1>audio</h1>
-        <h2>HTML5 Audio</h2>
         <van-cell title="循环延迟" is-link to="/audio/html5-audio/loop-delay" />
         <van-cell title="从某个时间点开始播放声音" is-link to="/audio/html5-audio/seek" />
         <van-cell title="音量静音率失谐" is-link to="/audio/html5-audio/volume-mute-rate-detune" />
@@ -87,6 +86,8 @@
         <van-cell title="使用相同的音频文件" is-link to="/audio/html5-audio/using-same-audio-file" />
         <van-cell title="播放文件包中的音频" is-link to="/audio/html5-audio/play-audio-from-file-pack" />
         <van-cell title="重用音频上下文" is-link to="/audio/html5-audio/reuse-audio-context" />
+        <h1>cache</h1>
+        <van-cell title="json" is-link to="/cache/json" />
       </van-list>
     </div>
   </div>
