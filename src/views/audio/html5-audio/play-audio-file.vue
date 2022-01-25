@@ -45,14 +45,15 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  for (let key in game.scene.keys) {
-    if (game.scene.keys.hasOwnProperty(key)) {
-      game.scene.stop(key)
-      game.scene.keys[key] = undefined
-    }
-  }
-  // 暂停所有audio
-  game.sound.stopAll()
+  // for (let key in game.scene.keys) {
+  //   if (game.scene.keys.hasOwnProperty(key)) {
+  //     game.scene.stop(key)
+  //     game.scene.keys[key] = undefined
+  //   }
+  // }
+  // // 暂停所有audio
+  // game.sound.stopAll()
+  game.destroy(true)
 })
 
 function changeText(value) {
