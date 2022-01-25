@@ -88,6 +88,7 @@
         <van-cell title="重用音频上下文" is-link to="/audio/html5-audio/reuse-audio-context" />
         <h1>cache</h1>
         <van-cell title="json" is-link to="/cache/json" />
+        <van-cell title="text" is-link to="/cache/text" />
       </van-list>
     </div>
   </div>

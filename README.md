@@ -108,3 +108,4 @@ yarn build
 ### cache
 
 - cache/json json
+- cache/text text
