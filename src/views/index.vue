@@ -89,6 +89,7 @@
         <h1>cache</h1>
         <van-cell title="json" is-link to="/cache/json" />
         <van-cell title="text" is-link to="/cache/text" />
+        <van-cell title="xml" is-link to="/cache/xml" />
       </van-list>
     </div>
   </div>

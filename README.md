@@ -109,3 +109,4 @@ yarn build
 
 - cache/json json
 - cache/text text
+- cache/xml xml
