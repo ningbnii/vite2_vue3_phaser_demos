@@ -5,16 +5,16 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import * as Phaser from 'Phaser'
+import { ref, onMounted, onUnmounted } from "vue"
+import * as Phaser from "Phaser"
 
-import Example from '../../../components/audio/html5-audio/basicPlaybackAndEvents'
+import Example from "../../../components/audio/html5-audio/basicPlaybackAndEvents"
 
 let myCanvas = ref(null)
 let canvasBox = ref(null)
 let game
 let exampleScene
-let text = ref('')
+let text = ref("")
 
 onMounted(() => {
   // This is revert of https://github.com/photonstorm/phaser/commit/7cbf3840af296c2f1f510be15b39a2519f7a72cf
@@ -32,7 +32,7 @@ onMounted(() => {
     width: canvasBox.value.clientWidth,
     height: canvasBox.value.clientHeight,
     parent: myCanvas.value,
-    backgroundColor: '#2d2d2d',
+    backgroundColor: "#2d2d2d",
     scene: [exampleScene],
     pixelArt: true, //将 antialias 设置为 false 并将 roundPixels 设置为 true。 这是像素艺术游戏的最佳设置
     audio: {
@@ -51,6 +51,8 @@ onUnmounted(() => {
       game.scene.keys[key] = undefined
     }
   }
+  // 暂停所有audio
+  game.sound.stopAll()
 })
 
 function changeText(value) {

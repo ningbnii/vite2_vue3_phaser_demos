@@ -51,6 +51,8 @@ onUnmounted(() => {
       game.scene.keys[key] = undefined
     }
   }
+  // 暂停所有audio
+  game.sound.stopAll()
 })
 
 function changeText(value) {
