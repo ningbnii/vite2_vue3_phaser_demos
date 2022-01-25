@@ -90,6 +90,8 @@
         <van-cell title="json" is-link to="/cache/json" />
         <van-cell title="text" is-link to="/cache/text" />
         <van-cell title="xml" is-link to="/cache/xml" />
+        <h1>camera</h1>
+        <van-cell title="相机基础" is-link to="/camera/basics" />
       </van-list>
     </div>
   </div>
