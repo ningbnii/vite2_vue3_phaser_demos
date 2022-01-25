@@ -92,3 +92,4 @@ yarn build
 - audio/html5-audio/markers-pause-resume 标记暂停恢复
 - audio/html5-audio/markers-play 标记播放
 - audio/html5-audio/play-audio-file 播放音频文件
+- audio/html5-audio/play-audio-from-child-scene 从子场景播放音频
