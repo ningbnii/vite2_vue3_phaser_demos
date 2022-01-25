@@ -76,7 +76,7 @@
         <h1>audio</h1>
         <h2>HTML5 Audio</h2>
         <van-cell title="循环延迟" is-link to="/audio/html5-audio/loop-delay" />
-        <van-cell title="寻找" is-link to="/audio/html5-audio/seek" />
+        <van-cell title="从某个时间点开始播放声音" is-link to="/audio/html5-audio/seek" />
         <van-cell title="音量静音率失谐" is-link to="/audio/html5-audio/volume-mute-rate-detune" />
         <van-cell title="音频精灵" is-link to="/audio/html5-audio/audiosprite" />
         <van-cell title="基本播放和事件" is-link to="/audio/html5-audio/basic-playback-and-events" />

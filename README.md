@@ -85,7 +85,7 @@ yarn build
 - animation/tween-timescale 补间动画时间尺度
 - animation/yoyo yoyo
 - audio/html5-audio/loop-delay 循环延迟
-- audio/html5-audio/seek 寻找
+- audio/html5-audio/seek 从某个时间点开始播放声音
 - audio/volume-mute-rate-detune 音量静音率失谐
 - audio/html5-audio/audiosprite 音频精灵
 - audio/html5-audio/basic-playback-and-events 基本播放和事件
