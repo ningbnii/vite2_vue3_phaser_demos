@@ -119,3 +119,4 @@ yarn build
 - camera/world-coordinate-from-another-scene 来自另一个场景的世界坐标
 - camera/world-camera 世界相机
 - camera/tile-map-with-camera-shake 带相机抖动的平铺地图
+- camera/single-small-camera 单独的小相机
