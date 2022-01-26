@@ -121,3 +121,4 @@ yarn build
 - camera/tile-map-with-camera-shake 带相机抖动的平铺地图
 - camera/single-small-camera 单独的小相机
 - camera/shake 相机摇晃
+- camera/shader-multi-cam-test 着色器多摄像头测试
