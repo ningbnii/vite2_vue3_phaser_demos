@@ -120,3 +120,4 @@ yarn build
 - camera/world-camera 世界相机
 - camera/tile-map-with-camera-shake 带相机抖动的平铺地图
 - camera/single-small-camera 单独的小相机
+- camera/shake 相机摇晃
