@@ -96,6 +96,7 @@
         <van-cell title="世界视图" is-link to="/camera/world-view" />
         <van-cell title="来自另一个场景的世界坐标" is-link to="/camera/world-coordinate-from-another-scene" />
         <van-cell title="世界相机" is-link to="/camera/world-camera" />
+        <van-cell title="带相机抖动的平铺地图" is-link to="/camera/tile-map-with-camera-shake" />
       </van-list>
     </div>
   </div>
