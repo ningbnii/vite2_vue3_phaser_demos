@@ -95,6 +95,7 @@
         <van-cell title="缩放" is-link to="/camera/zoom-to" />
         <van-cell title="世界视图" is-link to="/camera/world-view" />
         <van-cell title="来自另一个场景的世界坐标" is-link to="/camera/world-coordinate-from-another-scene" />
+        <van-cell title="世界相机" is-link to="/camera/world-camera" />
       </van-list>
     </div>
   </div>
