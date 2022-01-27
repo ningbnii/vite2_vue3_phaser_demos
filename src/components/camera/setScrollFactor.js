@@ -13,6 +13,7 @@ class Example extends Phaser.Scene {
   }
 
   create() {
+    // 设置相对于相机的滚动参数
     // 背景图随相机以1:1的比例滚动
     this.add.image(400, 300, "volcano")
     //一个精灵，以相机速度的一半滚动
