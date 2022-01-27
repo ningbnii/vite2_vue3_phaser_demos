@@ -105,6 +105,7 @@
         <van-cell title="设置界限" is-link to="/camera/set-bounds" />
         <van-cell title="设置滚动因子" is-link to="/camera/set-scroll-factor" />
         <van-cell title="选择着色器测试" is-link to="/camera/select-shader-test" />
+        <van-cell title="滚动视图" is-link to="/camera/scroll-view" />
       </van-list>
     </div>
   </div>
