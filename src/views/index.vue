@@ -101,6 +101,7 @@
         <van-cell title="相机摇晃" is-link to="/camera/shake" />
         <van-cell title="着色器多摄像头测试" is-link to="/camera/shader-multi-cam-test" />
         <van-cell title="设置视口" is-link to="/camera/set-viewport" />
+        <van-cell title="设置小范围" is-link to="/camera/set-small-bounds" />
       </van-list>
     </div>
   </div>

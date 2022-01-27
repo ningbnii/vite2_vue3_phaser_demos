@@ -123,3 +123,4 @@ yarn build
 - camera/shake 相机摇晃
 - camera/shader-multi-cam-test 着色器多摄像头测试
 - camera/set-viewport 设置视口
+- camera/set-small-bounds 设置小范围
