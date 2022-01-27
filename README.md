@@ -126,3 +126,4 @@ yarn build
 - camera/set-small-bounds 设置小范围
 - camera/set-bounds 设定界限
 - camera/set-scroll-factor 设置滚动因子
+- camera/select-shader-test 选择着色器测试
