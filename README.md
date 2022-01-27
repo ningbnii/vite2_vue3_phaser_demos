@@ -128,3 +128,4 @@ yarn build
 - camera/set-scroll-factor 设置滚动因子
 - camera/select-shader-test 选择着色器测试
 - camera/scroll-view 滚动视图
+- camera/round-pixels 像素四舍五入为整数
