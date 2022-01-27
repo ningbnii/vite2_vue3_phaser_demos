@@ -130,3 +130,4 @@ yarn build
 - camera/scroll-view 滚动视图
 - camera/round-pixels 像素四舍五入为整数
 - camera/rotate-camera 旋转相机
+- camera/render-to-texture 渲染到纹理

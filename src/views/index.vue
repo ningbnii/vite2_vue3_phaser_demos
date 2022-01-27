@@ -108,6 +108,7 @@
         <van-cell title="滚动视图" is-link to="/camera/scroll-view" />
         <van-cell title="像素四舍五入为整数" is-link to="/camera/round-pixels" />
         <van-cell title="旋转相机" is-link to="/camera/rotate-camera" />
+        <van-cell title="渲染到纹理" is-link to="/camera/render-to-texture" />
       </van-list>
     </div>
   </div>
