@@ -125,3 +125,4 @@ yarn build
 - camera/set-viewport 设置视口
 - camera/set-small-bounds 设置小范围
 - camera/set-bounds 设定界限
+- camera/set-scroll-factor 设置滚动因子

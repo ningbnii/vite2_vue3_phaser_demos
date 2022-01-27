@@ -103,6 +103,7 @@
         <van-cell title="设置视口" is-link to="/camera/set-viewport" />
         <van-cell title="设置小范围" is-link to="/camera/set-small-bounds" />
         <van-cell title="设置界限" is-link to="/camera/set-bounds" />
+        <van-cell title="设置滚动因子" is-link to="/camera/set-scroll-factor" />
       </van-list>
     </div>
   </div>
