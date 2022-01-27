@@ -102,6 +102,7 @@
         <van-cell title="着色器多摄像头测试" is-link to="/camera/shader-multi-cam-test" />
         <van-cell title="设置视口" is-link to="/camera/set-viewport" />
         <van-cell title="设置小范围" is-link to="/camera/set-small-bounds" />
+        <van-cell title="设置界限" is-link to="/camera/set-bounds" />
       </van-list>
     </div>
   </div>
