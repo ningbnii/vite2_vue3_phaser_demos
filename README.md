@@ -140,3 +140,5 @@ yarn build
 - camera/ignore 忽略某个对象
 - camera/ignore-group-children 忽略一组对象
 - camera/get-world-point 获取世界中点的坐标
+- camera/game-shader-test-1 游戏着色器测试 1
+- camera/follow-zoom 跟随缩放

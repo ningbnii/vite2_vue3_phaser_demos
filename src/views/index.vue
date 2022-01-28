@@ -118,6 +118,8 @@
         <van-cell title="忽略某个对象" is-link to="/camera/ignore" />
         <van-cell title="忽略一组对象" is-link to="/camera/ignore-group-children" />
         <van-cell title="获取世界中点的坐标" is-link to="/camera/get-world-point" />
+        <van-cell title="游戏着色器测试1" is-link to="/camera/game-shader-test-1" />
+        <van-cell title="跟随缩放" is-link to="/camera/follow-zoom" />
       </van-list>
     </div>
   </div>
