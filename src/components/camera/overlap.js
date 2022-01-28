@@ -18,6 +18,7 @@ class Example extends Phaser.Scene {
     // 添加一个小相机，这个小相机会叠加到main相机上面
     this.smallCamera = this.cameras.add(570, 30, 200, 200)
     // 设置个透明度
+    // 目前相机都是矩形，是否可以设置圆形
     this.smallCamera.setAlpha(0.5)
   }
 
