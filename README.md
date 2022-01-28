@@ -142,3 +142,4 @@ yarn build
 - camera/get-world-point 获取世界中点的坐标
 - camera/game-shader-test-1 游戏着色器测试 1
 - camera/follow-zoom 跟随缩放
+- camera/follow-zoom-tilemap 跟随缩放瓦片地图

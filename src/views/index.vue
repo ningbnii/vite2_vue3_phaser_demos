@@ -120,6 +120,7 @@
         <van-cell title="获取世界中点的坐标" is-link to="/camera/get-world-point" />
         <van-cell title="游戏着色器测试1" is-link to="/camera/game-shader-test-1" />
         <van-cell title="跟随缩放" is-link to="/camera/follow-zoom" />
+        <van-cell title="跟随缩放瓦片地图" is-link to="/camera/follow-zoom-tilemap" />
       </van-list>
     </div>
   </div>
