@@ -143,3 +143,4 @@ yarn build
 - camera/game-shader-test-1 游戏着色器测试 1
 - camera/follow-zoom 跟随缩放
 - camera/follow-zoom-tilemap 跟随缩放瓦片地图
+- camera/follow-user-controlled-sprite 跟随用户控制的精灵
