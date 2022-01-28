@@ -139,3 +139,4 @@ yarn build
 - camera/minimap-camera 小地图相机
 - camera/ignore 忽略某个对象
 - camera/ignore-group-children 忽略一组对象
+- camera/get-world-point 获取世界中点的坐标

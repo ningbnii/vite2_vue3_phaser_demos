@@ -117,6 +117,7 @@
         <van-cell title="小地图相机" is-link to="/camera/minimap-camera" />
         <van-cell title="忽略某个对象" is-link to="/camera/ignore" />
         <van-cell title="忽略一组对象" is-link to="/camera/ignore-group-children" />
+        <van-cell title="获取世界中点的坐标" is-link to="/camera/get-world-point" />
       </van-list>
     </div>
   </div>
