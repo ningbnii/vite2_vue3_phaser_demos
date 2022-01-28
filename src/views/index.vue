@@ -116,6 +116,7 @@
         <van-cell title="起源" is-link to="/camera/origin" />
         <van-cell title="小地图相机" is-link to="/camera/minimap-camera" />
         <van-cell title="忽略某个对象" is-link to="/camera/ignore" />
+        <van-cell title="忽略一组对象" is-link to="/camera/ignore-group-children" />
       </van-list>
     </div>
   </div>

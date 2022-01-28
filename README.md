@@ -138,3 +138,4 @@ yarn build
 - camera/origin 起源
 - camera/minimap-camera 小地图相机
 - camera/ignore 忽略某个对象
+- camera/ignore-group-children 忽略一组对象
