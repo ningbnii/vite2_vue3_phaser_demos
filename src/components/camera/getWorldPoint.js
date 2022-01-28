@@ -30,12 +30,15 @@ class Example extends Phaser.Scene {
 
     const cam = this.cameras.main
     cam.setBounds(0, 0, 4096, 4096)
-    cam.setZoom(1)
+    cam.setZoom(2)
 
     this.input.on("pointerdown", function (pointer) {
       let p = cam.getWorldPoint(pointer.x, pointer.y)
-      // 坐标和缩放没有关系
+      // 世界坐标和缩放没有关系
       console.log(p)
+      // pointer是相对与可视窗口的坐标系而言
+      // getWorldPoint 是相对于camera而言
+      console.log({ x: pointer.x, y: pointer.y })
     })
   }
 
