@@ -20,6 +20,7 @@ class Example extends Phaser.Scene {
     this.add.image(1024, 1024, "bg").setOrigin(0)
 
     this.cursors = this.input.keyboard.createCursorKeys()
+    // 添加键盘监听
     this.keys = this.input.keyboard.addKeys("W,A,S,D")
 
     // 中心点设置到相机窗口范围的中心
@@ -33,6 +34,8 @@ class Example extends Phaser.Scene {
 
     this.text.setText(["ScrollX: " + cam.scrollX, "ScrollY: " + cam.scrollY, "MidX: " + cam.midPoint.x, "MidY: " + cam.midPoint.y])
 
+    // this.input.keyboard.on('keydown-A',function(){})
+    // 键盘按下事件 isDown
     if (this.keys.A.isDown) {
       cam.scrollX -= 6
     } else if (this.keys.D.isDown) {

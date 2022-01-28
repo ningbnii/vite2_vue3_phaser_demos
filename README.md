@@ -131,3 +131,4 @@ yarn build
 - camera/round-pixels 像素四舍五入为整数
 - camera/rotate-camera 旋转相机
 - camera/render-to-texture 渲染到纹理
+- camera/render-to-texture-shader 渲染到纹理着色器 1
