@@ -112,6 +112,7 @@
         <van-cell title="渲染到纹理着色器" is-link to="/camera/render-to-texture-shader" />
         <van-cell title="点击移除相机" is-link to="/camera/remove-camera-on-click" />
         <van-cell title="平移" is-link to="/camera/pan-to" />
+        <van-cell title="重叠" is-link to="/camera/overlap" />
       </van-list>
     </div>
   </div>

@@ -134,3 +134,4 @@ yarn build
 - camera/render-to-texture-shader 渲染到纹理着色器
 - camera/remove-camera-on-click 点击移除相机
 - camera/pan-to 平移
+- camera/overlap 重叠
