@@ -40,7 +40,7 @@ class Example extends Phaser.Scene {
     this.player = this.matter.add.sprite(1600, 200, "ship")
     // 设置固定旋转将主体惯性设置为无穷大，这会在对其施加力时阻止其旋转。
     this.player.setFixedRotation()
-    this.player.setFrictionAir(0.05)
+    this.player.setFrictionAir(0.1)
     this.player.setMass(30)
 
     // 将相机设置为跟随游戏对象。
@@ -110,7 +110,7 @@ class Example extends Phaser.Scene {
     landscape.lineStyle(2, 0x00ff00, 1)
 
     landscape.beginPath()
-    landscape.fillRect(1600, 0, 50, this.center.y)
+    landscape.fillRect(1600, 0, 50, this.height)
     landscape.closePath()
     landscape.strokePath()
 
