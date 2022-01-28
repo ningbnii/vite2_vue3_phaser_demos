@@ -115,6 +115,7 @@
         <van-cell title="重叠" is-link to="/camera/overlap" />
         <van-cell title="起源" is-link to="/camera/origin" />
         <van-cell title="小地图相机" is-link to="/camera/minimap-camera" />
+        <van-cell title="忽略某个对象" is-link to="/camera/ignore" />
       </van-list>
     </div>
   </div>

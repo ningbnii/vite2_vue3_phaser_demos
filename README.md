@@ -137,3 +137,4 @@ yarn build
 - camera/overlap 重叠
 - camera/origin 起源
 - camera/minimap-camera 小地图相机
+- camera/ignore 忽略某个对象
