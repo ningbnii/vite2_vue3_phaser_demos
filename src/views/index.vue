@@ -110,6 +110,7 @@
         <van-cell title="旋转相机" is-link to="/camera/rotate-camera" />
         <van-cell title="渲染到纹理" is-link to="/camera/render-to-texture" />
         <van-cell title="渲染到纹理着色器" is-link to="/camera/render-to-texture-shader" />
+        <van-cell title="点击移除相机" is-link to="/camera/remove-camera-on-click" />
       </van-list>
     </div>
   </div>
