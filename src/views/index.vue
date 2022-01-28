@@ -114,6 +114,7 @@
         <van-cell title="平移" is-link to="/camera/pan-to" />
         <van-cell title="重叠" is-link to="/camera/overlap" />
         <van-cell title="起源" is-link to="/camera/origin" />
+        <van-cell title="小地图相机" is-link to="/camera/minimap-camera" />
       </van-list>
     </div>
   </div>

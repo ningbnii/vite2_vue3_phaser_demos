@@ -136,3 +136,4 @@ yarn build
 - camera/pan-to 平移
 - camera/overlap 重叠
 - camera/origin 起源
+- camera/minimap-camera 小地图相机
