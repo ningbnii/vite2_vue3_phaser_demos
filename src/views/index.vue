@@ -113,6 +113,7 @@
         <van-cell title="点击移除相机" is-link to="/camera/remove-camera-on-click" />
         <van-cell title="平移" is-link to="/camera/pan-to" />
         <van-cell title="重叠" is-link to="/camera/overlap" />
+        <van-cell title="起源" is-link to="/camera/origin" />
       </van-list>
     </div>
   </div>

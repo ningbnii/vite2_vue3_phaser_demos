@@ -135,3 +135,4 @@ yarn build
 - camera/remove-camera-on-click 点击移除相机
 - camera/pan-to 平移
 - camera/overlap 重叠
+- camera/origin 起源
