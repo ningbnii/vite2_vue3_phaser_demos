@@ -151,3 +151,4 @@ yarn build
 - camera/flash 相机闪烁
 - camera/fixed-to-camera 不跟随相机移动
 - camera/fade 逐渐消失
+- camera/cross-scene-object-placement 跨场景放置对象
