@@ -127,6 +127,7 @@
         <van-cell title="设置相机跟随偏移量" is-link to="/camera/follow-offset" />
         <van-cell title="相机闪烁" is-link to="/camera/flash" />
         <van-cell title="不跟随相机移动" is-link to="/camera/fixed-to-camera" />
+        <van-cell title="逐渐消失" is-link to="/camera/fade" />
       </van-list>
     </div>
   </div>
