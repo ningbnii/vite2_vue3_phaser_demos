@@ -149,3 +149,4 @@ yarn build
 - camera/follow-sprite-small-bounds 跟随精灵在一个小范围内
 - camera/follow-offset 设置相机跟随偏移量
 - camera/flash 相机闪烁
+- camera/fixed-to-camera 不跟随相机移动
