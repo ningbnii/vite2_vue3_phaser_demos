@@ -144,3 +144,4 @@ yarn build
 - camera/follow-zoom 跟随缩放
 - camera/follow-zoom-tilemap 跟随缩放瓦片地图
 - camera/follow-user-controlled-sprite 跟随用户控制的精灵
+- camera/follow-sprite 跟随精灵

@@ -121,7 +121,7 @@
         <van-cell title="游戏着色器测试1" is-link to="/camera/game-shader-test-1" />
         <van-cell title="跟随缩放" is-link to="/camera/follow-zoom" />
         <van-cell title="跟随缩放瓦片地图" is-link to="/camera/follow-zoom-tilemap" />
-        <van-cell title="跟随用户控制的精灵" is-link to="/camera/follow-user-controlled-sprite" />
+        <van-cell title="跟随精灵" is-link to="/camera/follow-sprite" />
       </van-list>
     </div>
   </div>
