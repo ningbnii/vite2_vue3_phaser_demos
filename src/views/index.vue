@@ -123,6 +123,7 @@
         <van-cell title="跟随缩放瓦片地图" is-link to="/camera/follow-zoom-tilemap" />
         <van-cell title="跟随精灵" is-link to="/camera/follow-sprite" />
         <van-cell title="跟随精灵在设置deadzone的时候" is-link to="/camera/follow-sprite-with-deadzone" />
+        <van-cell title="跟随精灵在一个小范围内" is-link to="/camera/follow-sprite-small-bounds" />
       </van-list>
     </div>
   </div>
