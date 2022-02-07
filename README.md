@@ -148,3 +148,4 @@ yarn build
 - camera/follow-sprite-with-deadzone 跟随精灵在设置 deadzone 的时候
 - camera/follow-sprite-small-bounds 跟随精灵在一个小范围内
 - camera/follow-offset 设置相机跟随偏移量
+- camera/flash 相机闪烁

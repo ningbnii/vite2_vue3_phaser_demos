@@ -125,6 +125,7 @@
         <van-cell title="跟随精灵在设置deadzone的时候" is-link to="/camera/follow-sprite-with-deadzone" />
         <van-cell title="跟随精灵在一个小范围内" is-link to="/camera/follow-sprite-small-bounds" />
         <van-cell title="设置相机跟随偏移量" is-link to="/camera/follow-offset" />
+        <van-cell title="相机闪烁" is-link to="/camera/flash" />
       </van-list>
     </div>
   </div>
