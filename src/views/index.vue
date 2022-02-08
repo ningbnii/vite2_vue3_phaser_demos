@@ -141,6 +141,8 @@
         <van-cell title="相机透明度" is-link to="/camera/camera-alpha" />
         <van-cell title="背景颜色插值" is-link to="/camera/background-color-interpolate" />
         <van-cell title="添加相机" is-link to="/camera/add-camera-on-click" />
+        <h1>data</h1>
+        <van-cell title="设置data的值" is-link to="/data/data-values" />
       </van-list>
     </div>
   </div>
