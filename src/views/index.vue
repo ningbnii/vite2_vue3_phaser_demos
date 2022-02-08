@@ -134,6 +134,7 @@
         <van-cell title="相机滤镜" is-link to="/camera/camera-filter" />
         <van-cell title="相机淡出和淡入" is-link to="/camera/camera-fade-out-and-in" />
         <van-cell title="相机淡入和淡出" is-link to="/camera/camera-fade-in-and-out" />
+        <van-cell title="相机效果" is-link to="/camera/camera-effects" />
       </van-list>
     </div>
   </div>
