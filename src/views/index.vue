@@ -129,6 +129,7 @@
         <van-cell title="不跟随相机移动" is-link to="/camera/fixed-to-camera" />
         <van-cell title="逐渐消失" is-link to="/camera/fade" />
         <van-cell title="跨场景放置对象" is-link to="/camera/cross-scene-object-placement" />
+        <van-cell title="更改相机着色器" is-link to="/camera/change-camera-shader" />
       </van-list>
     </div>
   </div>
