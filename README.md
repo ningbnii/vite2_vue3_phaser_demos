@@ -154,3 +154,4 @@ yarn build
 - camera/cross-scene-object-placement 跨场景放置对象
 - camera/change-camera-shader 更改相机着色器
 - camera/cameras-from-state-config 来自状态配置的相机
+- camera/cameras-filter 相机滤镜
