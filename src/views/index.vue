@@ -132,7 +132,8 @@
         <van-cell title="更改相机着色器" is-link to="/camera/change-camera-shader" />
         <van-cell title="来自状态配置的相机" is-link to="/camera/cameras-from-state-config" />
         <van-cell title="相机滤镜" is-link to="/camera/camera-filter" />
-        <van-cell title="相机淡入淡出" is-link to="/camera/camera-fade-out-and-in" />
+        <van-cell title="相机淡出和淡入" is-link to="/camera/camera-fade-out-and-in" />
+        <van-cell title="相机淡入和淡出" is-link to="/camera/camera-fade-in-and-out" />
       </van-list>
     </div>
   </div>

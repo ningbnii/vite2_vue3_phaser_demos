@@ -155,4 +155,5 @@ yarn build
 - camera/change-camera-shader 更改相机着色器
 - camera/cameras-from-state-config 来自状态配置的相机
 - camera/camera-filter 相机滤镜
-- camera/camera-fade-out-and-in 相机淡入淡出
+- camera/camera-fade-out-and-in 相机淡出和淡入
+- camera/camera-fade-in-and-out 相机淡入和淡出
