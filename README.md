@@ -163,3 +163,4 @@ yarn build
 - camera/camera-blur-shader 相机模糊着色器
 - camera/camera-alpha 相机透明度
 - camera/background-color-interpolate 背景颜色插值
+- camera/add-camera-on-click 添加相机
