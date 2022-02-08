@@ -5,10 +5,10 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from "vue"
+import { ref, onMounted, onUnmounted } from "vue"
 import * as Phaser from "Phaser"
 
-import Example from "../../components/data/changeDataEvent"
+import Example from "../../components/data/queryData"
 
 let myCanvas = ref(null)
 let canvasBox = ref(null)
@@ -27,7 +27,6 @@ onMounted(() => {
     this.create(scene)
   }
   exampleScene = new Example()
-
   let config = {
     type: Phaser.AUTO,
     scale: {

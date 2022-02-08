@@ -144,6 +144,7 @@
         <h1>data</h1>
         <van-cell title="设置data的值" is-link to="/data/data-values" />
         <van-cell title="更改data事件" is-link to="/data/change-data-event" />
+        <van-cell title="查询数据" is-link to="/data/query-data" />
       </van-list>
     </div>
   </div>

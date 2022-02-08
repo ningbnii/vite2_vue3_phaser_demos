@@ -27,6 +27,7 @@ onMounted(() => {
     this.create(scene)
   }
   exampleScene = new Example()
+
   let config = {
     type: Phaser.AUTO,
     scale: {

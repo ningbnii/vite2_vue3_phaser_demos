@@ -11,10 +11,17 @@ class Example extends Phaser.Scene {
     const text = this.add.text(350, 270, "", { font: "16px Courier", fill: "#00ff00" })
     const gem = this.add.image(300, 300, "gem")
 
+    this.data.set("test", "ning")
+    console.log(this.data.get("test"))
+
     // store some data about this Gem
-    gem.setData("name", "Red Gem Stone")
-    gem.setData("level", 2)
-    gem.setData("owner", "Link")
+    // gem.setData("name", "Red Gem Stone")
+    // gem.setData("level", 2)
+    // gem.setData("owner", "Link")
+
+    // 可以以对象的方式，设置多个值
+    //  Store some data about this Gem:
+    gem.setData({ name: "Red Gem Stone", level: 2, owner: "Link", gold: 50 })
 
     // whenever a data value is updated we call this function
     gem.on("setdata", function (gameObject, key, value) {
