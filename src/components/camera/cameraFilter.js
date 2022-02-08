@@ -21,9 +21,13 @@ class Example extends Phaser.Scene {
     UI_CAM_1 = this.cameras.add()
     UI_CAM_2 = this.cameras.add()
 
+    // 获取所有相机的数组
     this.camlist = this.cameras.cameras
 
     // 给某个对象添加相机滤镜，给相机添加相应的效果后，就会应用到这些对象上面
+    // 控制此游戏对象是否由相机绘制的位掩码。
+    // 通常不直接设置，而是调用`Camera.ignore`，但是你可以
+    // 直接使用 Camera.id 属性设置此属性：
     UIText1.cameraFilter = this.setCamera(UI_CAM_1)
     UIText2.cameraFilter = this.setCamera(UI_CAM_1)
     UIText3.cameraFilter = this.setCamera(UI_CAM_2)
