@@ -143,6 +143,7 @@
         <van-cell title="添加相机" is-link to="/camera/add-camera-on-click" />
         <h1>data</h1>
         <van-cell title="设置data的值" is-link to="/data/data-values" />
+        <van-cell title="更改data事件" is-link to="/data/change-data-event" />
       </van-list>
     </div>
   </div>
