@@ -137,6 +137,7 @@
         <van-cell title="相机效果" is-link to="/camera/camera-effects" />
         <van-cell title="相机效果回调" is-link to="/camera/camera-effects-callbacks" />
         <van-cell title="相机中心" is-link to="/camera/camera-center-on" />
+        <van-cell title="相机模糊着色器" is-link to="/camera/camera-blur-shader" />
       </van-list>
     </div>
   </div>

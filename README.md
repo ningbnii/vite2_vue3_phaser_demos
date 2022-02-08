@@ -160,3 +160,4 @@ yarn build
 - camera/camera-effects 相机效果
 - camera/camera-effects-callbacks 相机效果回调
 - camera/camera-center-on 相机中心
+- camera/camera-blur-shader 相机模糊着色器
