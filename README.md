@@ -158,3 +158,4 @@ yarn build
 - camera/camera-fade-out-and-in 相机淡出和淡入
 - camera/camera-fade-in-and-out 相机淡入和淡出
 - camera/camera-effects 相机效果
+- camera/camera-effects-callbacks 相机效果回调
