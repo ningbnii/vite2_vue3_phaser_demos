@@ -150,6 +150,7 @@
         <van-cell title="小鸟南南" is-link to="/demoscene/birdy-nam-nam" />
         <van-cell title="粗大的光栅条" is-link to="/demoscene/chunky-raster-bars" />
         <van-cell title="光栅地毯" is-link to="/demoscene/raster-carpet" />
+        <van-cell title="垂直光栅波" is-link to="/demoscene/vertical-raster-wave" />
       </van-list>
     </div>
   </div>

@@ -177,3 +177,4 @@ yarn build
 - demoscene/birdy-nam-nam 小鸟南南
 - demoscene/chunky-raster-bars 粗大的光栅条
 - demoscene/raster-carpet 光栅地毯
+- demoscene/vertical-raster-wave 垂直光栅波

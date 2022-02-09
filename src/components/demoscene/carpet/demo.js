@@ -34,6 +34,8 @@ class Demo extends Phaser.Scene {
           x: { value: 300, duration: 700 },
           y: { value: 500, duration: 2500 },
           scaleX: { value: Math.min(0.1, child.depth / 64), duration: 4000, hold: 2000, delay: 2000 },
+          // y: { value: 500, duration: 1500 },
+          // scaleX: { value: child.depth / 64, duration: 6000, hold: 2000, delay: 2000 },
         },
         yoyo: true,
         repeat: -1,
