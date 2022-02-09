@@ -170,3 +170,4 @@ yarn build
 - data/data-values 设置 data 的值
 - data/change-data-event 更改 data 事件
 - data/query-data 查询数据
+- data/store-scene-data 存储场景数据
