@@ -94,7 +94,7 @@ class Demo extends Phaser.Scene {
       bird.anims.play("lay")
     } else {
       // 更换背景
-      // 添加一个监听事件，800毫秒后，执行changeScene
+      // 添加一个时间监听事件，800毫秒后，执行changeScene
       this.time.addEvent({ delay: 800, callback: this.changeScene, callbackScope: this })
     }
   }
