@@ -185,3 +185,4 @@ yarn build
 - depth/depth-sorting 深度排序
 - depth/bring-to-top 移动到最上层
 - depth/get-top-object 移动到最上层
+- depth/isometric-blocks 等距块
