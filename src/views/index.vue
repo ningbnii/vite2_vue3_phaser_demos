@@ -153,6 +153,7 @@
         <van-cell title="垂直光栅波" is-link to="/demoscene/vertical-raster-wave" />
         <h1>depth sorting</h1>
         <van-cell title="3d深度排序" is-link to="/depth/3d-depth-sort" />
+        <van-cell title="深度排序" is-link to="/depth/depth-sorting" />
       </van-list>
     </div>
   </div>

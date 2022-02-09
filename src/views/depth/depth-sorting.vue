@@ -8,12 +8,12 @@
 import { ref, onMounted, onUnmounted, watch } from "vue"
 import * as Phaser from "Phaser"
 
-import Demo from "../../components/demoscene/carpet/demo"
+import Example from "../../components/depth/depthSorting"
 
 let myCanvas = ref(null)
 let canvasBox = ref(null)
 let game
-let demoScene
+let exampleScene
 let text = ref("")
 
 onMounted(() => {
@@ -27,7 +27,7 @@ onMounted(() => {
     this.create(scene)
   }
 
-  demoScene = new Demo()
+  exampleScene = new Example()
 
   let config = {
     type: Phaser.AUTO,
@@ -40,7 +40,7 @@ onMounted(() => {
     },
 
     backgroundColor: "#2d2d2d",
-    scene: [demoScene],
+    scene: [exampleScene],
     pixelArt: true, //将 antialias 设置为 false 并将 roundPixels 设置为 true。 这是像素艺术游戏的最佳设置
     audio: {
       // 音频配置对象

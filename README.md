@@ -182,3 +182,4 @@ yarn build
 ### depth sorting
 
 - depth/3d-depth-sort 3d 深度排序
+- depth/depth-sorting 深度排序
