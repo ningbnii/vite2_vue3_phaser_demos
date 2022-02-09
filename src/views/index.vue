@@ -146,6 +146,8 @@
         <van-cell title="更改data事件" is-link to="/data/change-data-event" />
         <van-cell title="查询数据" is-link to="/data/query-data" />
         <van-cell title="存储场景数据" is-link to="/data/store-scene-data" />
+        <h1>demoscene</h1>
+        <van-cell title="小鸟南南" is-link to="/demoscene/birdy-nam-nam" />
       </van-list>
     </div>
   </div>
