@@ -178,3 +178,7 @@ yarn build
 - demoscene/chunky-raster-bars 粗大的光栅条
 - demoscene/raster-carpet 光栅地毯
 - demoscene/vertical-raster-wave 垂直光栅波
+
+### depth sorting
+
+- depth/3d-depth-sort 3d 深度排序

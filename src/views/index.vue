@@ -151,6 +151,8 @@
         <van-cell title="粗大的光栅条" is-link to="/demoscene/chunky-raster-bars" />
         <van-cell title="光栅地毯" is-link to="/demoscene/raster-carpet" />
         <van-cell title="垂直光栅波" is-link to="/demoscene/vertical-raster-wave" />
+        <h1>depth sorting</h1>
+        <van-cell title="3d深度排序" is-link to="/depth/3d-depth-sort" />
       </van-list>
     </div>
   </div>
