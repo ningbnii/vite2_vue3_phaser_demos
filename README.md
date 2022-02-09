@@ -175,3 +175,4 @@ yarn build
 ### demoscene
 
 - demoscene/birdy-nam-nam 小鸟南南
+- demoscene/chunky-raster-bars 粗大的光栅条

@@ -148,6 +148,7 @@
         <van-cell title="存储场景数据" is-link to="/data/store-scene-data" />
         <h1>demoscene</h1>
         <van-cell title="小鸟南南" is-link to="/demoscene/birdy-nam-nam" />
+        <van-cell title="粗大的光栅条" is-link to="/demoscene/chunky-raster-bars" />
       </van-list>
     </div>
   </div>

@@ -1,19 +1,22 @@
-var track
-var bird
-var egg = 0
-var chick1
-var chick2
-var chick3
-var loadImage
+// var track
+// var bird
+// this.egg = 0 // 全局变量，页面返回后，值仍然在
+// var chick1
+// var chick2
+// var chick3
+// var loadImage
 class Demo extends Phaser.Scene {
   constructor() {
     super({
       key: "demo",
+      active: false,
+      visible: false,
     })
+    this.egg = 0 // 全局变量，页面返回后，值仍然在
   }
 
   preload() {
-    loadImage = this.add.image(0, 0, "loader").setOrigin(0)
+    this.loadImage = this.add.image(0, 0, "loader").setOrigin(0)
     this.load.audio("jungle", ["assets/audio/jungle.mp3"])
     this.load.animation("birdyAnims", "assets/demoscene/birdy.json")
     this.load.image("bg1", "assets/demoscene/birdy-nam-nam-bg1.png")
@@ -25,7 +28,7 @@ class Demo extends Phaser.Scene {
     // 页面失去焦点，仍然播放
     this.sound.pauseOnBlur = false
 
-    track = this.sound.add("jungle")
+    this.track = this.sound.add("jungle")
 
     this.anims.create({
       key: "lay",
@@ -35,7 +38,7 @@ class Demo extends Phaser.Scene {
 
     if (this.sound.locked) {
       // 更换纹理
-      loadImage.setTexture("click")
+      this.loadImage.setTexture("click")
       this.sound.once("unlocked", () => {
         this.startDemo()
       })
@@ -46,15 +49,15 @@ class Demo extends Phaser.Scene {
 
   startDemo() {
     // 隐藏加载页面
-    loadImage.setVisible(false)
+    this.loadImage.setVisible(false)
     // 显示背景1
     this.add.image(0, 0, "bg1").setOrigin(0)
     // 显示鸟，设置鸟的层级为10，这样，鸟会在蛋上面
-    bird = this.add.sprite(328, 152, "birdy", "lay0").setOrigin(0).setDepth(10)
-    bird.on("animationcomplete", this.dropEgg, this)
+    this.bird = this.add.sprite(328, 152, "birdy", "lay0").setOrigin(0).setDepth(10)
+    this.bird.on("animationcomplete", this.dropEgg, this)
     // 2250毫秒后开始播放动画lay
-    bird.anims.playAfterDelay("lay", 2250)
-    track.play()
+    this.bird.anims.playAfterDelay("lay", 2250)
+    this.track.play()
   }
 
   /**
@@ -64,7 +67,7 @@ class Demo extends Phaser.Scene {
     console.log("dropEgg")
 
     // 添加一个蛋
-    var smallEgg = this.add.image(bird.x + 116, 228, "birdy", "egg-small").setOrigin(0)
+    var smallEgg = this.add.image(this.bird.x + 116, 228, "birdy", "egg-small").setOrigin(0)
     // 下蛋动画
     this.tweens.add({
       targets: smallEgg,
@@ -76,22 +79,22 @@ class Demo extends Phaser.Scene {
       onComplete: this.moveBird,
       callbackScope: this,
     })
-    egg++
+    this.egg++
   }
 
   /**
    * 移动
    */
   moveBird() {
-    console.log("moveBird", egg, bird.x)
+    console.log("moveBird", this.egg, this.bird.x)
 
-    if (egg < 3) {
+    if (this.egg < 3) {
       // 往左移动124
-      bird.x -= 124
+      this.bird.x -= 124
       // 动画设置到第一帧
-      bird.setFrame("lay0")
+      this.bird.setFrame("lay0")
       // 播放动画
-      bird.anims.play("lay")
+      this.bird.anims.play("lay")
     } else {
       // 更换背景
       // 添加一个时间监听事件，800毫秒后，执行changeScene
@@ -104,21 +107,21 @@ class Demo extends Phaser.Scene {
     this.children.removeAll()
     this.add.image(0, 0, "bg2").setOrigin(0)
 
-    chick1 = this.add.sprite(100, 72, "birdy", "hatch1").setOrigin(0)
-    chick2 = this.add.sprite(260, 72, "birdy", "hatch1").setOrigin(0)
-    chick3 = this.add.sprite(420, 72, "birdy", "hatch1").setOrigin(0)
+    this.chick1 = this.add.sprite(100, 72, "birdy", "hatch1").setOrigin(0)
+    this.chick2 = this.add.sprite(260, 72, "birdy", "hatch1").setOrigin(0)
+    this.chick3 = this.add.sprite(420, 72, "birdy", "hatch1").setOrigin(0)
 
-    chick1.anims.playAfterDelay("hatch", 1000 - 200)
-    chick2.anims.playAfterDelay("hatch", 2000 - 200)
-    chick3.anims.playAfterDelay("hatch", 3000 - 200)
+    this.chick1.anims.playAfterDelay("hatch", 1000 - 200)
+    this.chick2.anims.playAfterDelay("hatch", 2000 - 200)
+    this.chick3.anims.playAfterDelay("hatch", 3000 - 200)
 
     this.time.addEvent({ delay: 4500, callback: this.checkDisOut, callbackScope: this })
   }
 
   checkDisOut() {
-    chick1.anims.play("lookRight")
-    chick2.anims.play("checkDisOut")
-    chick3.anims.play("lookLeft")
+    this.chick1.anims.play("lookRight")
+    this.chick2.anims.play("checkDisOut")
+    this.chick3.anims.play("lookLeft")
   }
 }
 
