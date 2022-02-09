@@ -154,6 +154,7 @@
         <h1>depth sorting</h1>
         <van-cell title="3d深度排序" is-link to="/depth/3d-depth-sort" />
         <van-cell title="深度排序" is-link to="/depth/depth-sorting" />
+        <van-cell title="移动到最上层" is-link to="/depth/bring-to-top" />
       </van-list>
     </div>
   </div>
