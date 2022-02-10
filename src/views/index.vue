@@ -167,6 +167,7 @@
         <van-cell title="混合模式" is-link to="/display/blend-modes/blend-mode-tester" />
         <van-cell title="切出的圆圈" is-link to="/display/blend-modes/circle-cut-out" />
         <van-cell title="不同" is-link to="/display/blend-modes/difference" />
+        <van-cell title="图形混合模式" is-link to="/display/blend-modes/graphics-blend-mode" />
       </van-list>
     </div>
   </div>
