@@ -188,3 +188,4 @@ yarn build
 - depth/isometric-blocks 等距块
 - depth/isometric-map 等轴测图
 - depth/remove-from-display-list 从显示列表中移除
+- depth/z-index z 轴

@@ -159,6 +159,7 @@
         <van-cell title="等距块" is-link to="/depth/isometric-blocks" />
         <van-cell title="等轴测图" is-link to="/depth/isometric-map" />
         <van-cell title="从显示列表中移除" is-link to="/depth/remove-from-display-list" />
+        <van-cell title="z轴" is-link to="/depth/z-index" />
       </van-list>
     </div>
   </div>
