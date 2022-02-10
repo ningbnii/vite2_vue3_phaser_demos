@@ -21,7 +21,8 @@ class Example extends Phaser.Scene {
     const alpha = 1
 
     graphics.fillStyle(color, alpha)
-    graphics.fillCircle(400, 300, 256)
+    // graphics.fillCircle(400, 300, 256)
+    graphics.fillRect(200, 200, 200, 200)
 
     this.add.image(400, 300, "turkey").setBlendMode(modeIndex)
   }
