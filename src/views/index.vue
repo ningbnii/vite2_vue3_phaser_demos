@@ -157,6 +157,7 @@
         <van-cell title="移动到最上层" is-link to="/depth/bring-to-top" />
         <van-cell title="获取最上层的对象" is-link to="/depth/get-top-object" />
         <van-cell title="等距块" is-link to="/depth/isometric-blocks" />
+        <van-cell title="等轴测图" is-link to="/depth/isometric-map" />
       </van-list>
     </div>
   </div>
