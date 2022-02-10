@@ -158,6 +158,7 @@
         <van-cell title="获取最上层的对象" is-link to="/depth/get-top-object" />
         <van-cell title="等距块" is-link to="/depth/isometric-blocks" />
         <van-cell title="等轴测图" is-link to="/depth/isometric-map" />
+        <van-cell title="从显示列表中移除" is-link to="/depth/remove-from-display-list" />
       </van-list>
     </div>
   </div>
