@@ -162,6 +162,7 @@
         <van-cell title="z轴" is-link to="/depth/z-index" />
         <h1>display</h1>
         <van-cell title="底部中间" is-link to="/display/align/in-bottom-center" />
+        <van-cell title="底部透明度" is-link to="/display/alpha/bottom-alpha" />
       </van-list>
     </div>
   </div>

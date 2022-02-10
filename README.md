@@ -193,3 +193,4 @@ yarn build
 ### display
 
 - display/align/in-bottom-center 底部中间位置
+- display/alpha/bottom-alpha 透明度
