@@ -194,3 +194,5 @@ yarn build
 
 - display/align/in-bottom-center 底部中间位置
 - display/alpha/bottom-alpha 透明度
+- display/alpha/tween-alpha alpha 动画
+- display/blend-modes/blend-mode-tester 混合模式
