@@ -165,6 +165,7 @@
         <van-cell title="底部透明度" is-link to="/display/alpha/bottom-alpha" />
         <van-cell title="alpha动画" is-link to="/display/alpha/tween-alpha" />
         <van-cell title="混合模式" is-link to="/display/blend-modes/blend-mode-tester" />
+        <van-cell title="切出的圆圈" is-link to="/display/blend-modes/circle-cut-out" />
       </van-list>
     </div>
   </div>

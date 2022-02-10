@@ -8,7 +8,7 @@
 import { ref, onMounted, onUnmounted, watch } from "vue"
 import * as Phaser from "Phaser"
 
-import Example from "../../../components/display/alpha/tweenAlpha"
+import Example from "../../../components/display/blend-modes/circleCutOut"
 
 let myCanvas = ref(null)
 let canvasBox = ref(null)
