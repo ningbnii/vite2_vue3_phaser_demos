@@ -197,3 +197,4 @@ yarn build
 - display/alpha/tween-alpha alpha 动画
 - display/blend-modes/blend-mode-tester 混合模式
 - display/blend-modes/circle-cut-out 切出的圆圈
+- display/blend-modes/difference 不同

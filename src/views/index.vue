@@ -166,6 +166,7 @@
         <van-cell title="alpha动画" is-link to="/display/alpha/tween-alpha" />
         <van-cell title="混合模式" is-link to="/display/blend-modes/blend-mode-tester" />
         <van-cell title="切出的圆圈" is-link to="/display/blend-modes/circle-cut-out" />
+        <van-cell title="不同" is-link to="/display/blend-modes/difference" />
       </van-list>
     </div>
   </div>
