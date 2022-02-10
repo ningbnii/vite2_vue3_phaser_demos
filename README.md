@@ -189,3 +189,7 @@ yarn build
 - depth/isometric-map 等轴测图
 - depth/remove-from-display-list 从显示列表中移除
 - depth/z-index z 轴
+
+### display
+
+- display/align/in-bottom-center 底部中间位置
