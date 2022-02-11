@@ -204,3 +204,4 @@ yarn build
 - display/effects/fractal-terrain 分形地形
 - display/masks/camera-inversed-mask-test1 相机反转蒙版
 - display/masks/camera--mask-test 相机蒙版
+- display/masks/camera--mask-test2 相机蒙版 2
