@@ -171,6 +171,7 @@
         <van-cell title="hex转成color" is-link to="/display/color/hex-string-to-color" />
         <van-cell title="分形地形" is-link to="/display/effects/fractal-terrain" />
         <van-cell title="相机反转蒙版" is-link to="/display/masks/camera-inversed-mask-test1" />
+        <van-cell title="相机蒙版" is-link to="/display/masks/camera-mask-test" />
       </van-list>
     </div>
   </div>
