@@ -40,7 +40,8 @@ class Example extends Phaser.Scene {
       // COLOR
       // LUMINOSITY
 
-      image.setBlendMode(Phaser.BlendModes.ADD)
+      // image.setBlendMode(Phaser.BlendModes.ADD)
+      image.setBlendMode(Phaser.BlendModes.OVERLAY)
       // 给每一个image生成一个随机向上的速度
       this.sprites.push({ s: image, r: 2 + Math.random() * 6 })
     }

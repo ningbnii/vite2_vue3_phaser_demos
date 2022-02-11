@@ -199,3 +199,4 @@ yarn build
 - display/blend-modes/circle-cut-out 切出的圆圈
 - display/blend-modes/difference canvas 和 webGL 混合模式的不同
 - display/blend-modes/graphics-blend-mode 图形混合模式
+- display/color/hex-string-to-color hex 转成 color
