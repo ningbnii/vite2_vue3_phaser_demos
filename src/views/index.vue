@@ -170,6 +170,7 @@
         <van-cell title="图形混合模式" is-link to="/display/blend-modes/graphics-blend-mode" />
         <van-cell title="hex转成color" is-link to="/display/color/hex-string-to-color" />
         <van-cell title="分形地形" is-link to="/display/effects/fractal-terrain" />
+        <van-cell title="相机反转蒙版" is-link to="/display/masks/camera-inversed-mask-test1" />
       </van-list>
     </div>
   </div>
