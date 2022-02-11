@@ -54,6 +54,7 @@ class Example extends Phaser.Scene {
       speedX: { min: -200, max: -400, steps: 8 },
       quantity: 4,
       frequency: 500,
+      rotate: 180, // 鱼旋转180度
     })
 
     // 控制显示隐藏
@@ -78,11 +79,11 @@ class Example extends Phaser.Scene {
     // particles.setMask(geomask1)
 
     // 可以给主相机设置蒙版，可以给粒子发射器管理器设置蒙版，可以给每一个粒子发射器设置蒙版
-    this.cameras.main.setMask(geomask1)
+    this.cameras.main.setMask(mask)
 
-    bg.setMask(mask)
+    // bg.setMask(mask)
     // 只能添加几何图形遮罩
-    particles.setMask(geomask2)
+    // particles.setMask(geomask2)
 
     emitter2.setMask(geomask3)
 
