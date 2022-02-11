@@ -205,3 +205,4 @@ yarn build
 - display/masks/camera-inversed-mask-test1 相机反转蒙版
 - display/masks/camera--mask-test 相机蒙版
 - display/masks/camera--mask-test2 相机蒙版 2
+- display/masks/camera--mask-test3 相机蒙版 3
