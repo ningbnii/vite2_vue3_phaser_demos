@@ -169,6 +169,7 @@
         <van-cell title="不同" is-link to="/display/blend-modes/difference" />
         <van-cell title="图形混合模式" is-link to="/display/blend-modes/graphics-blend-mode" />
         <van-cell title="hex转成color" is-link to="/display/color/hex-string-to-color" />
+        <van-cell title="分形地形" is-link to="/display/effects/fractal-terrain" />
       </van-list>
     </div>
   </div>

@@ -200,3 +200,5 @@ yarn build
 - display/blend-modes/difference canvas 和 webGL 混合模式的不同
 - display/blend-modes/graphics-blend-mode 图形混合模式
 - display/color/hex-string-to-color hex 转成 color
+- display/color/hex-string-to-color hex 转成 color
+- display/effects/fractal-terrain 分形地形
