@@ -203,6 +203,7 @@ yarn build
 - display/color/hex-string-to-color hex 转成 color
 - display/effects/fractal-terrain 分形地形
 - display/masks/camera-inversed-mask-test1 相机反转蒙版
-- display/masks/camera--mask-test 相机蒙版
-- display/masks/camera--mask-test2 相机蒙版 2
-- display/masks/camera--mask-test3 相机蒙版 3
+- display/masks/camera-mask-test 相机蒙版
+- display/masks/camera-mask-test2 相机蒙版 2
+- display/masks/camera-mask-test3 相机蒙版 3
+- display/masks/camera-mask-test5 相机蒙版 5

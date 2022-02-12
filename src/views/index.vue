@@ -174,6 +174,7 @@
         <van-cell title="相机蒙版" is-link to="/display/masks/camera-mask-test" />
         <van-cell title="相机蒙版2" is-link to="/display/masks/camera-mask-test2" />
         <van-cell title="相机蒙版3" is-link to="/display/masks/camera-mask-test3" />
+        <van-cell title="相机蒙版5" is-link to="/display/masks/camera-mask-test5" />
       </van-list>
     </div>
   </div>
