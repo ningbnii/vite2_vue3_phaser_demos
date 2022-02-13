@@ -220,3 +220,7 @@ yarn build
 ### game config
 
 - game-config/test 游戏配置参数
+
+### game objects
+
+- game-objects/bitmaptext

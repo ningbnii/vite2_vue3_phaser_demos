@@ -184,6 +184,8 @@
         <van-cell title="事件发射器" is-link to="/events/create-event-emitter" />
         <h1>game config</h1>
         <van-cell title="游戏配置参数" is-link to="/game-config/test" />
+        <h1>game objects</h1>
+        <van-cell title="位图文本" is-link to="/game-objects/bitmaptext" />
       </van-list>
     </div>
   </div>
