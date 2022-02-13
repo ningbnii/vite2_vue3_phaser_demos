@@ -216,3 +216,7 @@ yarn build
 ### events
 
 - events/create-event-emitter 事件发射器
+
+### game config
+
+- game-config/test 游戏配置参数

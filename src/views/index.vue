@@ -182,6 +182,8 @@
         <van-cell title="atlas上色" is-link to="/display/tint/atlas-frame-tint" />
         <h1>events</h1>
         <van-cell title="事件发射器" is-link to="/events/create-event-emitter" />
+        <h1>game config</h1>
+        <van-cell title="游戏配置参数" is-link to="/game-config/test" />
       </van-list>
     </div>
   </div>
