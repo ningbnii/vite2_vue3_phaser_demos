@@ -211,3 +211,4 @@ yarn build
 - display/shader/shader-test2 着色器 2
 - display/shader/shader-test3 着色器 3
 - display/shader/shader-test6 着色器 6
+- display/tint/atlas-frame-tint atlas 上色

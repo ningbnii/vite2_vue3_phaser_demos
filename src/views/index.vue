@@ -179,6 +179,7 @@
         <van-cell title="着色器2" is-link to="/display/shader/shader-test2" />
         <van-cell title="着色器3" is-link to="/display/shader/shader-test3" />
         <van-cell title="着色器6" is-link to="/display/shader/shader-test6" />
+        <van-cell title="atlas上色" is-link to="/display/tint/atlas-frame-tint" />
       </van-list>
     </div>
   </div>
