@@ -168,6 +168,16 @@ class Example extends Phaser.Scene {
         this.setTint(0xff00ff, 0xff0000, 0x00ff00, 0x0000ff)
       }
     })
+
+    this.tweens.addCounter({
+      from: 255,
+      to: 0,
+      duration: 5000,
+      onUpdate: (tween) => {
+        const value = Math.floor(tween.getValue())
+        image1.setTint(Phaser.Display.Color.GetColor(value, value, value))
+      },
+    })
   }
 
   update() {
