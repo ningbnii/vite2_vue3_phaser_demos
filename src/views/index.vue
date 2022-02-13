@@ -177,6 +177,7 @@
         <van-cell title="相机蒙版5" is-link to="/display/masks/camera-mask-test5" />
         <van-cell title="着色器" is-link to="/display/shader/shader-test" />
         <van-cell title="着色器2" is-link to="/display/shader/shader-test2" />
+        <van-cell title="着色器3" is-link to="/display/shader/shader-test3" />
       </van-list>
     </div>
   </div>
