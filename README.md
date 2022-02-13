@@ -210,3 +210,4 @@ yarn build
 - display/shader/shader-test 着色器
 - display/shader/shader-test2 着色器 2
 - display/shader/shader-test3 着色器 3
+- display/shader/shader-test6 着色器 6

@@ -178,6 +178,7 @@
         <van-cell title="着色器" is-link to="/display/shader/shader-test" />
         <van-cell title="着色器2" is-link to="/display/shader/shader-test2" />
         <van-cell title="着色器3" is-link to="/display/shader/shader-test3" />
+        <van-cell title="着色器6" is-link to="/display/shader/shader-test6" />
       </van-list>
     </div>
   </div>
