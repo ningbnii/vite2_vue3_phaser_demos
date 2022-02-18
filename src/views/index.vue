@@ -192,6 +192,7 @@
         <van-cell title="health-bars-demo" is-link to="/game-objects/graphics/health-bars-demo" />
         <van-cell title="multiple-stroke-rect" is-link to="/game-objects/graphics/multiple-stroke-rect" />
         <van-cell title="phaser-logo-3d" is-link to="/game-objects/graphics/phaser-logo-3d" />
+        <van-cell title="group" is-link to="/game-objects/group" />
       </van-list>
     </div>
   </div>

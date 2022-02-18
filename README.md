@@ -230,3 +230,4 @@ yarn build
 - game-objects/graphics/health-bars-demo
 - game-objects/graphics/multiple-stroke-rect
 - game-objects/graphics/phaser-logo-3d
+- game-objects/group
