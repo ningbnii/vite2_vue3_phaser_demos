@@ -194,6 +194,7 @@
         <van-cell title="phaser-logo-3d" is-link to="/game-objects/graphics/phaser-logo-3d" />
         <van-cell title="group" is-link to="/game-objects/group" />
         <van-cell title="image" is-link to="/game-objects/image" />
+        <van-cell title="layer" is-link to="/game-objects/layer" />
       </van-list>
     </div>
   </div>

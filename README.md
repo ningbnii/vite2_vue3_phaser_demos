@@ -232,3 +232,4 @@ yarn build
 - game-objects/graphics/phaser-logo-3d
 - game-objects/group
 - game-objects/image
+- game-objects/layer
