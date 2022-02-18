@@ -227,3 +227,4 @@ yarn build
 - game-objects/container
 - game-objects/graphics/circles-test
 - game-objects/graphics/generate-texture-test
+- game-objects/graphics/health-bars-demo
