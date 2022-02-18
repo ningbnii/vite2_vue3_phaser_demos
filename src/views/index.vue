@@ -189,7 +189,8 @@
         <van-cell title="容器" is-link to="/game-objects/container" />
         <van-cell title="circles-test" is-link to="/game-objects/graphics/circles-test" />
         <van-cell title="生成纹理测试" is-link to="/game-objects/graphics/generate-texture-test" />
-        <van-cell title="健康酒吧" is-link to="/game-objects/graphics/health-bars-demo" />
+        <van-cell title="health-bars-demo" is-link to="/game-objects/graphics/health-bars-demo" />
+        <van-cell title="multiple-stroke-rect" is-link to="/game-objects/graphics/multiple-stroke-rect" />
       </van-list>
     </div>
   </div>
