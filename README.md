@@ -226,3 +226,4 @@ yarn build
 - game-objects/bitmaptext
 - game-objects/container
 - game-objects/graphics/circles-test
+- game-objects/graphics/generate-texture-test
