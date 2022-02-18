@@ -191,6 +191,7 @@
         <van-cell title="生成纹理测试" is-link to="/game-objects/graphics/generate-texture-test" />
         <van-cell title="health-bars-demo" is-link to="/game-objects/graphics/health-bars-demo" />
         <van-cell title="multiple-stroke-rect" is-link to="/game-objects/graphics/multiple-stroke-rect" />
+        <van-cell title="phaser-logo-3d" is-link to="/game-objects/graphics/phaser-logo-3d" />
       </van-list>
     </div>
   </div>
