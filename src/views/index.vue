@@ -187,6 +187,7 @@
         <h1>game objects</h1>
         <van-cell title="位图文本" is-link to="/game-objects/bitmaptext" />
         <van-cell title="容器" is-link to="/game-objects/container" />
+        <van-cell title="circles-test" is-link to="/game-objects/graphics/circles-test" />
       </van-list>
     </div>
   </div>
