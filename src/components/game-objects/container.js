@@ -5,8 +5,8 @@ class SceneA extends Phaser.Scene {
       active: true,
     })
     // super('SceneA')
-    this.stars = []
-    this.cameraRotation = 0
+    this.time1 = 0
+    this.inc = 0
   }
 
   preload() {
@@ -15,23 +15,54 @@ class SceneA extends Phaser.Scene {
   }
 
   create() {
-    var colorsTable = [0xff0000, 0x00ff00, 0x0000ff, 0xff00ff, 0xffff00, 0x00ffff]
-    for (var i = 0; i < 500; ++i) {
-      let starGraphics = this.add.graphics({ x: Math.random() * 800, y: Math.random() * 600 })
-      this.drawStar(starGraphics, 0, 0, 5, 100, 50, colorsTable[Math.floor(Math.random() * 6)], 0xff0000)
-      starGraphics.fillRect(100, 100, 100, 100)
-      starGraphics.rotation = Math.random()
-      starGraphics.scaleX = 0.1 + Math.abs(Math.sin(starGraphics.rotation)) * 0.2
-      starGraphics.scaleY = 0.1 + Math.abs(Math.sin(starGraphics.rotation)) * 0.2
-      this.stars.push(starGraphics)
-    }
+    this.graphics = this.add.graphics({ x: 400, y: 300 })
+
+    this.palette = [0, 1911635, 8267091, 34641, 11227702, 6248271, 12764103, 16773608, 16711757, 16753408, 16772135, 58422, 2731519, 8615580, 16742312, 16764074]
+  }
+  cos(f) {
+    return Math.cos(f * (Math.PI * 2))
+  }
+
+  sin(f) {
+    return Math.sin(f * (Math.PI * 2))
   }
   update() {
-    for (var i = 0; i < this.stars.length; ++i) {
-      var star = this.stars[i]
-      star.rotation += 0.01
-      star.scaleX = 0.1 + Math.abs(Math.sin(star.rotation)) * 0.2
-      star.scaleY = 0.1 + Math.abs(Math.sin(star.rotation)) * 0.2
+    this.time1 += 0.03
+
+    this.time1 = Phaser.Math.Wrap(this.time1, -32765, 32765)
+    this.graphics.clear()
+
+    let f = this.time1 / 9
+    let n = 650 + 60 * this.sin(f / 3)
+
+    for (let i = 0; i < n; i++) {
+      let a = f + Math.random()
+      let d = 0.3 + Math.random() * 2
+      let y = -2
+
+      if (i > 400) {
+        let j = i - 400
+        y = (y * 2) / n - 1
+        a = (j * 40) / n + f + j / 3
+        d = (j * 3) / n
+      }
+
+      let x = d * this.cos(a)
+      let z = 2 + this.cos(f) + d * this.sin(a)
+      x = 64 + (x * 64) / z
+      y = 64 + (y * 64) / z
+
+      let c = 6 + (i % 5)
+      let e = 5 / z
+
+      if (z > 0.1) {
+        this.graphics.fillStyle(this.palette[c])
+        if (i > 400) {
+          this.graphics.fillCircle(x, y, e)
+        } else {
+          this.graphics.fillRect(x, y, e, e)
+        }
+      }
     }
   }
 
