@@ -193,6 +193,7 @@
         <van-cell title="multiple-stroke-rect" is-link to="/game-objects/graphics/multiple-stroke-rect" />
         <van-cell title="phaser-logo-3d" is-link to="/game-objects/graphics/phaser-logo-3d" />
         <van-cell title="group" is-link to="/game-objects/group" />
+        <van-cell title="image" is-link to="/game-objects/image" />
       </van-list>
     </div>
   </div>

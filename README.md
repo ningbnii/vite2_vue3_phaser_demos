@@ -231,3 +231,4 @@ yarn build
 - game-objects/graphics/multiple-stroke-rect
 - game-objects/graphics/phaser-logo-3d
 - game-objects/group
+- game-objects/image
