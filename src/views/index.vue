@@ -187,6 +187,15 @@
         <h1>game objects</h1>
         <van-cell title="位图文本" is-link to="/game-objects/bitmaptext" />
         <van-cell title="blitter" is-link to="/game-objects/blitter" />
+        <van-cell title="容器" is-link to="/game-objects/container" />
+        <van-cell title="circles-test" is-link to="/game-objects/graphics/circles-test" />
+        <van-cell title="生成纹理测试" is-link to="/game-objects/graphics/generate-texture-test" />
+        <van-cell title="health-bars-demo" is-link to="/game-objects/graphics/health-bars-demo" />
+        <van-cell title="multiple-stroke-rect" is-link to="/game-objects/graphics/multiple-stroke-rect" />
+        <van-cell title="phaser-logo-3d" is-link to="/game-objects/graphics/phaser-logo-3d" />
+        <van-cell title="group" is-link to="/game-objects/group" />
+        <van-cell title="image" is-link to="/game-objects/image" />
+        <van-cell title="layer" is-link to="/game-objects/layer" />
       </van-list>
     </div>
   </div>

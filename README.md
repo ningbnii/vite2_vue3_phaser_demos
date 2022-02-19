@@ -225,3 +225,12 @@ yarn build
 
 - game-objects/bitmaptext
 - game-objects/blitter
+- game-objects/container
+- game-objects/graphics/circles-test
+- game-objects/graphics/generate-texture-test
+- game-objects/graphics/health-bars-demo
+- game-objects/graphics/multiple-stroke-rect
+- game-objects/graphics/phaser-logo-3d
+- game-objects/group
+- game-objects/image
+- game-objects/layer
