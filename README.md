@@ -224,3 +224,4 @@ yarn build
 ### game objects
 
 - game-objects/bitmaptext
+- game-objects/blitter
