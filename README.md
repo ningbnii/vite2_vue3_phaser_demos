@@ -234,3 +234,4 @@ yarn build
 - game-objects/group
 - game-objects/image
 - game-objects/layer
+- game-objects/lights 灯光

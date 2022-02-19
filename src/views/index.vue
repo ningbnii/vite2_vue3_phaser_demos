@@ -196,6 +196,7 @@
         <van-cell title="group" is-link to="/game-objects/group" />
         <van-cell title="image" is-link to="/game-objects/image" />
         <van-cell title="layer" is-link to="/game-objects/layer" />
+        <van-cell title="灯光" is-link to="/game-objects/lights" />
       </van-list>
     </div>
   </div>
