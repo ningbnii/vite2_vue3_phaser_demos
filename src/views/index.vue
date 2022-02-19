@@ -197,6 +197,7 @@
         <van-cell title="image" is-link to="/game-objects/image" />
         <van-cell title="layer" is-link to="/game-objects/layer" />
         <van-cell title="灯光" is-link to="/game-objects/lights" />
+        <van-cell title="网格灯光" is-link to="/game-objects/mesh-light" />
       </van-list>
     </div>
   </div>
