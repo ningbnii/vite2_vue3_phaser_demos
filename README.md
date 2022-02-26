@@ -236,3 +236,4 @@ yarn build
 - game-objects/layer
 - game-objects/lights 灯光
 - game-objects/mesh-light 网格灯光
+- game-objects/particles-light 粒子灯光
