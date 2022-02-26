@@ -1,19 +1,39 @@
+var graphics
+var point
+var points
+var a = 0
+
+var angle = 0
 class SceneA extends Phaser.Scene {
   constructor() {
     super('SceneA')
   }
-
-  preload() {
-    this.load.video('wormhole', 'assets/video/wormhole.mp4', 'loadeddata', false, true)
-  }
-
   create() {
-    var vid = this.add.video(400, 300, 'wormhole')
+    var graphics = this.add.graphics({ lineStyle: { width: 1, color: 0x2266aa }, fillStyle: { color: 0x2266aa } })
 
-    vid.play(true)
+    var point = new Phaser.Geom.Point(400, 300)
 
-    // Prevents video freeze when game is out of focus (i.e. user changes tab on the browser)
-    vid.setPaused(false)
+    var text = this.add.text(50, 50, '')
+
+    this.input.on('pointermove', function (pointer) {
+      Phaser.Geom.Point.CopyFrom(pointer, point)
+
+      redraw()
+    })
+
+    redraw()
+
+    function redraw() {
+      graphics.clear()
+
+      graphics.fillPointShape(point, 20)
+
+      graphics.lineBetween(0, 0, point.x, point.y)
+
+      var magnitude = Phaser.Geom.Point.GetMagnitude(point)
+
+      text.setText('Point Magnitude: ' + magnitude)
+    }
   }
 }
 
