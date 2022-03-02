@@ -14,7 +14,7 @@ import { SceneA } from "../../components/game-objects/render-texture"
 let myCanvas = ref(null)
 let canvasBox = ref(null)
 let game
-let sceneA
+let sceneA, controller
 let text = ref("")
 
 onMounted(() => {
@@ -34,13 +34,28 @@ onMounted(() => {
   // overlayScene = new Overlay()
 
   let config = {
-    type: Phaser.WEBGL,
+    type: Phaser.AUTO,
+    render: {
+      antialias: true, // 抗锯齿
+      transparent: false, // 背景透明
+      // batchSize: 1024,
+    },
+    // canvasStyle: 'overflow:hidden;', // canvas的行内样式
     scale: {
-      // mode: Phaser.DOM.FIT, // 自适应
+      mode: Phaser.Scale.RESIZE, // 自适应
+
       parent: myCanvas.value,
-      autoCenter: Phaser.DOM.CENTER_BOTH, // 自动居中
+      autoCenter: Phaser.Scale.BOTH, // 自动居中
       width: 800,
       height: 600,
+      min: {
+        width: 800,
+        height: 600,
+      },
+      max: {
+        width: 1600,
+        height: 1200,
+      },
     },
     // 渲染之前清除
     // clearBeforeRender: false,
@@ -56,7 +71,7 @@ onMounted(() => {
     banner: false,
     backgroundColor: "#2d2d2d",
     // transparent: true, // 透明，backgroundColor失效
-    scene: [sceneA],
+    scene: [sceneA], // 初始化完成后，默认加载第一个scene
     pixelArt: true, //将 antialias 设置为 false 并将 roundPixels 设置为 true。 这是像素艺术游戏的最佳设置
     roundPixels: true,
     audio: {
@@ -65,13 +80,25 @@ onMounted(() => {
       // noAudio: false, // if this is true, it works, with audio enabled it fails
     },
     physics: {
-      default: "arcade",
+      // default: 'matter',
       // matter: {
       //   debug: true,
       //   gravity: {
       //     y: 0.3,
       //   },
       // },
+      default: "arcade",
+      arcade: {
+        debug: false,
+      },
+    },
+    input: {
+      // mouse: false, // 移动端项目一般关掉mouse，不然会出点透bug
+      activePointers: 1, // 多指触摸限制
+    },
+    disableContextMenu: true, // 禁用鼠标右键菜单
+    loader: {
+      crossOrigin: "anonymous", // 避免图片跨域
     },
   }
 

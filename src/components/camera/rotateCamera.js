@@ -8,31 +8,31 @@ class Example extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image("bg", "assets/pics/uv-grid-diag.png")
-    this.load.image("block", "assets/sprites/block.png")
+    this.load.image('bg', 'assets/pics/uv-grid-diag.png')
+    this.load.image('block', 'assets/sprites/block.png')
   }
 
   create() {
     this.cameras.main.setBounds(0, 0, 1024 * 2, 1024 * 2)
-    this.add.image(0, 0, "bg").setOrigin(0)
-    this.add.image(1024, 0, "bg").setOrigin(0)
-    this.add.image(0, 1024, "bg").setOrigin(0)
-    this.add.image(1024, 1024, "bg").setOrigin(0)
+    this.add.image(0, 0, 'bg').setOrigin(0)
+    this.add.image(1024, 0, 'bg').setOrigin(0)
+    this.add.image(0, 1024, 'bg').setOrigin(0)
+    this.add.image(1024, 1024, 'bg').setOrigin(0)
 
     this.cursors = this.input.keyboard.createCursorKeys()
     // 添加键盘监听
-    this.keys = this.input.keyboard.addKeys("W,A,S,D")
+    this.keys = this.input.keyboard.addKeys('W,A,S,D')
 
     // 中心点设置到相机窗口范围的中心
     this.cameras.main.centerToBounds()
 
-    this.text = this.add.text(32, 32).setScrollFactor(0).setFontSize(32).setColor("#ffffff")
+    this.text = this.add.text(32, 32).setScrollFactor(0).setFontSize(32).setColor('#ffffff')
   }
 
   update() {
     const cam = this.cameras.main
 
-    this.text.setText(["ScrollX: " + cam.scrollX, "ScrollY: " + cam.scrollY, "MidX: " + cam.midPoint.x, "MidY: " + cam.midPoint.y])
+    this.text.setText(['ScrollX: ' + cam.scrollX, 'ScrollY: ' + cam.scrollY, 'MidX: ' + cam.midPoint.x, 'MidY: ' + cam.midPoint.y])
 
     // this.input.keyboard.on('keydown-A',function(){})
     // 键盘按下事件 isDown
