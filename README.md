@@ -238,3 +238,7 @@ yarn build
 - game-objects/mesh-light 网格灯光
 - game-objects/particles-light 粒子灯光
 - game-objects/render-texture
+
+### games
+
+- games/avoid-the-germs

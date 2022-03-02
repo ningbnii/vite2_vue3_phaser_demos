@@ -200,6 +200,8 @@
         <van-cell title="网格灯光" is-link to="/game-objects/mesh-light" />
         <van-cell title="粒子灯光" is-link to="/game-objects/particles-light" />
         <van-cell title="render texture" is-link to="/game-objects/render-texture" />
+        <h1>games</h1>
+        <van-cell title="avoid-the-germs" is-link to="/games/avoid-the-germs" />
       </van-list>
     </div>
   </div>
