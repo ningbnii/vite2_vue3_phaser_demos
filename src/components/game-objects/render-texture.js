@@ -1,39 +1,27 @@
-var graphics
-var point
-var points
-var a = 0
-
-var angle = 0
+var player
+var cursors
+var text
 class SceneA extends Phaser.Scene {
   constructor() {
-    super('SceneA')
+    super("SceneA")
   }
+
+  preload() {
+    this.load.image("eye", "assets/pics/lance-overdose-loader-eye.png")
+  }
+
   create() {
-    var graphics = this.add.graphics({ lineStyle: { width: 1, color: 0x2266aa }, fillStyle: { color: 0x2266aa } })
+    this.input.setDefaultCursor("url(assets/input/cursors/blue.cur), pointer")
 
-    var point = new Phaser.Geom.Point(400, 300)
+    var sprite = this.add.sprite(400, 300, "eye").setInteractive({ cursor: "url(assets/input/cursors/pen.cur), pointer" })
 
-    var text = this.add.text(50, 50, '')
-
-    this.input.on('pointermove', function (pointer) {
-      Phaser.Geom.Point.CopyFrom(pointer, point)
-
-      redraw()
+    sprite.on("pointerover", function (event) {
+      this.setTint(0xff0000)
     })
 
-    redraw()
-
-    function redraw() {
-      graphics.clear()
-
-      graphics.fillPointShape(point, 20)
-
-      graphics.lineBetween(0, 0, point.x, point.y)
-
-      var magnitude = Phaser.Geom.Point.GetMagnitude(point)
-
-      text.setText('Point Magnitude: ' + magnitude)
-    }
+    sprite.on("pointerout", function (event) {
+      this.clearTint()
+    })
   }
 }
 
