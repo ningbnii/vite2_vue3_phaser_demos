@@ -1,39 +1,67 @@
-var graphics
-var point
-var points
-var a = 0
-
-var angle = 0
 class SceneA extends Phaser.Scene {
   constructor() {
     super('SceneA')
   }
+
+  preload() {
+    this.load.image('ship', 'assets/sprites/phaser-ship.png')
+  }
+
   create() {
-    var graphics = this.add.graphics({ lineStyle: { width: 1, color: 0x2266aa }, fillStyle: { color: 0x2266aa } })
+    //  Create an RTree
 
-    var point = new Phaser.Geom.Point(400, 300)
+    var tree = new Phaser.Structs.RTree()
 
-    var text = this.add.text(50, 50, '')
+    for (var i = 0; i < 512; i++) {
+      var ship = this.add.image(Phaser.Math.Between(0, 800), Phaser.Math.Between(0, 590), 'ship')
 
-    this.input.on('pointermove', function (pointer) {
-      Phaser.Geom.Point.CopyFrom(pointer, point)
+      var bounds = ship.getBounds()
 
-      redraw()
-    })
-
-    redraw()
-
-    function redraw() {
-      graphics.clear()
-
-      graphics.fillPointShape(point, 20)
-
-      graphics.lineBetween(0, 0, point.x, point.y)
-
-      var magnitude = Phaser.Geom.Point.GetMagnitude(point)
-
-      text.setText('Point Magnitude: ' + magnitude)
+      //  Insert our entry into the RTree:
+      tree.insert({ left: bounds.left, right: bounds.right, top: bounds.top, bottom: bounds.bottom, sprite: ship })
     }
+    console.log(tree)
+    var debug = this.add.graphics()
+
+    debug.lineStyle(1, 0x00ff00)
+
+    var results = []
+
+    this.input.on(
+      'pointermove',
+      function (pointer) {
+        //  First clear the previous results
+        results.forEach(function (entry) {
+          entry.sprite.setTint(0xffffff)
+        })
+
+        debug.clear()
+
+        //  Update the search area
+
+        var bbox = {
+          minX: pointer.x - 100,
+          minY: pointer.y - 100,
+          maxX: pointer.x + 100,
+          maxY: pointer.y + 100,
+        }
+
+        //  Search the RTree
+
+        results = tree.search(bbox)
+
+        //  Set Tint on intersecting Sprites
+
+        results.forEach(function (entry) {
+          entry.sprite.setTint(0xff0000)
+        })
+
+        //  Draw debug
+
+        debug.strokeRect(bbox.minX, bbox.minY, 200, 200)
+      },
+      this
+    )
   }
 }
 
