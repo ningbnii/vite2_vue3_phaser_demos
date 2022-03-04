@@ -202,6 +202,7 @@
         <van-cell title="render texture" is-link to="/game-objects/render-texture" />
         <h1>games</h1>
         <van-cell title="avoid-the-germs" is-link to="/games/avoid-the-germs" />
+        <van-cell title="bank-panic" is-link to="/games/bank-panic" />
       </van-list>
     </div>
   </div>

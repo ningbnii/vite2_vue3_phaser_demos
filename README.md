@@ -242,3 +242,4 @@ yarn build
 ### games
 
 - games/avoid-the-germs
+- games/bank-panic
