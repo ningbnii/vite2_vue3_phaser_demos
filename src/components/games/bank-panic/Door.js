@@ -51,10 +51,11 @@ export default class Door extends Phaser.GameObjects.Container {
     scene.add.existing(this)
   }
 
-  destroy() {
-    // 移除事件监听
-    this.off('pointerup')
-  }
+  // 不能加destroy，会报错
+  // destroy() {
+  //   // 移除事件监听
+  //   this.off('pointerup')
+  // }
 
   start(time) {
     // 获取门开的时间

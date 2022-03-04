@@ -42,7 +42,7 @@ onMounted(() => {
     },
     // canvasStyle: 'overflow:hidden;', // canvas的行内样式
     scale: {
-      mode: Phaser.Scale.ENVELOP, // 自适应
+      mode: Phaser.Scale.FIT, // 自适应
 
       parent: myCanvas.value,
       autoCenter: Phaser.Scale.BOTH, // 自动居中
