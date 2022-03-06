@@ -204,6 +204,7 @@
         <van-cell title="avoid-the-germs" is-link to="/games/avoid-the-germs" />
         <van-cell title="bank-panic" is-link to="/games/bank-panic" />
         <van-cell title="emoji-match" is-link to="/games/emoji-match" />
+        <van-cell title="snowmen-attack" is-link to="/games/snowmen-attack" />
       </van-list>
     </div>
   </div>

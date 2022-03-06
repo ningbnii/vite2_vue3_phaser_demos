@@ -244,3 +244,4 @@ yarn build
 - games/avoid-the-germs
 - games/bank-panic
 - games/emoji-match
+- games/snowmen-attack

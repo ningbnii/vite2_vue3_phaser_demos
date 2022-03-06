@@ -9,10 +9,10 @@ cont
 import { ref, onMounted, onUnmounted, watch } from "vue"
 import * as Phaser from "Phaser"
 
-import Boot from "../../components/games/snowmen-attack/Boot"
-import Preloader from "../../components/games/snowmen-attack/Preloader"
-import MainMenu from "../../components/games/snowmen-attack/MainMenu"
-import MainGame from "../../components/games/snowmen-attack/Game"
+import Boot from "../../components/games/emoji-match/Boot"
+import Preloader from "../../components/games/emoji-match/Preloader"
+import MainMenu from "../../components/games/emoji-match/MainMenu"
+import MainGame from "../../components/games/emoji-match/Game"
 
 let myCanvas = ref(null)
 let canvasBox = ref(null)
@@ -46,8 +46,8 @@ onMounted(() => {
 
       parent: myCanvas.value,
       autoCenter: Phaser.Scale.BOTH, // 自动居中
-      width: 1024,
-      height: 768,
+      width: window.innerWidth,
+      height: window.innerHeight,
       //   min: {
       //     width: 800,
       //     height: 600,
