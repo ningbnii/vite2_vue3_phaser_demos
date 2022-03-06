@@ -6,18 +6,18 @@ cont
   </div>
 </template>
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue'
-import * as Phaser from 'Phaser'
+import { ref, onMounted, onUnmounted, watch } from "vue"
+import * as Phaser from "Phaser"
 
-import Boot from '../../components/games/emoji-match/Boot'
-import Preloader from '../../components/games/emoji-match/Preloader'
-import MainMenu from '../../components/games/emoji-match/MainMenu'
-import MainGame from '../../components/games/emoji-match/Game'
+import Boot from "../../components/games/emoji-match/Boot"
+import Preloader from "../../components/games/emoji-match/Preloader"
+import MainMenu from "../../components/games/emoji-match/MainMenu"
+import MainGame from "../../components/games/emoji-match/Game"
 
 let myCanvas = ref(null)
 let canvasBox = ref(null)
 let game
-let text = ref('')
+let text = ref("")
 
 onMounted(() => {
   // This is revert of https://github.com/photonstorm/phaser/commit/7cbf3840af296c2f1f510be15b39a2519f7a72cf
@@ -46,8 +46,8 @@ onMounted(() => {
 
       parent: myCanvas.value,
       autoCenter: Phaser.Scale.BOTH, // 自动居中
-      width: 800,
-      height: 600,
+      width: window.innerWidth,
+      height: window.innerHeight,
       //   min: {
       //     width: 800,
       //     height: 600,
@@ -60,16 +60,16 @@ onMounted(() => {
     // 渲染之前清除
     // clearBeforeRender: false,
     // 显示到console中
-    title: 'shock and awesome',
-    url: 'http://wxbuluo.com',
-    version: '1.2b',
+    title: "shock and awesome",
+    url: "http://wxbuluo.com",
+    version: "1.2b",
     // banner: {
     //   text: "#ffffff",
     //   background: ["#fff200", "#38f0e8", "#00bff3", "#ec008c"],
     //   hidePhaser: true,
     // },
     banner: false,
-    backgroundColor: '#2d2d2d',
+    backgroundColor: "#2d2d2d",
     // transparent: true, // 透明，backgroundColor失效
     scene: [Boot, Preloader, MainMenu, MainGame], // 初始化完成后，默认加载第一个scene
     pixelArt: true, //将 antialias 设置为 false 并将 roundPixels 设置为 true。 这是像素艺术游戏的最佳设置
@@ -87,7 +87,7 @@ onMounted(() => {
       //     y: 0.3,
       //   },
       // },
-      default: 'arcade',
+      default: "arcade",
       arcade: {
         debug: false,
       },
@@ -98,7 +98,7 @@ onMounted(() => {
     },
     disableContextMenu: true, // 禁用鼠标右键菜单
     loader: {
-      crossOrigin: 'anonymous', // 避免图片跨域
+      crossOrigin: "anonymous", // 避免图片跨域
     },
   }
 

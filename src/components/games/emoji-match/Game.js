@@ -1,6 +1,6 @@
 export default class MainGame extends Phaser.Scene {
   constructor() {
-    super('MainGame')
+    super("MainGame")
 
     this.emojis
 
@@ -27,10 +27,15 @@ export default class MainGame extends Phaser.Scene {
 
     // 时间文字
     this.timerText
+    this.scaleX
+    this.scaleY
   }
 
   create() {
-    this.add.image(400, 300, 'background')
+    this.scaleX = this.game.config.width / 800
+    this.scaleY = this.game.config.height / 600
+
+    this.add.image(0, 0, "background").setOrigin(0, 0).setScale(this.scaleX, this.scaleY)
 
     // 创建2个圆圈
     this.circle1 = this.add.circle(0, 0, 42).setStrokeStyle(3, 0xf8960e)
@@ -44,7 +49,7 @@ export default class MainGame extends Phaser.Scene {
 
     // 创建4x4的表情阵列
     this.emojis = this.add.group({
-      key: 'emojis',
+      key: "emojis",
       frameQuantity: 1,
       repeat: 15,
       gridAlign: {
@@ -52,20 +57,21 @@ export default class MainGame extends Phaser.Scene {
         height: 4,
         cellWidth: 90,
         cellHeight: 90,
-        x: 280,
-        y: 200,
+        x: (this.game.config.width - 248) / 2,
+        y: (this.game.config.height - 270) / 2,
       },
     })
+    // this.emojis.setOrigin(0, 0)
 
     // 设置文字样式
     const fontStyle = {
-      fontFamily: 'Arial',
-      fontSize: 48,
-      color: '#ffffff',
-      fontStyle: 'bold',
+      fontFamily: "Arial",
+      fontSize: 30,
+      color: "#ffffff",
+      fontStyle: "bold",
       padding: 16,
       shadow: {
-        color: '#000000',
+        color: "#000000",
         fill: true,
         offsetX: 2,
         offsetY: 2,
@@ -73,8 +79,8 @@ export default class MainGame extends Phaser.Scene {
       },
     }
 
-    this.timerText = this.add.text(20, 20, '30:00', fontStyle)
-    this.scoreText = this.add.text(530, 20, 'Found: 0', fontStyle)
+    this.timerText = this.add.text(20, 20, "30:00", fontStyle)
+    this.scoreText = this.add.text(450 * this.scaleX, 20, "Found: 0", fontStyle)
 
     // 表情
     let children = this.emojis.getChildren()
@@ -85,21 +91,27 @@ export default class MainGame extends Phaser.Scene {
     })
 
     // 选择表情
-    this.input.on('gameobjectdown', this.selectEmoji, this)
-    this.input.once('pointerdown', this.start, this)
+    this.input.on("gameobjectdown", this.selectEmoji, this)
+    // 游戏开始
+    this.input.once("pointerdown", this.start, this)
 
-    this.highscore = this.registry.get('highscore')
+    // 最高分
+    this.highscore = this.registry.get("highscore")
 
+    // 初始化表情组
     this.arrangeGrid()
   }
 
   start() {
+    // 分数重置为0
     this.score = 0
+    // 状态设置为，未匹配
     this.matched = false
 
+    // 计时器，30s后，游戏结束
     this.timer = this.time.addEvent({ delay: 30000, callback: this.gameOver, callbackScope: this })
 
-    this.sound.play('countdown', { delay: 27 })
+    this.sound.play("countdown", { delay: 27 })
   }
 
   selectEmoji(pointer, emoji) {
@@ -134,15 +146,15 @@ export default class MainGame extends Phaser.Scene {
         this.tweens.add({
           targets: [this.child1, this.child2],
           scale: 1.4,
-          angle: '-=30',
+          angle: "-=30",
           yoyo: true,
-          ease: 'sine.inout',
+          ease: "sine.inout",
           duration: 200,
           completeDelay: 200,
           onComplete: () => this.newRound(),
         })
 
-        this.sound.play('match')
+        this.sound.play("match")
       } else {
         this.circle1.setPosition(emoji.x, emoji.y)
         this.circle1.setVisible(true)
@@ -163,7 +175,7 @@ export default class MainGame extends Phaser.Scene {
     this.score++
 
     // 设置文本
-    this.scoreText.setText('Found: ' + this.score)
+    this.scoreText.setText("Found: " + this.score)
 
     // 圆圈1设置成没选中的颜色
     this.circle1.setStrokeStyle(3, 0xf8960e)
@@ -177,9 +189,9 @@ export default class MainGame extends Phaser.Scene {
     this.tweens.add({
       targets: this.emojis.getChildren(),
       scale: 0,
-      ease: 'power2',
+      ease: "power2",
       duration: 600,
-      delay: this.tweens.stagger(100, { grid: [4, 4], from: 'center' }),
+      delay: this.tweens.stagger(100, { grid: [4, 4], from: "center" }),
       onComplete: () => this.arrangeGrid(),
     })
   }
@@ -199,7 +211,7 @@ export default class MainGame extends Phaser.Scene {
       // 从给定的数组中删除一个随机对象并返回它
       let frame = Phaser.Utils.Array.RemoveRandomElement(frames)
 
-      children[i].setFrame('smile' + frame)
+      children[i].setFrame("smile" + frame)
     }
 
     //  Finally, pick two random children and make them a pair:
@@ -214,7 +226,7 @@ export default class MainGame extends Phaser.Scene {
     //  Set the frame to match
     this.child2.setFrame(this.child1.frame.name)
 
-    console.log('Pair: ', index1, index2)
+    console.log("Pair: ", index1, index2)
 
     //  Clear the currently selected emojis (if any)
     this.selectedEmoji = null
@@ -223,57 +235,63 @@ export default class MainGame extends Phaser.Scene {
     this.tweens.add({
       targets: children,
       scale: { start: 0, from: 0, to: 1 },
-      ease: 'bounce.out',
+      ease: "bounce.out",
       duration: 600,
-      delay: this.tweens.stagger(100, { grid: [4, 4], from: 'center' }),
+      delay: this.tweens.stagger(100, { grid: [4, 4], from: "center" }),
     })
   }
 
   update() {
     if (this.timer) {
       if (this.timer.getProgress() === 1) {
-        this.timerText.setText('00:00')
+        this.timerText.setText("00:00")
       } else {
         const remaining = (30 - this.timer.getElapsedSeconds()).toPrecision(4)
-        const pos = remaining.indexOf('.')
+        const pos = remaining.indexOf(".")
 
         let seconds = remaining.substring(0, pos)
         let ms = remaining.substr(pos + 1, 2)
 
-        seconds = Phaser.Utils.String.Pad(seconds, 2, '0', 1)
+        seconds = Phaser.Utils.String.Pad(seconds, 2, "0", 1)
 
-        this.timerText.setText(seconds + ':' + ms)
+        this.timerText.setText(seconds + ":" + ms)
       }
     }
   }
 
+  // 游戏结束
   gameOver() {
     //  Show them where the match actually was
+    // 两个圆圈设置到匹配的表情上，显示
     this.circle1.setStrokeStyle(4, 0xfc29a6).setPosition(this.child1.x, this.child1.y).setVisible(true)
     this.circle2.setStrokeStyle(4, 0xfc29a6).setPosition(this.child2.x, this.child2.y).setVisible(true)
 
-    this.input.off('gameobjectdown', this.selectEmoji, this)
+    // 取消监听
+    this.input.off("gameobjectdown", this.selectEmoji, this)
 
     console.log(this.score, this.highscore)
 
+    // 如果超过了最高分，刷新纪录，设置最高分为当前分数
     if (this.score > this.highscore) {
-      console.log('high set')
+      console.log("high set")
 
-      this.registry.set('highscore', this.score)
+      this.registry.set("highscore", this.score)
     }
 
+    // 匹配的连个表情，动画
     this.tweens.add({
       targets: [this.circle1, this.circle2],
       alpha: 0,
       yoyo: true,
-      repeat: 2,
-      duration: 250,
-      ease: 'sine.inout',
+      repeat: 2, // 重复2次
+      duration: 250, // 250ms
+      ease: "sine.inout",
       onComplete: () => {
+        // 动画结束，一点击，重新开MainMenu
         this.input.once(
-          'pointerdown',
+          "pointerdown",
           () => {
-            this.scene.start('MainMenu')
+            this.scene.start("MainMenu")
           },
           this
         )
