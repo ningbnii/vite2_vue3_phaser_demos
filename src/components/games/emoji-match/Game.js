@@ -57,7 +57,7 @@ export default class MainGame extends Phaser.Scene {
         height: 4,
         cellWidth: 90,
         cellHeight: 90,
-        x: (this.game.config.width - 248) / 2,
+        x: (this.game.config.width - 248) / 2, // (屏幕宽度-(4-1)*90-90/4)
         y: (this.game.config.height - 270) / 2,
       },
     })
