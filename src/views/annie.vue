@@ -8,6 +8,7 @@ cont
 <script setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import * as Phaser from 'Phaser'
+import AlloyFinger from 'alloyfinger'
 
 let myCanvas = ref(null)
 let canvasBox = ref(null)
@@ -95,13 +96,31 @@ onMounted(() => {
 
   game = new Phaser.Game(config)
 
+  var Trig = {
+    distanceBetween2Points: function (point1, point2) {
+      var dx = point2.x - point1.x
+      var dy = point2.y - point1.y
+      return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2))
+    },
+
+    angleBetween2Points: function (point1, point2) {
+      var dx = point2.x - point1.x
+      var dy = point2.y - point1.y
+      return Math.atan2(dx, dy)
+    },
+  }
+
   function create() {
     let shape = new annie.Shape()
     shape.beginFill('#ff0000')
     shape.drawCircle(0, 0, 30)
     shape.endFill()
 
-    texture = this.textures.createCanvas('gradient', this.cameras.main.width, this.cameras.main.height)
+    texture = this.textures.createCanvas(
+      'gradient',
+      this.cameras.main.width,
+      this.cameras.main.height
+    )
 
     //  We can access the underlying Canvas context like this:
     // var grd = texture.context.createLinearGradient(0, 0, 0, 256)
@@ -111,7 +130,12 @@ onMounted(() => {
     let ctx = texture.context
 
     ctx.fillStyle = 'white'
-    ctx.fillRect(0, (this.cameras.main.height - this.cameras.main.width) / 2, this.cameras.main.width, this.cameras.main.width)
+    ctx.fillRect(
+      0,
+      (this.cameras.main.height - this.cameras.main.width) / 2,
+      this.cameras.main.width,
+      this.cameras.main.width
+    )
     // ctx.stroke()
 
     //  Call this if running under WebGL, or you'll see nothing change
@@ -121,14 +145,65 @@ onMounted(() => {
 
     this.input.addPointer(3)
 
-    let temp1 = {}
-    let temp2 = {}
-    this.input.on('pointerdown', (pointer, gameObject) => {
-      console.log(this.input.pointer1.worldX)
-      console.log(this.input.pointer1.worldY)
-      if (this.input.pointer1.isDown && this.input.pointer2.isDown) {
-      }
+    new AlloyFinger(texture, {
+      rotate: function (evt) {
+        this.cameras.main.rotation += evt.angle
+      },
     })
+
+    // let temp1 = {}
+    // let temp2 = {}
+    // this.input.on('pointerdown', (pointer, gameObject) => {
+    //   if (this.input.pointer1.isDown && this.input.pointer2.isDown) {
+    //     temp1 = {
+    //       x: this.input.pointer1.worldX,
+    //       y: this.input.pointer1.worldY,
+    //     }
+    //     temp2 = {
+    //       x: this.input.pointer2.worldX,
+    //       y: this.input.pointer2.worldY,
+    //     }
+    //   }
+    // })
+
+    // this.input.on('pointermove', () => {
+    //   let newPoint1 = {
+    //     x: this.input.pointer1.worldX,
+    //     y: this.input.pointer1.worldY,
+    //   }
+    //   let newPoint2 = {
+    //     x: this.input.pointer2.worldX,
+    //     y: this.input.pointer2.worldY,
+    //   }
+    //   let res1 = (newPoint1.x - temp1.x) * (newPoint2.x - temp2.x)
+    //   let res2 = (newPoint1.y - temp1.y) * (newPoint2.y - temp2.y)
+
+    //   let angle1 = Trig.angleBetween2Points(temp1, temp2)
+    //   let angle2 = Trig.angleBetween2Points(newPoint1, newPoint2)
+
+    //   let angle =
+    //     (angle2.toFixed(2) * 180) / Math.PI -
+    //     (angle1.toFixed(2) * 180) / Math.PI
+
+    //   if (res1 < 1000 || res2 < 1000) {
+    //     if (res1 > 0 || res2 > 0) {
+    //       // 移动
+    //       let offsetX = newPoint1.x - temp1.x
+    //       let offsetY = newPoint1.y - temp1.y
+    //       this.cameras.main.x += offsetX
+    //       this.cameras.main.y += offsetY
+    //     }
+
+    //     if (res1 <= 0 || res2 <= 0) {
+    //       this.cameras.main.zoom += 0.1
+    //     }
+    //   }
+    // })
+
+    // this.input.on('pointerup', () => {
+    //   temp1 = {}
+    //   temp2 = {}
+    // })
   }
 
   function update() {}

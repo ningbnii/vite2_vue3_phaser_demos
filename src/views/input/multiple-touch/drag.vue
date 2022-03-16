@@ -8,7 +8,7 @@
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import * as Phaser from 'Phaser'
 
-import { SceneA } from '../../components/game-objects/render-texture'
+import { SceneA } from '../../../components/input/multiple-touch/drag'
 
 let myCanvas = ref(null)
 let canvasBox = ref(null)
@@ -45,16 +45,8 @@ onMounted(() => {
 
       parent: myCanvas.value,
       autoCenter: Phaser.Scale.BOTH, // 自动居中
-      width: 800,
-      height: 600,
-      min: {
-        width: 800,
-        height: 600,
-      },
-      max: {
-        width: 1600,
-        height: 1200,
-      },
+      width: window.innerWidth,
+      height: window.innerHeight,
     },
     // 渲染之前清除
     // clearBeforeRender: false,

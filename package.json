@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "alloyfinger": "^0.1.16",
     "axios": "^0.24.0",
     "axios-retry": "^3.2.4",
     "dat.gui": "^0.7.7",
@@ -16,6 +17,7 @@
     "phaser": "^3.55.2",
     "qs": "^6.10.3",
     "vant": "3",
+    "vconsole": "^3.12.1",
     "vue": "^3.2.25",
     "vue-router": "^4.0.12"
   },
