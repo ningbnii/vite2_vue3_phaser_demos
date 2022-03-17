@@ -8,7 +8,6 @@ cont
 <script setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import * as Phaser from 'Phaser'
-import AlloyFinger from 'alloyfinger'
 
 let myCanvas = ref(null)
 let canvasBox = ref(null)
@@ -86,7 +85,7 @@ onMounted(() => {
     },
     input: {
       // mouse: false, // 移动端项目一般关掉mouse，不然会出点透bug
-      activePointers: 1, // 多指触摸限制
+      // activePointers: 1, // 多指触摸限制
     },
     disableContextMenu: true, // 禁用鼠标右键菜单
     loader: {
@@ -111,16 +110,7 @@ onMounted(() => {
   }
 
   function create() {
-    let shape = new annie.Shape()
-    shape.beginFill('#ff0000')
-    shape.drawCircle(0, 0, 30)
-    shape.endFill()
-
-    texture = this.textures.createCanvas(
-      'gradient',
-      this.cameras.main.width,
-      this.cameras.main.height
-    )
+    texture = this.textures.createCanvas('gradient', this.cameras.main.width, this.cameras.main.height)
 
     //  We can access the underlying Canvas context like this:
     // var grd = texture.context.createLinearGradient(0, 0, 0, 256)
@@ -130,80 +120,70 @@ onMounted(() => {
     let ctx = texture.context
 
     ctx.fillStyle = 'white'
-    ctx.fillRect(
-      0,
-      (this.cameras.main.height - this.cameras.main.width) / 2,
-      this.cameras.main.width,
-      this.cameras.main.width
-    )
+    ctx.fillRect(0, (this.cameras.main.height - this.cameras.main.width) / 2, this.cameras.main.width, this.cameras.main.width)
     // ctx.stroke()
 
     //  Call this if running under WebGL, or you'll see nothing change
     texture.refresh()
 
-    this.add.image(0, 0, 'gradient').setOrigin(0)
+    let img = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'gradient').setInteractive({ draggable: true })
 
-    this.input.addPointer(3)
+    this.input.addPointer(2)
+    let temp1 = {}
+    let temp2 = {}
 
-    new AlloyFinger(texture, {
-      rotate: function (evt) {
-        this.cameras.main.rotation += evt.angle
-      },
+    img.on('drag', (pointer, dragX, dragY) => {
+      if (this.input.pointer1.isDown && this.input.pointer2.isDown) {
+        img.x = dragX
+        img.y = dragY
+      }
     })
 
-    // let temp1 = {}
-    // let temp2 = {}
-    // this.input.on('pointerdown', (pointer, gameObject) => {
-    //   if (this.input.pointer1.isDown && this.input.pointer2.isDown) {
-    //     temp1 = {
-    //       x: this.input.pointer1.worldX,
-    //       y: this.input.pointer1.worldY,
-    //     }
-    //     temp2 = {
-    //       x: this.input.pointer2.worldX,
-    //       y: this.input.pointer2.worldY,
-    //     }
-    //   }
-    // })
+    img.on('pointerdown', (pointer, localX, localY, event) => {
+      if (this.input.pointer1.isDown && this.input.pointer2.isDown) {
+        temp1 = {
+          x: this.input.pointer1.worldX,
+          y: this.input.pointer1.worldY,
+        }
+        temp2 = {
+          x: this.input.pointer2.worldX,
+          y: this.input.pointer2.worldY,
+        }
+      }
+    })
 
-    // this.input.on('pointermove', () => {
-    //   let newPoint1 = {
-    //     x: this.input.pointer1.worldX,
-    //     y: this.input.pointer1.worldY,
-    //   }
-    //   let newPoint2 = {
-    //     x: this.input.pointer2.worldX,
-    //     y: this.input.pointer2.worldY,
-    //   }
-    //   let res1 = (newPoint1.x - temp1.x) * (newPoint2.x - temp2.x)
-    //   let res2 = (newPoint1.y - temp1.y) * (newPoint2.y - temp2.y)
+    this.input.on('pointermove', (pointer, localX, localY, event) => {
+      if (this.input.pointer1.isDown && this.input.pointer2.isDown) {
+        let newPoint1 = {
+          x: this.input.pointer1.worldX,
+          y: this.input.pointer1.worldY,
+        }
+        let newPoint2 = {
+          x: this.input.pointer2.worldX,
+          y: this.input.pointer2.worldY,
+        }
 
-    //   let angle1 = Trig.angleBetween2Points(temp1, temp2)
-    //   let angle2 = Trig.angleBetween2Points(newPoint1, newPoint2)
+        let preLen = Phaser.Math.Distance.Between(temp1.x, temp1.y, temp2.x, temp2.y)
+        let newLen = Phaser.Math.Distance.Between(newPoint1.x, newPoint1.y, newPoint2.x, newPoint2.y)
 
-    //   let angle =
-    //     (angle2.toFixed(2) * 180) / Math.PI -
-    //     (angle1.toFixed(2) * 180) / Math.PI
+        img.scale *= newLen / preLen
+        let rad1 = Phaser.Math.Angle.BetweenPoints(temp1, temp2)
+        let deg1 = Phaser.Math.RadToDeg(rad1)
+        let rad2 = Phaser.Math.Angle.BetweenPoints(newPoint1, newPoint2)
+        let deg2 = Phaser.Math.RadToDeg(rad2)
+        let deg = Phaser.Math.Angle.ShortestBetween(deg1, deg2)
+        let angle = Phaser.Math.DegToRad(deg)
+        img.rotation += angle
 
-    //   if (res1 < 1000 || res2 < 1000) {
-    //     if (res1 > 0 || res2 > 0) {
-    //       // 移动
-    //       let offsetX = newPoint1.x - temp1.x
-    //       let offsetY = newPoint1.y - temp1.y
-    //       this.cameras.main.x += offsetX
-    //       this.cameras.main.y += offsetY
-    //     }
+        temp1 = newPoint1
+        temp2 = newPoint2
+      }
+    })
 
-    //     if (res1 <= 0 || res2 <= 0) {
-    //       this.cameras.main.zoom += 0.1
-    //     }
-    //   }
-    // })
-
-    // this.input.on('pointerup', () => {
-    //   temp1 = {}
-    //   temp2 = {}
-    // })
+    img.on('pointerup', () => {
+      temp1 = {}
+      temp2 = {}
+    })
   }
 
   function update() {}
