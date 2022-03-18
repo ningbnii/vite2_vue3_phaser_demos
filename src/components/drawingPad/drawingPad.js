@@ -4,6 +4,10 @@ class DrawingPad extends Phaser.Scene {
   }
 
   create() {
+    let graphics = this.add.graphics()
+    graphics.fillStyle(0x0000aa)
+    graphics.fillRect(0, 0, this.cameras.main.width, this.cameras.main.height)
+
     let texture = this.textures.createCanvas('gradient', this.cameras.main.width, this.cameras.main.height)
 
     //  We can access the underlying Canvas context like this:
@@ -24,7 +28,6 @@ class DrawingPad extends Phaser.Scene {
     texture.refresh()
 
     let img = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'gradient').setInteractive({ draggable: true })
-
     this.input.addPointer(1)
     let temp1 = {}
     let temp2 = {}
@@ -48,7 +51,6 @@ class DrawingPad extends Phaser.Scene {
         }
       } else {
         ctx.beginPath()
-
         ctx.moveTo(pointer.x, pointer.y)
       }
     })
@@ -68,6 +70,7 @@ class DrawingPad extends Phaser.Scene {
         let newLen = Phaser.Math.Distance.Between(newPoint1.x, newPoint1.y, newPoint2.x, newPoint2.y)
 
         img.scale *= newLen / preLen
+
         let rad1 = Phaser.Math.Angle.BetweenPoints(temp1, temp2)
         let deg1 = Phaser.Math.RadToDeg(rad1)
         let rad2 = Phaser.Math.Angle.BetweenPoints(newPoint1, newPoint2)
