@@ -8,7 +8,11 @@ class DrawingPad extends Phaser.Scene {
     graphics.fillStyle(0x0000aa)
     graphics.fillRect(0, 0, this.cameras.main.width, this.cameras.main.height)
 
-    let texture = this.textures.createCanvas('gradient', this.cameras.main.width, this.cameras.main.height)
+    let texture = this.textures.createCanvas(
+      'gradient',
+      this.cameras.main.width,
+      this.cameras.main.height
+    )
 
     //  We can access the underlying Canvas context like this:
     // var grd = texture.context.createLinearGradient(0, 0, 0, 256)
@@ -19,7 +23,7 @@ class DrawingPad extends Phaser.Scene {
 
     ctx.fillStyle = 'red'
     ctx.strokeStyle = 'white'
-    ctx.lineWidth = 6
+    ctx.lineWidth = 0.1
     // ctx.fillRect(0, (this.cameras.main.height - this.cameras.main.width) / 2, this.cameras.main.width, this.cameras.main.width)
     ctx.fillRect(0, 0, this.cameras.main.width, this.cameras.main.height)
     // ctx.stroke()
@@ -27,7 +31,13 @@ class DrawingPad extends Phaser.Scene {
     //  Call this if running under WebGL, or you'll see nothing change
     texture.refresh()
 
-    let img = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'gradient').setInteractive({ draggable: true })
+    let img = this.add
+      .image(
+        this.cameras.main.width / 2,
+        this.cameras.main.height / 2,
+        'gradient'
+      )
+      .setInteractive({ draggable: true })
     this.input.addPointer(1)
     let temp1 = {}
     let temp2 = {}
@@ -51,7 +61,13 @@ class DrawingPad extends Phaser.Scene {
         }
       } else {
         ctx.beginPath()
-        ctx.moveTo(pointer.x, pointer.y)
+        // 缩放后的坐标
+
+        ctx.moveTo(
+          this.input.pointer1.worldX + 0.5,
+          this.input.pointer1.worldY + 0.5
+        )
+        // ctx.moveTo(pointer.x + 0.5, pointer.y + 0.5)
       }
     })
 
@@ -66,8 +82,18 @@ class DrawingPad extends Phaser.Scene {
           y: this.input.pointer2.worldY,
         }
 
-        let preLen = Phaser.Math.Distance.Between(temp1.x, temp1.y, temp2.x, temp2.y)
-        let newLen = Phaser.Math.Distance.Between(newPoint1.x, newPoint1.y, newPoint2.x, newPoint2.y)
+        let preLen = Phaser.Math.Distance.Between(
+          temp1.x,
+          temp1.y,
+          temp2.x,
+          temp2.y
+        )
+        let newLen = Phaser.Math.Distance.Between(
+          newPoint1.x,
+          newPoint1.y,
+          newPoint2.x,
+          newPoint2.y
+        )
 
         img.scale *= newLen / preLen
 
@@ -82,7 +108,9 @@ class DrawingPad extends Phaser.Scene {
         temp1 = newPoint1
         temp2 = newPoint2
       } else {
-        ctx.lineTo(pointer.x, pointer.y)
+        // lineTo
+        ctx.lineTo(pointer.worldX, pointer.worldY)
+        // ctx.lineTo(pointer.x + 0.5, pointer.y + 0.5)
         ctx.stroke()
       }
     })
