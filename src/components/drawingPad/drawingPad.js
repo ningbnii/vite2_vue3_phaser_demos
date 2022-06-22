@@ -61,13 +61,9 @@ class DrawingPad extends Phaser.Scene {
         }
       } else {
         ctx.beginPath()
-        // 缩放后的坐标
+        //
 
-        ctx.moveTo(
-          this.input.pointer1.worldX + 0.5,
-          this.input.pointer1.worldY + 0.5
-        )
-        // ctx.moveTo(pointer.x + 0.5, pointer.y + 0.5)
+        ctx.moveTo(pointer.x + 0.5, pointer.y + 0.5)
       }
     })
 
