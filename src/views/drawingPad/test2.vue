@@ -8,7 +8,7 @@ cont
 <script setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import * as Phaser from 'Phaser'
-import DrawingPad from '../components/drawingPad/drawingPad.js'
+import DrawingPad from '../../components/drawingPad/drawingPad2.js'
 
 let myCanvas = ref(null)
 let canvasBox = ref(null)

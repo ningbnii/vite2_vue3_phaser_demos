@@ -13,26 +13,39 @@ class Example extends Phaser.Scene {
   }
 
   create() {
+    // 设置相机的视口
     this.cameras.main.setBounds(0, 0, 1024 * 2, 1024 * 2)
+    // 添加4个图片拼接到一起
     this.add.image(0, 0, 'bg').setOrigin(0)
     this.add.image(1024, 0, 'bg').setOrigin(0)
     this.add.image(0, 1024, 'bg').setOrigin(0)
     this.add.image(1024, 1024, 'bg').setOrigin(0)
 
+    // 键盘对象
     this.cursors = this.input.keyboard.createCursorKeys()
-    // 添加键盘监听
+    // 添加键盘监听，wasd控制移动
     this.keys = this.input.keyboard.addKeys('W,A,S,D')
 
     // 中心点设置到相机窗口范围的中心
+    // 相机会定位到4张图片的交点处(1024,1024)
     this.cameras.main.centerToBounds()
 
-    this.text = this.add.text(32, 32).setScrollFactor(0).setFontSize(32).setColor('#ffffff')
+    this.text = this.add
+      .text(32, 32)
+      .setScrollFactor(0) // 不跟随相机变化位置
+      .setFontSize(32)
+      .setColor('#ffffff')
   }
 
   update() {
     const cam = this.cameras.main
 
-    this.text.setText(['ScrollX: ' + cam.scrollX, 'ScrollY: ' + cam.scrollY, 'MidX: ' + cam.midPoint.x, 'MidY: ' + cam.midPoint.y])
+    this.text.setText([
+      'ScrollX: ' + cam.scrollX,
+      'ScrollY: ' + cam.scrollY,
+      'MidX: ' + cam.midPoint.x,
+      'MidY: ' + cam.midPoint.y,
+    ])
 
     // this.input.keyboard.on('keydown-A',function(){})
     // 键盘按下事件 isDown
