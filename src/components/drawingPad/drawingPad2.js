@@ -49,17 +49,6 @@ class DrawingPad extends Phaser.Scene {
     let start1 = {}
     let start2 = {}
 
-    // this.input.on('dragonStart', (pointer, gameObject) => {
-
-    // }
-    this.input.on('drag', (pointer, gameObject, dragX, dragY) => {
-      console.log(pointer, gameObject, dragX, dragY)
-      if (this.input.pointer1.isDown && this.input.pointer2.isDown) {
-        // img.x = dragX
-        // img.y = dragY
-      }
-    })
-
     this.input.on('pointerdown', (pointer) => {
       if (this.input.pointer1.isDown && this.input.pointer2.isDown) {
         start1 = {
@@ -117,16 +106,16 @@ class DrawingPad extends Phaser.Scene {
         let deg = Phaser.Math.Angle.ShortestBetween(deg1, deg2)
         let angle = Phaser.Math.DegToRad(deg)
 
-        cam.rotation += angle
+        // cam.rotation += angle
 
-        if (res1 < 1000 || res2 < 1000) {
-          if (res1 > 0 || res2 > 0) {
-          }
-          if (res1 <= 0 || res2 <= 0) {
-            // s.test_mc.scaleY += evt.scale
-            // s.test_mc.scaleX += evt.scale
-          }
-        }
+        // if (res1 < 1000 || res2 < 1000) {
+        //   if (res1 > 0 || res2 > 0) {
+        //   }
+        //   if (res1 <= 0 || res2 <= 0) {
+        //     // s.test_mc.scaleY += evt.scale
+        //     // s.test_mc.scaleX += evt.scale
+        //   }
+        // }
 
         start1 = end1
         start2 = end2

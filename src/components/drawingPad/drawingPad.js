@@ -23,7 +23,7 @@ class DrawingPad extends Phaser.Scene {
 
     ctx.fillStyle = 'red'
     ctx.strokeStyle = 'white'
-    ctx.lineWidth = 0.1
+    ctx.lineWidth = 10
     // ctx.fillRect(0, (this.cameras.main.height - this.cameras.main.width) / 2, this.cameras.main.width, this.cameras.main.width)
     ctx.fillRect(0, 0, this.cameras.main.width, this.cameras.main.height)
     // ctx.stroke()
