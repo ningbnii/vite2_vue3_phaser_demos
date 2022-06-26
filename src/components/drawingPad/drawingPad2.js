@@ -4,16 +4,18 @@ class DrawingPad extends Phaser.Scene {
   }
 
   create() {
-    // this.cameras.main.setBounds(
-    //   0,
-    //   0,
-    //   this.cameras.main.width,
-    //   this.cameras.main.height
-    // )
+    this.cameras.main.setBounds(
+      -this.cameras.main.width,
+      -this.cameras.main.height,
+      this.cameras.main.width * 3,
+      this.cameras.main.height * 3
+    )
+
     const cam = this.cameras.main
-    let graphics = this.add.graphics()
-    graphics.fillStyle(0x0000aa)
-    graphics.fillRect(0, 0, this.cameras.main.width, this.cameras.main.height)
+
+    // let graphics = this.add.graphics()
+    // graphics.fillStyle(0x0000aa)
+    // graphics.fillRect(0, 0, this.cameras.main.width, this.cameras.main.height)
 
     let texture = this.textures.createCanvas(
       'gradient',
@@ -37,7 +39,6 @@ class DrawingPad extends Phaser.Scene {
 
     //  Call this if running under WebGL, or you'll see nothing change
     texture.refresh()
-
     let img = this.add
       .image(
         this.cameras.main.width / 2,
@@ -45,6 +46,7 @@ class DrawingPad extends Phaser.Scene {
         'gradient'
       )
       .setInteractive({ draggable: true })
+
     this.input.addPointer(1)
     let start1 = {}
     let start2 = {}
@@ -79,12 +81,18 @@ class DrawingPad extends Phaser.Scene {
 
         var offsetX = end1.x - start1.x
         var offsetY = end1.y - start1.y
-        if (offsetX < 10 && offsetX > -10) {
-          cam.offsetX += offsetX * 5
-        }
-        if (offsetY < 10 && offsetY > -10) {
-          cam.offsetY += offsetY * 5
-        }
+        // cam.scrollX = 1
+        // console.log(cam.scrollX)
+        cam.scrollX -= offsetX
+        cam.scrollY -= offsetY
+        // if (offsetX < 10 && offsetX > -10) {
+        //   console.log(offsetX, offsetY)
+        //   cam.scrollX += offsetX
+        // }
+        // if (offsetY < 10 && offsetY > -10) {
+        //   console.log(offsetX, offsetY)
+        //   cam.scrollY += offsetY
+        // }
 
         let preLen = Phaser.Math.Distance.Between(
           start1.x,
