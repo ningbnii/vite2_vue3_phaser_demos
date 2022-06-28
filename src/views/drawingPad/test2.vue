@@ -81,10 +81,10 @@ onMounted(() => {
         debug: false,
       },
     },
-    input: {
-      // mouse: false, // 移动端项目一般关掉mouse，不然会出点透bug
-      // activePointers: 1, // 多指触摸限制
-    },
+    // input: {
+    //   mouse: false, // 移动端项目一般关掉mouse，不然会出点透bug
+    //   activePointers: 2, // 多指触摸限制
+    // },
     disableContextMenu: true, // 禁用鼠标右键菜单
     loader: {
       crossOrigin: 'anonymous', // 避免图片跨域

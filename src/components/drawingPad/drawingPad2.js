@@ -4,14 +4,8 @@ class DrawingPad extends Phaser.Scene {
   }
 
   create() {
-    this.cameras.main.setBounds(
-      -this.cameras.main.width,
-      -this.cameras.main.height,
-      this.cameras.main.width * 3,
-      this.cameras.main.height * 3
-    )
-
     const cam = this.cameras.main
+    // cam.setZoom(1)
 
     // let graphics = this.add.graphics()
     // graphics.fillStyle(0x0000aa)
@@ -45,14 +39,25 @@ class DrawingPad extends Phaser.Scene {
         this.cameras.main.height / 2,
         'gradient'
       )
-      .setInteractive({ draggable: true })
+      .setInteractive({ draggable: false })
 
-    this.input.addPointer(1)
+    // this.input.addPointer(1)
     let start1 = {}
     let start2 = {}
 
     this.input.on('pointerdown', (pointer) => {
+      var amount = this.input.manager.pointersTotal
+      console.log(amount)
+      console.log(this.input.manager.pointers)
       if (this.input.pointer1.isDown && this.input.pointer2.isDown) {
+        // start1 = {
+        //   x: parseFloat(this.input.pointer1.worldX.toFixed(2)),
+        //   y: parseFloat(this.input.pointer1.worldY.toFixed(2)),
+        // }
+        // start2 = {
+        //   x: parseFloat(this.input.pointer2.worldX.toFixed(2)),
+        //   y: parseFloat(this.input.pointer2.worldY.toFixed(2)),
+        // }
         start1 = {
           x: this.input.pointer1.worldX,
           y: this.input.pointer1.worldY,
@@ -70,6 +75,7 @@ class DrawingPad extends Phaser.Scene {
 
     this.input.on('pointermove', (pointer, localX, localY, event) => {
       if (this.input.pointer1.isDown && this.input.pointer2.isDown) {
+        // console.log(this.input.pointer1)
         let end1 = {
           x: this.input.pointer1.worldX,
           y: this.input.pointer1.worldY,
@@ -78,13 +84,22 @@ class DrawingPad extends Phaser.Scene {
           x: this.input.pointer2.worldX,
           y: this.input.pointer2.worldY,
         }
+        console.log(end1, end2)
 
-        var offsetX = end1.x - start1.x
-        var offsetY = end1.y - start1.y
+        let offsetX = end1.x - start1.x
+        let offsetY = end1.y - start1.y
+
+        // console.log(start1)
+        // console.log(end1)
+        let res1 = (end1.x - start1.x) * (end2.x - start2.x)
+        let res2 = (end1.y - start1.y) * (end2.y - start2.y)
+        // console.log(res1, res2)
+
+        cam.scrollX -= (offsetX * 0.5) / cam.zoom
+        cam.scrollY -= (offsetY * 0.5) / cam.zoom
         // cam.scrollX = 1
         // console.log(cam.scrollX)
-        cam.scrollX -= offsetX
-        cam.scrollY -= offsetY
+
         // if (offsetX < 10 && offsetX > -10) {
         //   console.log(offsetX, offsetY)
         //   cam.scrollX += offsetX
@@ -106,7 +121,8 @@ class DrawingPad extends Phaser.Scene {
           end2.x,
           end2.y
         )
-        // cam.scale *= newLen / preLen
+
+        // cam.zoom *= newLen / preLen
         let rad1 = Phaser.Math.Angle.BetweenPoints(start1, start2)
         let deg1 = Phaser.Math.RadToDeg(rad1)
         let rad2 = Phaser.Math.Angle.BetweenPoints(end1, end2)
@@ -114,7 +130,7 @@ class DrawingPad extends Phaser.Scene {
         let deg = Phaser.Math.Angle.ShortestBetween(deg1, deg2)
         let angle = Phaser.Math.DegToRad(deg)
 
-        // cam.rotation += angle
+        // cam.rotation += angle * 0.5
 
         // if (res1 < 1000 || res2 < 1000) {
         //   if (res1 > 0 || res2 > 0) {
