@@ -39,25 +39,17 @@ class DrawingPad extends Phaser.Scene {
         this.cameras.main.height / 2,
         'gradient'
       )
-      .setInteractive({ draggable: false })
+      .setInteractive()
 
-    // this.input.addPointer(1)
+    this.input.addPointer(1)
     let start1 = {}
     let start2 = {}
+    // 控制模式
+    let controlMode = false
 
     this.input.on('pointerdown', (pointer) => {
-      var amount = this.input.manager.pointersTotal
-      console.log(amount)
-      console.log(this.input.manager.pointers)
       if (this.input.pointer1.isDown && this.input.pointer2.isDown) {
-        // start1 = {
-        //   x: parseFloat(this.input.pointer1.worldX.toFixed(2)),
-        //   y: parseFloat(this.input.pointer1.worldY.toFixed(2)),
-        // }
-        // start2 = {
-        //   x: parseFloat(this.input.pointer2.worldX.toFixed(2)),
-        //   y: parseFloat(this.input.pointer2.worldY.toFixed(2)),
-        // }
+        controlMode = true
         start1 = {
           x: this.input.pointer1.worldX,
           y: this.input.pointer1.worldY,
@@ -67,9 +59,11 @@ class DrawingPad extends Phaser.Scene {
           y: this.input.pointer2.worldY,
         }
       } else {
-        ctx.beginPath()
-        let worldPoint = cam.getWorldPoint(pointer.x, pointer.y)
-        ctx.moveTo(worldPoint.x + 0.5, worldPoint.y + 0.5)
+        if (!controlMode) {
+          ctx.beginPath()
+          let worldPoint = cam.getWorldPoint(pointer.x, pointer.y)
+          ctx.moveTo(worldPoint.x + 0.5, worldPoint.y + 0.5)
+        }
       }
     })
 
@@ -93,71 +87,64 @@ class DrawingPad extends Phaser.Scene {
         // console.log(end1)
         let res1 = (end1.x - start1.x) * (end2.x - start2.x)
         let res2 = (end1.y - start1.y) * (end2.y - start2.y)
-        // console.log(res1, res2)
+        console.log(res1, res2)
+        cam.scrollX -= (offsetX * 0.1) / cam.zoom
+        cam.scrollY -= (offsetY * 0.1) / cam.zoom
 
-        cam.scrollX -= (offsetX * 0.5) / cam.zoom
-        cam.scrollY -= (offsetY * 0.5) / cam.zoom
-        // cam.scrollX = 1
-        // console.log(cam.scrollX)
+        if (Math.abs(res1) < 1000 || Math.abs(res2) < 1000) {
+          let preLen = Phaser.Math.Distance.Between(
+            start1.x,
+            start1.y,
+            start2.x,
+            start2.y
+          )
+          let newLen = Phaser.Math.Distance.Between(
+            end1.x,
+            end1.y,
+            end2.x,
+            end2.y
+          )
+          if (
+            cam.zoom + (newLen - preLen) / 1000 < 2 &&
+            cam.zoom + (newLen - preLen) / 1000 > 0.5
+          ) {
+            cam.zoom += (newLen - preLen) / 1000
+          }
 
-        // if (offsetX < 10 && offsetX > -10) {
-        //   console.log(offsetX, offsetY)
-        //   cam.scrollX += offsetX
-        // }
-        // if (offsetY < 10 && offsetY > -10) {
-        //   console.log(offsetX, offsetY)
-        //   cam.scrollY += offsetY
-        // }
+          let rad1 = Phaser.Math.Angle.BetweenPoints(start1, start2)
+          let deg1 = Phaser.Math.RadToDeg(rad1)
+          let rad2 = Phaser.Math.Angle.BetweenPoints(end1, end2)
+          let deg2 = Phaser.Math.RadToDeg(rad2)
+          let deg = Phaser.Math.Angle.ShortestBetween(deg1, deg2)
+          let angle = Phaser.Math.DegToRad(deg)
 
-        let preLen = Phaser.Math.Distance.Between(
-          start1.x,
-          start1.y,
-          start2.x,
-          start2.y
-        )
-        let newLen = Phaser.Math.Distance.Between(
-          end1.x,
-          end1.y,
-          end2.x,
-          end2.y
-        )
-
-        // cam.zoom *= newLen / preLen
-        let rad1 = Phaser.Math.Angle.BetweenPoints(start1, start2)
-        let deg1 = Phaser.Math.RadToDeg(rad1)
-        let rad2 = Phaser.Math.Angle.BetweenPoints(end1, end2)
-        let deg2 = Phaser.Math.RadToDeg(rad2)
-        let deg = Phaser.Math.Angle.ShortestBetween(deg1, deg2)
-        let angle = Phaser.Math.DegToRad(deg)
-
-        // cam.rotation += angle * 0.5
-
-        // if (res1 < 1000 || res2 < 1000) {
-        //   if (res1 > 0 || res2 > 0) {
-        //   }
-        //   if (res1 <= 0 || res2 <= 0) {
-        //     // s.test_mc.scaleY += evt.scale
-        //     // s.test_mc.scaleX += evt.scale
-        //   }
-        // }
-
-        start1 = end1
-        start2 = end2
+          cam.rotation += angle * 0.1
+        }
       } else {
-        let worldPoint = cam.getWorldPoint(pointer.x, pointer.y)
-        // lineTo
-        ctx.lineTo(worldPoint.x, worldPoint.y)
-        // ctx.lineTo(pointer.x + 0.5, pointer.y + 0.5)
-        ctx.stroke()
+        if (!controlMode) {
+          let worldPoint = cam.getWorldPoint(pointer.x, pointer.y)
+          // lineTo
+          ctx.lineTo(worldPoint.x + 0.5, worldPoint.y + 0.5)
+          // ctx.lineTo(pointer.x + 0.5, pointer.y + 0.5)
+          ctx.stroke()
+        }
       }
     })
 
     this.input.on('pointerup', () => {
-      if (!this.input.pointer1.isDown && !this.input.pointer2.isDown) {
+      // 两个触点抬起来
+      if (
+        controlMode &&
+        !this.input.pointer1.isDown &&
+        !this.input.pointer2.isDown
+      ) {
+        controlMode = false
         start1 = {}
         start2 = {}
       } else {
-        ctx.closePath()
+        if (!controlMode) {
+          ctx.closePath()
+        }
       }
     })
   }
