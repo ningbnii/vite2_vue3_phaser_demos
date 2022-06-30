@@ -78,18 +78,15 @@ class DrawingPad extends Phaser.Scene {
           x: this.input.pointer2.worldX,
           y: this.input.pointer2.worldY,
         }
-        console.log(end1, end2)
 
         let offsetX = end1.x - start1.x
         let offsetY = end1.y - start1.y
 
-        // console.log(start1)
-        // console.log(end1)
         let res1 = (end1.x - start1.x) * (end2.x - start2.x)
         let res2 = (end1.y - start1.y) * (end2.y - start2.y)
-        console.log(res1, res2)
-        cam.scrollX -= (offsetX * 0.1) / cam.zoom
-        cam.scrollY -= (offsetY * 0.1) / cam.zoom
+
+        cam.scrollX -= (offsetX * 0.2) / cam.zoom
+        cam.scrollY -= (offsetY * 0.2) / cam.zoom
 
         if (Math.abs(res1) < 1000 || Math.abs(res2) < 1000) {
           let preLen = Phaser.Math.Distance.Between(
@@ -105,7 +102,7 @@ class DrawingPad extends Phaser.Scene {
             end2.y
           )
           if (
-            cam.zoom + (newLen - preLen) / 1000 < 2 &&
+            cam.zoom + (newLen - preLen) / 1000 < 5 &&
             cam.zoom + (newLen - preLen) / 1000 > 0.5
           ) {
             cam.zoom += (newLen - preLen) / 1000
@@ -124,8 +121,8 @@ class DrawingPad extends Phaser.Scene {
         if (!controlMode) {
           let worldPoint = cam.getWorldPoint(pointer.x, pointer.y)
           // lineTo
-          ctx.lineTo(worldPoint.x + 0.5, worldPoint.y + 0.5)
-          // ctx.lineTo(pointer.x + 0.5, pointer.y + 0.5)
+          // ctx.lineTo(worldPoint.x + 0.5, worldPoint.y + 0.5)
+          ctx.lineTo(worldPoint.x, worldPoint.y)
           ctx.stroke()
         }
       }
