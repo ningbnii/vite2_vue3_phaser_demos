@@ -31,10 +31,10 @@ onMounted(() => {
   // overlayScene = new Overlay()
 
   let config = {
-    type: Phaser.CANVAS,
+    type: Phaser.AUTO,
     render: {
       antialias: true, // 抗锯齿
-      transparent: false, // 背景透明
+      transparent: true, // 背景透明
       // batchSize: 1024,
     },
     // canvasStyle: 'overflow:hidden;', // canvas的行内样式
@@ -45,6 +45,11 @@ onMounted(() => {
       autoCenter: Phaser.Scale.BOTH, // 自动居中
       width: window.innerWidth,
       height: window.innerHeight,
+      // max: {
+      //   // 指定适配后的最大尺寸，这里限制一下，在pc端会美观一点(不会出现尺寸特别大的情况)
+      //   width: 1080,
+      //   height: 1920,
+      // },
     },
     // 渲染之前清除
     // clearBeforeRender: false,

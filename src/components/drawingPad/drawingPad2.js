@@ -124,6 +124,7 @@ class DrawingPad extends Phaser.Scene {
           // ctx.lineTo(worldPoint.x + 0.5, worldPoint.y + 0.5)
           ctx.lineTo(worldPoint.x, worldPoint.y)
           ctx.stroke()
+          texture.refresh()
         }
       }
     })
