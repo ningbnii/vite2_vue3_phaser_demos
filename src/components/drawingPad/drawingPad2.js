@@ -54,6 +54,7 @@ class DrawingPad extends Phaser.Scene {
     let start2 = {}
     // 控制模式
     let controlMode = false
+    this.points = []
 
     this.input.on('pointerdown', (pointer) => {
       if (this.input.pointer1.isDown && this.input.pointer2.isDown) {
@@ -68,9 +69,10 @@ class DrawingPad extends Phaser.Scene {
         }
       } else {
         if (!controlMode) {
-          this.ctx.beginPath()
-
-          this.ctx.moveTo(pointer.worldX * scale, pointer.worldY * scale)
+          this.points.push({
+            x: pointer.worldX * scale,
+            y: pointer.worldY * scale,
+          })
         }
       }
     })
@@ -127,13 +129,12 @@ class DrawingPad extends Phaser.Scene {
         }
       } else {
         if (!controlMode) {
-          this.ctx.lineTo(pointer.worldX * scale, pointer.worldY * scale)
-          this.ctx.stroke()
+          this.draw(pointer.worldX * scale, pointer.worldY * scale)
         }
       }
     })
 
-    this.input.on('pointerup', () => {
+    this.input.on('pointerup', (pointer) => {
       // 两个触点抬起来
       if (
         controlMode &&
@@ -145,7 +146,9 @@ class DrawingPad extends Phaser.Scene {
         start2 = {}
       } else {
         if (!controlMode) {
+          this.draw(pointer.worldX * scale, pointer.worldY * scale)
           this.ctx.closePath()
+          this.points = []
         }
       }
     })
@@ -153,6 +156,44 @@ class DrawingPad extends Phaser.Scene {
 
   update() {
     this.texture.refresh()
+  }
+
+  draw(mouseX, mouseY) {
+    this.points.push({ x: mouseX, y: mouseY })
+    this.ctx.beginPath()
+    let x =
+        (this.points[this.points.length - 2].x +
+          this.points[this.points.length - 1].x) /
+        2,
+      y =
+        (this.points[this.points.length - 2].y +
+          this.points[this.points.length - 1].y) /
+        2
+    if (this.points.length == 2) {
+      this.ctx.moveTo(
+        this.points[this.points.length - 2].x,
+        this.points[this.points.length - 2].y
+      )
+      this.ctx.lineTo(x, y)
+    } else {
+      let lastX =
+          (this.points[this.points.length - 3].x +
+            this.points[this.points.length - 2].x) /
+          2,
+        lastY =
+          (this.points[this.points.length - 3].y +
+            this.points[this.points.length - 2].y) /
+          2
+      this.ctx.moveTo(lastX, lastY)
+      this.ctx.quadraticCurveTo(
+        this.points[this.points.length - 2].x,
+        this.points[this.points.length - 2].y,
+        x,
+        y
+      )
+    }
+    this.ctx.stroke()
+    this.points.slice(0, 1)
   }
 }
 
