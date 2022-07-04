@@ -5,16 +5,17 @@ class DrawingPad extends Phaser.Scene {
 
   create() {
     const cam = this.cameras.main
+
     // cam.setZoom(1)
 
     // let graphics = this.add.graphics()
     // graphics.fillStyle(0x0000aa)
     // graphics.fillRect(0, 0, this.cameras.main.width, this.cameras.main.height)
-
-    let texture = this.textures.createCanvas(
+    let scale = window.devicePixelRatio
+    this.texture = this.textures.createCanvas(
       'gradient',
-      this.cameras.main.width,
-      this.cameras.main.height
+      this.cameras.main.width * scale,
+      this.cameras.main.height * scale
     )
 
     //  We can access the underlying Canvas context like this:
@@ -22,24 +23,31 @@ class DrawingPad extends Phaser.Scene {
 
     // grd.addColorStop(0, '#8ED6FF')
     // grd.addColorStop(1, '#004CB3')
-    let ctx = texture.context
+    this.ctx = this.texture.getContext()
 
-    ctx.fillStyle = 'red'
-    ctx.strokeStyle = 'white'
-    ctx.lineWidth = 0.1
+    this.ctx.fillStyle = 'red'
+    this.ctx.strokeStyle = 'white'
+    this.ctx.lineWidth = 0.8 * scale
+    this.ctx.lineJoin = 'round'
+    this.ctx.lineCap = 'round'
+
     // ctx.fillRect(0, (this.cameras.main.height - this.cameras.main.width) / 2, this.cameras.main.width, this.cameras.main.width)
-    ctx.fillRect(0, 0, this.cameras.main.width, this.cameras.main.height)
+
+    this.ctx.fillRect(0, 0, this.texture.width, this.texture.height)
     // ctx.stroke()
 
     //  Call this if running under WebGL, or you'll see nothing change
-    texture.refresh()
+    this.texture.refresh()
     let img = this.add
       .image(
         this.cameras.main.width / 2,
         this.cameras.main.height / 2,
         'gradient'
       )
+      .setScale(1 / scale)
       .setInteractive()
+    // 设置相机的位置
+    // cam.y = (cam.height - cam.width) / 2
 
     this.input.addPointer(1)
     let start1 = {}
@@ -60,9 +68,9 @@ class DrawingPad extends Phaser.Scene {
         }
       } else {
         if (!controlMode) {
-          ctx.beginPath()
-          let worldPoint = cam.getWorldPoint(pointer.x, pointer.y)
-          ctx.moveTo(worldPoint.x + 0.5, worldPoint.y + 0.5)
+          this.ctx.beginPath()
+
+          this.ctx.moveTo(pointer.worldX * scale, pointer.worldY * scale)
         }
       }
     })
@@ -119,12 +127,8 @@ class DrawingPad extends Phaser.Scene {
         }
       } else {
         if (!controlMode) {
-          let worldPoint = cam.getWorldPoint(pointer.x, pointer.y)
-          // lineTo
-          // ctx.lineTo(worldPoint.x + 0.5, worldPoint.y + 0.5)
-          ctx.lineTo(worldPoint.x, worldPoint.y)
-          ctx.stroke()
-          texture.refresh()
+          this.ctx.lineTo(pointer.worldX * scale, pointer.worldY * scale)
+          this.ctx.stroke()
         }
       }
     })
@@ -141,10 +145,14 @@ class DrawingPad extends Phaser.Scene {
         start2 = {}
       } else {
         if (!controlMode) {
-          ctx.closePath()
+          this.ctx.closePath()
         }
       }
     })
+  }
+
+  update() {
+    this.texture.refresh()
   }
 }
 
