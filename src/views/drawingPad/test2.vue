@@ -8,6 +8,7 @@ cont
 <script setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import * as Phaser from 'Phaser'
+import CanvasPlugin from 'phaser3-rex-plugins/plugins/canvas-plugin.js'
 import DrawingPad from '../../components/drawingPad/drawingPad2.js'
 
 let myCanvas = ref(null)
@@ -93,6 +94,15 @@ onMounted(() => {
     disableContextMenu: true, // 禁用鼠标右键菜单
     loader: {
       crossOrigin: 'anonymous', // 避免图片跨域
+    },
+    plugins: {
+      global: [
+        {
+          key: 'rexCanvasPlugin',
+          plugin: CanvasPlugin,
+          start: true,
+        },
+      ],
     },
   }
 

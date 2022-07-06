@@ -14,6 +14,7 @@
     "less": "^4.1.2",
     "package": "^1.0.1",
     "phaser": "^3.55.2",
+    "phaser3-rex-plugins": "^1.1.71",
     "qs": "^6.10.3",
     "vant": "3",
     "vconsole": "^3.12.1",

@@ -11,41 +11,42 @@ class DrawingPad extends Phaser.Scene {
     // let graphics = this.add.graphics()
     // graphics.fillStyle(0x0000aa)
     // graphics.fillRect(0, 0, this.cameras.main.width, this.cameras.main.height)
-    let scale = window.devicePixelRatio
-    this.texture = this.textures.createCanvas(
-      'gradient',
-      this.cameras.main.width * scale,
-      this.cameras.main.height * scale
-    )
+    let scale = window.devicePixelRatio / 2
 
+    this.canvas = this.add
+      .rexCanvas(0, 0, cam.width * scale, cam.height * scale)
+      .setInteractive()
+      .setOrigin(0, 0)
+      .setScale(1 / scale)
+      .needRedraw()
     //  We can access the underlying Canvas context like this:
     // var grd = texture.context.createLinearGradient(0, 0, 0, 256)
 
     // grd.addColorStop(0, '#8ED6FF')
     // grd.addColorStop(1, '#004CB3')
-    this.ctx = this.texture.getContext()
+    this.ctx = this.canvas.getContext('2d')
 
     this.ctx.fillStyle = 'red'
     this.ctx.strokeStyle = 'white'
-    this.ctx.lineWidth = 0.8 * scale
+    this.ctx.lineWidth = 1 * scale
     this.ctx.lineJoin = 'round'
     this.ctx.lineCap = 'round'
 
     // ctx.fillRect(0, (this.cameras.main.height - this.cameras.main.width) / 2, this.cameras.main.width, this.cameras.main.width)
 
-    this.ctx.fillRect(0, 0, this.texture.width, this.texture.height)
+    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
     // ctx.stroke()
 
     //  Call this if running under WebGL, or you'll see nothing change
-    this.texture.refresh()
-    let img = this.add
-      .image(
-        this.cameras.main.width / 2,
-        this.cameras.main.height / 2,
-        'gradient'
-      )
-      .setScale(1 / scale)
-      .setInteractive()
+    // this.texture.refresh()
+    // let img = this.add
+    //   .image(
+    //     this.cameras.main.width / 2,
+    //     this.cameras.main.height / 2,
+    //     'gradient'
+    //   )
+    //   .setScale(1 / scale)
+    //   .setInteractive()
     // 设置相机的位置
     // cam.y = (cam.height - cam.width) / 2
 
@@ -152,7 +153,7 @@ class DrawingPad extends Phaser.Scene {
   }
 
   update() {
-    this.texture.refresh()
+    this.canvas.updateTexture()
   }
 }
 
